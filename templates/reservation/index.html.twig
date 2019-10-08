@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}liste des reservation{% endblock %}
+
+{% block body %}
+    
+    <div class="container-fluid reservation-hero bg-hero">    
+        <h1>liste des reservations :</h1>
+        <p>Retrouvez toutes vos réservations effectués depuis votre inscription : </p>
+    </div>    
+    <div class="container">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <table class="table table-striped table-hover shadow p-3 mb-5 md-5 rounded">
+                <thead>
+                    <tr>
+                        <th class="text-center">id</th>
+                        <th class="text-center">nom</th>
+                        <th class="text-center">Jours</th>
+                        <th class="text-center">Heure de debut</th>
+                        <th class="text-center">Heure de fin</th>
+                        <th class="text-center">semaine</th>
+                        <th class="text-center">terrain</th>
+                        <th class="text-center">Voir</th>
+                    </tr>
+                </thead>    
+                <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                    <td class="text-center">{{ reservation.id }}</td>
+                    <td class="text-center">{{ reservation.nom }}</td>
+                    <td class="text-center">{{ reservation.jour }}</td>
+                    <td class="text-center">{{ reservation.heuredebut }}</td>
+                    <td class="text-center">{{ reservation.heurefin }}</td>
+                    <td class="text-center">{{ reservation.semaine }}</td>
+                    <td class="text-center">{{ reservation.terrain }}</td>
+                    <td>
+                        <ul class="nav">
+                            <li>
+                                <a class="btn btn-dark" href="{{ path('reservation_show', { 'id': reservation.id }) }}">show</a>
+                            </li>
+                        </ul>
+                    </td> 
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>        
+    </div>
+{% endblock %}

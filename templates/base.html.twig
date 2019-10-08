@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>TennisClubSaussan{% block title %}TCS{% endblock %}</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <!--  navbar for the site -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand h2" href="{{ path('homepage') }}">TSC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('reservation') }}">Reservation</a>
+                    </li>    
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    <li>
+                </ul>
+            </div>
+        </nav>
+        {% block body %}{% endblock %}
+         <hr class="my-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4 mb-4">
+                   <ul class="nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
+                        <li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mention légale</a>
+                        <li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        <li>
+                    </ul> 
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/pooper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

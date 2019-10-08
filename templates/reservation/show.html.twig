@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{reservation.id}}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="title-reservation bg rounded mb-5">
+            <h1 class="text-center">Reservation n° : {{reservation.id}}</h1>
+            <p class="text-center"> voila toutes vos reservation que vous avez faites</p>
+        </div>
+        <div class="container w-25">
+            <table class="table table-borderless bg-light shadow p-3 mb-5 rounded">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ reservation.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>nom</th>
+                        <td>{{ reservation.nom }}</td>
+                    </tr>
+                    <tr>
+                        <th>jour</th>
+                        <td>{{ reservation.jour }}</td>
+                    </tr>
+                    <tr>
+                        <th>heure de debut</th>
+                        <td>{{ reservation.heureDebut }}</td>
+                    </tr>
+                    <tr>
+                        <th>heure de fin</th>
+                        <td>{{ reservation.heureFin }}</td>
+                    </tr>
+                    <tr>
+                        <th>Semaine</th>
+                        <td>{{ reservation.semaine }}</td>
+                    </tr>
+                    <tr>
+                        <th>terrain</th>
+                        <td>{{ reservation.terrain }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mx-auto">
+            <ul class="nav">
+                <li class="nav-item mx-auto">
+                    <a class="btn btn-dark" href="{{ path('reservation') }}">Retour</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

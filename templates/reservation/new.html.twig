@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'une annonce{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Faites votre réservation de terrain de tennis :</h1>   
+        <p>Vous pouvez faire votre réservation grâce à ce formulaire et merci de votre confiance</p>
+    </div>
+    <div class="container">
+        {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary">Valider</button>
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+div.container{
+    margin-top:20px;
+}
+
+bg-hero{
+    background-image: url('img/fond.jpg');
+}
+
+div.reservation-hero{
+    padding: 4em;
+}
+
+div.reservation-hero h1, div.reservation-hero p{
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+div.title-reservation{
+    padding: 3em;
+}
+
+
+div.title-reservation h1, div.title-reservation p{
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bg{
+    background-color: black;
+}
