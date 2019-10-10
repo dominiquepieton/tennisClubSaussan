@@ -5,8 +5,8 @@
 {% block body %}
     
     <div class="container-fluid reservation-hero bg-hero">    
-        <h1>liste des reservations :</h1>
-        <p>Retrouvez toutes vos réservations effectués depuis votre inscription : </p>
+        <h1 class="text-center h1">liste des reservations :</h1>
+        <p class="text-center">Retrouvez toutes vos réservations effectués depuis votre inscription : </p>
     </div>    
     <div class="container">
         <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -35,7 +35,7 @@
                     <td class="text-center">{{ reservation.terrain }}</td>
                     <td>
                         <ul class="nav">
-                            <li>
+                            <li class="mx-auto">
                                 <a class="btn btn-dark" href="{{ path('reservation_show', { 'id': reservation.id }) }}">show</a>
                             </li>
                         </ul>

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du profile{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">&nbsp;</div>
+            <div class="col-md-6 bg-light py-3 px-3">
+                <h1>Modification du profil :</h1>
+                    <p>vous pouvez modifier votre profil où changez le mot de passe</p>
+
+                    {{ form_start(form) }}
+
+                    {{ form_widget(form) }}
+
+                    <button type="submit" class="btn btn-primary">Valider les modifications</button>
+
+                    {{ form_end(form)}}
+                   <a href="{{ path('user_show', {'firstName' : app.user.firstName}) }}" class="btn btn-primary">Retour</a> 
+            </div>
+            <div class="col-md-3">&nbsp;</div>
+        </div>
+
+
+
+    </div>
+
+
+{% endblock %}

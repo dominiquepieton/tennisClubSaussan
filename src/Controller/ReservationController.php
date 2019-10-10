@@ -42,15 +42,27 @@ class ReservationController extends AbstractController
         // creation du formulaire on lui passe la nouvelle reservation
         $form = $this->createForm(ReservationType::class, $reservation);
 
-        // recupertion des données grace à form en utilisant handleRequest
+        // recuperation des données grace à form en utilisant handleRequest
         $form->handleRequest($request);
 
         // on verifie si le formulaire a étè sousmit et si il est valide
         if ($form->isSubmitted() && $form->isValid()){
 
+            // on indique a qui appartient la reservation
+            $reservation->setReserve($this->getUser());
+
+
             $manager->persist($reservation); // persiste dans le temps
             $manager->flush();   // envoies la requête à la db
+            
 
+
+            // message pour prevenir que cela c'est bien passé       
+            $this->addFlash(
+                'success',
+                "<strong>{$reservation->getNom()}</strong> : votre réservation a bien étè enregistrée."
+            );
+            
             // gérer la redirection la redirection 
             return $this->redirectToRoute('reservation_show', [
                 'id' =>$reservation->getId()
@@ -61,6 +73,44 @@ class ReservationController extends AbstractController
             'form' => $form->createView()    // permet de faire passer a twig un plus petit objet
         ]);
     }
+    
+    
+    /**
+     * Permet d'afficher le formulaire d'édition
+     * 
+     * @Route("/reservation/{id}/edit", name="reservation_edit")
+     * 
+     * @return Response
+     */
+    public function edit(Reservation $reservation, Request $request, ObjectManager $manager){
+         // creation du formulaire on lui passe la nouvelle reservation
+        $form = $this->createForm(ReservationType::class, $reservation);
+
+         // recuperation des données grace à form en utilisant handleRequest
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+
+            $manager->persist($reservation); // persiste dans le temps
+            $manager->flush();   // envoies la requête à la db
+            
+            // message pour prevenir que cela c'est bien passé       
+            $this->addFlash(
+                'success',
+                "<strong>{$reservation->getNom()}</strong> : Les modifications de votre réservation ont bien étè enregistrée."
+            );
+            
+            // gérer la redirection la redirection 
+            return $this->redirectToRoute('reservation_show', [
+                'id' =>$reservation->getId()
+            ]);
+        }
+    
+        return $this->render('reservation/edit.html.twig', [
+            'form' =>$form->createView()
+        ]);
+    }
+
 
     /**
      * permet de voir une annonce 

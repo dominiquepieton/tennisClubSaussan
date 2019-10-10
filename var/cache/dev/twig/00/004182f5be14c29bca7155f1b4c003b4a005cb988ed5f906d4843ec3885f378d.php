@@ -97,52 +97,45 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
             <table class=\"table table-borderless bg-light shadow p-3 mb-5 rounded\">
                 <tbody>
                     <tr>
-                        <th>Id</th>
-                        <td>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16), "html", null, true);
-        echo "</td>
-                    </tr>
-                    <tr>
                         <th>nom</th>
                         <td>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 20, $this->source); })()), "nom", [], "any", false, false, false, 20), "html", null, true);
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 16, $this->source); })()), "nom", [], "any", false, false, false, 16), "html", null, true);
         echo "</td>
                     </tr>
                     <tr>
                         <th>jour</th>
                         <td>";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 24, $this->source); })()), "jour", [], "any", false, false, false, 24), "html", null, true);
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 20, $this->source); })()), "jour", [], "any", false, false, false, 20), "html", null, true);
         echo "</td>
                     </tr>
                     <tr>
                         <th>heure de debut</th>
                         <td>";
-        // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 28, $this->source); })()), "heureDebut", [], "any", false, false, false, 28), "html", null, true);
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 24, $this->source); })()), "heureDebut", [], "any", false, false, false, 24), "html", null, true);
         echo "</td>
                     </tr>
                     <tr>
                         <th>heure de fin</th>
                         <td>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 32, $this->source); })()), "heureFin", [], "any", false, false, false, 32), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 28, $this->source); })()), "heureFin", [], "any", false, false, false, 28), "html", null, true);
         echo "</td>
                     </tr>
                     <tr>
                         <th>Semaine</th>
                         <td>";
-        // line 36
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 36, $this->source); })()), "semaine", [], "any", false, false, false, 36), "html", null, true);
+        // line 32
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 32, $this->source); })()), "semaine", [], "any", false, false, false, 32), "html", null, true);
         echo "</td>
                     </tr>
                     <tr>
                         <th>terrain</th>
                         <td>";
-        // line 40
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 40, $this->source); })()), "terrain", [], "any", false, false, false, 40), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 36, $this->source); })()), "terrain", [], "any", false, false, false, 36), "html", null, true);
         echo "</td>
                     </tr>
                 </tbody>
@@ -152,9 +145,15 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
             <ul class=\"nav\">
                 <li class=\"nav-item mx-auto\">
                     <a class=\"btn btn-dark\" href=\"";
-        // line 48
+        // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation");
         echo "\">Retour</a>
+                </li>
+                <li class=\"nav-item mx-auto\">
+                    <a class=\"btn btn-dark\" href=\"";
+        // line 47
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 47, $this->source); })()), "id", [], "any", false, false, false, 47)]), "html", null, true);
+        echo "\">réedit</a>
                 </li>
             </ul>
         </div>
@@ -180,7 +179,7 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
 
     public function getDebugInfo()
     {
-        return array (  156 => 48,  145 => 40,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  155 => 47,  149 => 44,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -198,10 +197,6 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
         <div class=\"container w-25\">
             <table class=\"table table-borderless bg-light shadow p-3 mb-5 rounded\">
                 <tbody>
-                    <tr>
-                        <th>Id</th>
-                        <td>{{ reservation.id }}</td>
-                    </tr>
                     <tr>
                         <th>nom</th>
                         <td>{{ reservation.nom }}</td>
@@ -233,6 +228,9 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
             <ul class=\"nav\">
                 <li class=\"nav-item mx-auto\">
                     <a class=\"btn btn-dark\" href=\"{{ path('reservation') }}\">Retour</a>
+                </li>
+                <li class=\"nav-item mx-auto\">
+                    <a class=\"btn btn-dark\" href=\"{{ path('reservation_edit',{'id' : reservation.id}) }}\">réedit</a>
                 </li>
             </ul>
         </div>

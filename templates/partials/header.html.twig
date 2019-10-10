@@ -1,0 +1,59 @@
+        <!--  navbar for the site -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand h2" href="{{ path('homepage') }}">TSC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- lien navigation de base  -->
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('reservation') }}">Reservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('account_register') }}" class="nav-link">Inscription</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    <li>  
+                </ul>
+                <!-- lien si l'adhérent se connecte -->
+                <ul class="navbar-nav ml-auto">
+                    {% if app.user %}
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdown">
+                                <img src="{{app.user.picture}}" class="avatar" alt="Avatar de {{app.user.lastName}} {{app.user.firstName}}">&nbsp;  {{app.user.lastName}}  {{app.user.firstName}} 
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
+                                <a href="{{ path('user_show',{'firstName' : app.user.firstname }) }}" class="dropdown-item">Mon profil</a>
+                                <a href="{{ path('account_profile')}}" class="dropdown-item">Modifier mon profile</a>
+                                <a href="{{ path('account_password')}}" class="dropdown-item">Modifier mon password</a>                                
+                                <a href="{{ path('reservation_create') }}" class="dropdown-item">réserver terrain</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ path('account_logout') }}" class="nav-link">Déconnection</a>
+                            </div>
+                        </li>
+                    {% else %}
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="{{ path('account_login') }}" class="nav-link">Connexion</a>
+                        </li>
+                    </ul>    
+                    {% endif %}
+            </div>
+        </nav>
+        <!-- error message -->
+        {% for label, messages in app.flashes %}
+            <div class="container">
+                <div class="alert alert-{{ label }}">
+                    {% for message in messages %}
+                        <p>{{ message | raw }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+
+       

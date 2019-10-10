@@ -48,7 +48,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>TennisClubSaussan";
+        <title>";
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
@@ -60,74 +60,28 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
         // line 9
         echo "    </head>
     <body>
-        <!--  navbar for the site -->
-        <nav class=\"navbar navbar-expand-lg navbar-light\">
-            <a class=\"navbar-brand h2\" href=\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
-        echo "\">TSC</a>
-            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
-
-            <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
-                <ul class=\"navbar-nav mr-auto\">
-                    <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"";
-        // line 21
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
-        echo "\">Accueil</a>
-                    </li>
-                    <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"";
-        // line 24
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation");
-        echo "\">Reservation</a>
-                    </li>    
-                </ul>
-                <ul class=\"navbar-nav ml-auto\">
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Contact</a>
-                    <li>
-                </ul>
-            </div>
-        </nav>
         ";
-        // line 34
+        // line 11
+        $this->loadTemplate("partials/header.html.twig", "base.html.twig", 11)->display($context);
+        // line 12
+        echo "
+        ";
+        // line 13
         $this->displayBlock('body', $context, $blocks);
-        // line 35
-        echo "         <hr class=\"my-5\">
-        <div class=\"container-fluid\">
-            <div class=\"row\">
-                <div class=\"col-md-4\">
-                </div>
-                <div class=\"col-md-4 mb-4\">
-                   <ul class=\"nav mx-auto\">
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"";
-        // line 43
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
-        echo "\">Accueil</a>
-                        <li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Mention légale</a>
-                        <li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Contact</a>
-                        <li>
-                    </ul> 
-                </div>
-                <div class=\"col-md-4\">
-                </div>
-            </div>
-        </div>
+        // line 14
+        echo "
+        ";
+        // line 15
+        $this->loadTemplate("partials/footer.html.twig", "base.html.twig", 15)->display($context);
+        // line 16
+        echo "        
         <script src=\"/js/jquery.min.js\"></script>
         <script src=\"/js/pooper.min.js\"></script>
         <script src=\"/js/bootstrap.min.js\"></script>
         ";
-        // line 60
+        // line 20
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 61
+        // line 21
         echo "    </body>
 </html>
 ";
@@ -176,7 +130,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 34
+    // line 13
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -194,7 +148,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 60
+    // line 20
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -224,7 +178,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     public function getDebugInfo()
     {
-        return array (  198 => 60,  180 => 34,  162 => 8,  143 => 5,  131 => 61,  129 => 60,  109 => 43,  99 => 35,  97 => 34,  84 => 24,  78 => 21,  67 => 13,  61 => 9,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  152 => 20,  134 => 13,  116 => 8,  97 => 5,  85 => 21,  83 => 20,  77 => 16,  75 => 15,  72 => 14,  70 => 13,  67 => 12,  65 => 11,  61 => 9,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -233,58 +187,18 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>TennisClubSaussan{% block title %}TCS{% endblock %}</title>
+        <title>{% block title %}TCS{% endblock %}</title>
         <link rel=\"stylesheet\" href=\"/css/bootstrap.min.css\">
         <link rel=\"stylesheet\" href=\"/css/style.css\">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <!--  navbar for the site -->
-        <nav class=\"navbar navbar-expand-lg navbar-light\">
-            <a class=\"navbar-brand h2\" href=\"{{ path('homepage') }}\">TSC</a>
-            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
+        {% include 'partials/header.html.twig' %}
 
-            <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
-                <ul class=\"navbar-nav mr-auto\">
-                    <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"{{ path('homepage') }}\">Accueil</a>
-                    </li>
-                    <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"{{ path('reservation') }}\">Reservation</a>
-                    </li>    
-                </ul>
-                <ul class=\"navbar-nav ml-auto\">
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Contact</a>
-                    <li>
-                </ul>
-            </div>
-        </nav>
         {% block body %}{% endblock %}
-         <hr class=\"my-5\">
-        <div class=\"container-fluid\">
-            <div class=\"row\">
-                <div class=\"col-md-4\">
-                </div>
-                <div class=\"col-md-4 mb-4\">
-                   <ul class=\"nav mx-auto\">
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path('homepage') }}\">Accueil</a>
-                        <li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Mention légale</a>
-                        <li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"#\">Contact</a>
-                        <li>
-                    </ul> 
-                </div>
-                <div class=\"col-md-4\">
-                </div>
-            </div>
-        </div>
+
+        {% include 'partials/footer.html.twig' %}
+        
         <script src=\"/js/jquery.min.js\"></script>
         <script src=\"/js/pooper.min.js\"></script>
         <script src=\"/js/bootstrap.min.js\"></script>

@@ -4,7 +4,9 @@ namespace Symfony\Component\VarExporter\Internal;
 
 return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     $o = [
-        clone (Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\LessThan'] ?? Registry::p('Symfony\\Component\\Validator\\Constraints\\LessThan')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\GreaterThan'] ?? Registry::p('Symfony\\Component\\Validator\\Constraints\\GreaterThan')),
     ],
     null,
     [
@@ -12,10 +14,28 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
             'type' => [
                 'integer',
             ],
+            'message' => [
+                1 => 'il n\'y a que 52 semaines, pas possible',
+                'les semaine ne peut pas être négatif',
+            ],
+            'value' => [
+                1 => 53,
+                0,
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+                [
+                    'Default',
+                ],
+            ],
         ],
     ],
     [
         $o[0],
+        $o[1],
+        $o[2],
     ],
     []
 );

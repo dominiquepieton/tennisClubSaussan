@@ -13,6 +13,11 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'account_login', '_controller' => 'App\\Controller\\AccountController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'account_logout', '_controller' => 'App\\Controller\\AccountController::logout'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'account_register', '_controller' => 'App\\Controller\\AccountController::register'], null, null, null, false, false, null]],
+        '/account/profile' => [[['_route' => 'account_profile', '_controller' => 'App\\Controller\\AccountController::profile'], null, null, null, false, false, null]],
+        '/account/password-update' => [[['_route' => 'account_password', '_controller' => 'App\\Controller\\AccountController::updatePassword'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'homepage', '_controller' => 'App\\Controller\\HomeController::home'], null, null, null, false, false, null]],
         '/reservation' => [[['_route' => 'reservation', '_controller' => 'App\\Controller\\ReservationController::index'], null, null, null, false, false, null]],
         '/reservation/new' => [[['_route' => 'reservation_create', '_controller' => 'App\\Controller\\ReservationController::create'], null, null, null, false, false, null]],
@@ -34,7 +39,11 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/reservation/([^/]++)(*:190)'
+                .'|/reservation/([^/]++)(?'
+                    .'|/edit(*:198)'
+                    .'|(*:206)'
+                .')'
+                .'|/user/([^/]++)(*:229)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -45,8 +54,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        190 => [
-            [['_route' => 'reservation_show', '_controller' => 'App\\Controller\\ReservationController::show'], ['id'], null, null, false, true, null],
+        198 => [[['_route' => 'reservation_edit', '_controller' => 'App\\Controller\\ReservationController::edit'], ['id'], null, null, false, false, null]],
+        206 => [[['_route' => 'reservation_show', '_controller' => 'App\\Controller\\ReservationController::show'], ['id'], null, null, false, true, null]],
+        229 => [
+            [['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::index'], ['firstName'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

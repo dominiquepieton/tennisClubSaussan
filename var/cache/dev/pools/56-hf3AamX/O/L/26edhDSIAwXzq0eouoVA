@@ -1,0 +1,29 @@
+<?php
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (Registry::$prototypes['Symfony\\Component\\Validator\\Constraints\\Length'] ?? Registry::p('Symfony\\Component\\Validator\\Constraints\\Length')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'minMessage' => [
+                'Votre mot de passe doit faire au moins 8 caractéres.....',
+            ],
+            'min' => [
+                8,
+            ],
+            'groups' => [
+                [
+                    'Default',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+);

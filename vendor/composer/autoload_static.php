@@ -116,6 +116,7 @@ class ComposerStaticInit258f8358a46f155aa99915517580aac1
         'F' => 
         array (
             'Fig\\Link\\' => 9,
+            'Faker\\' => 6,
         ),
         'E' => 
         array (
@@ -449,6 +450,10 @@ class ComposerStaticInit258f8358a46f155aa99915517580aac1
         'Fig\\Link\\' => 
         array (
             0 => __DIR__ . '/..' . '/fig/link-util/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'Egulias\\EmailValidator\\' => 
         array (

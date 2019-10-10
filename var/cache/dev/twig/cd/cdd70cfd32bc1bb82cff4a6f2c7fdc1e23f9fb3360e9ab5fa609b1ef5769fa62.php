@@ -87,8 +87,8 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
         // line 6
         echo "    
     <div class=\"container-fluid reservation-hero bg-hero\">    
-        <h1>liste des reservations :</h1>
-        <p>Retrouvez toutes vos réservations effectués depuis votre inscription : </p>
+        <h1 class=\"text-center h1\">liste des reservations :</h1>
+        <p class=\"text-center\">Retrouvez toutes vos réservations effectués depuis votre inscription : </p>
     </div>    
     <div class=\"container\">
         <div class=\"table-wrapper-scroll-y my-custom-scrollbar\">
@@ -143,7 +143,7 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
             echo "</td>
                     <td>
                         <ul class=\"nav\">
-                            <li>
+                            <li class=\"mx-auto\">
                                 <a class=\"btn btn-dark\" href=\"";
             // line 39
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 39)]), "html", null, true);
@@ -195,8 +195,8 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
 {% block body %}
     
     <div class=\"container-fluid reservation-hero bg-hero\">    
-        <h1>liste des reservations :</h1>
-        <p>Retrouvez toutes vos réservations effectués depuis votre inscription : </p>
+        <h1 class=\"text-center h1\">liste des reservations :</h1>
+        <p class=\"text-center\">Retrouvez toutes vos réservations effectués depuis votre inscription : </p>
     </div>    
     <div class=\"container\">
         <div class=\"table-wrapper-scroll-y my-custom-scrollbar\">
@@ -225,7 +225,7 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
                     <td class=\"text-center\">{{ reservation.terrain }}</td>
                     <td>
                         <ul class=\"nav\">
-                            <li>
+                            <li class=\"mx-auto\">
                                 <a class=\"btn btn-dark\" href=\"{{ path('reservation_show', { 'id': reservation.id }) }}\">show</a>
                             </li>
                         </ul>

@@ -12,10 +12,6 @@
             <table class="table table-borderless bg-light shadow p-3 mb-5 rounded">
                 <tbody>
                     <tr>
-                        <th>Id</th>
-                        <td>{{ reservation.id }}</td>
-                    </tr>
-                    <tr>
                         <th>nom</th>
                         <td>{{ reservation.nom }}</td>
                     </tr>
@@ -46,6 +42,9 @@
             <ul class="nav">
                 <li class="nav-item mx-auto">
                     <a class="btn btn-dark" href="{{ path('reservation') }}">Retour</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a class="btn btn-dark" href="{{ path('reservation_edit',{'id' : reservation.id}) }}">réedit</a>
                 </li>
             </ul>
         </div>

@@ -4,8 +4,15 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert; // validation du formulaire si pas vide
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReservationRepository")
+ * @UniqueEntity(
+ *      fields={"jour","semaine","heureDebut","heureFin","terrain"},
+ *      message = "Une reservation est déjà enregistrée dans les creneaux que vous avez selectionné."
+ * )
  */
 class Reservation
 {
@@ -23,28 +30,54 @@ class Reservation
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\LessThan(value = 31,message="la date est trop grande pas possible")
+     * @Assert\GreaterThan(value = 1, message ="la date est trop petit")
      */
     private $jour;
 
     /**
      * @ORM\Column(type="integer")
+     * 
+     * @Assert\LessThan(value = 23,message="l'heure est trop grande pas possible")
+     * @Assert\GreaterThan(value = 7, message ="l'heure est trop petit")
+     * 
      */
     private $heureDebut;
 
     /**
+     * 
      * @ORM\Column(type="integer")
+     * 
+     * @Assert\LessThan(value = 23,message="l'heure est trop grande pas possible")
+     * @Assert\GreaterThan(value = 7, message ="l'heure est trop petit")
+     *
      */
     private $heureFin;
 
     /**
      * @ORM\Column(type="integer")
+     * 
+     * @Assert\LessThan(value = 53,message="il n'y a que 52 semaines, pas possible")
+     * @Assert\GreaterThan(value = 0, message ="les semaine ne peut pas être négatif")
+     * 
      */
     private $semaine;
 
     /**
      * @ORM\Column(type="integer")
+     * 
+     * @Assert\LessThan(value = 4,message="la numero numero de terrain est trop grand pas possible")
+     * @Assert\GreaterThan(value = 0, message ="le nunmero de terrain est trop petit")
+     * 
      */
     private $terrain;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Adherent", inversedBy="reservations")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $reserve;
 
     public function getId(): ?int
     {
@@ -119,6 +152,18 @@ class Reservation
     public function setTerrain(int $terrain): self
     {
         $this->terrain = $terrain;
+
+        return $this;
+    }
+
+    public function getReserve(): ?Adherent
+    {
+        return $this->reserve;
+    }
+
+    public function setReserve(?Adherent $reserve): self
+    {
+        $this->reserve = $reserve;
 
         return $this;
     }
