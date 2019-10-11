@@ -41,10 +41,13 @@
         <div class="mx-auto">
             <ul class="nav">
                 <li class="nav-item mx-auto">
-                    <a class="btn btn-dark" href="{{ path('reservation') }}">Retour</a>
+                    <a class="btn btn-dark" href="{{ path('homepage') }}">Retour</a>
                 </li>
                 <li class="nav-item mx-auto">
                     <a class="btn btn-dark" href="{{ path('reservation_edit',{'id' : reservation.id}) }}">réedit</a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="btn btn-danger" href="{{ path('reservation_delete',{'id' : reservation.id}) }}" onclick="return confirm(`Êtes-vous sur de vouloir supprimer votre réservation ?`)">delete</a>
                 </li>
             </ul>
         </div>

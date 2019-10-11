@@ -4,7 +4,8 @@ namespace Symfony\Component\VarExporter\Internal;
 
 return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     $o = [
-        clone (Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone (($p = &Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone ($p['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security'] ?? Registry::p('Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security')),
     ],
     null,
     [
@@ -16,9 +17,18 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
                 'reservation_edit',
             ],
         ],
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security' => [
+            'expression' => [
+                1 => 'is_granted(\'ROLE_USER\') and user === reservation.getReserve()',
+            ],
+            'message' => [
+                1 => 'Cette réservation n\'est pas la vôtre,Choisissez une révervation qui vous appartient.....',
+            ],
+        ],
     ],
     [
         $o[0],
+        $o[1],
     ],
     []
 );

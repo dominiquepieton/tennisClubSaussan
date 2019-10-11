@@ -87,26 +87,27 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
-        echo "  <div class=\"container-fluide\">
-    <div class=\"jumbotron mt-4 bg-white\">
+        echo "<div class=\"bg-home hv-100\">  
+  <div class=\"container-fluid \">
+    <div class=\"jumbotron mt-4 bg-transparent\">
       <h1 class=\"display-3 text-center\">";
-        // line 10
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 10, $this->source); })()), "html", null, true);
+        // line 11
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 11, $this->source); })()), "html", null, true);
         echo "</h1>
         <p class=\"lead text-center\">Association sportif de tennis avec un esprit de famille, venez rejoindre le club pour passer un bon moment au club et jouer avec la bonne humeur.</p>
         <hr class=\"my-4\">
         <p class=\"text-center\">Vous pouvez aussi réserver un terrain directement de ce site.</p>
         <p class=\"lead text-center\">
-          <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Venez</a>
+          <a class=\"btn btn-warning btn-lg\" href=\"#\" role=\"button\">Venez</a>
         </p> 
       </div>
   </div>
   <div class=\"container\">
     <hr class=\"my-5\">
-    <h2 class=\"h1 mt-3 mb-4\">Derniers événements :</h2>
+    <h2 class=\"h1 mt-3 mb-4 text-white\">Derniers événements :</h2>
     <div class=\"row\">
-      <div class=\"col-md-4\">
-        <div class=\"card border-primary mb-3\" style=\"max-width: 20rem;\">
+      <div class=\"col-md-4 py-5\">
+        <div class=\"card border-primary mb-3 \" style=\"max-width: 20rem;\">
           <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
             <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
             <div class=\"card-body\">
@@ -115,8 +116,8 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
             </div>
         </div>
       </div>
-      <div class=\"col-md-4\">
-        <div class=\"card border-primary mb-3\" style=\"max-width: 20rem;\">
+      <div class=\"col-md-4 py-5\">
+        <div class=\"card mb-3\" style=\"max-width: 20rem;\">
           <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
             <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
             <div class=\"card-body\">
@@ -125,7 +126,7 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
             </div>
         </div>
       </div>
-      <div class=\"col-md-4\">
+      <div class=\"col-md-4 py-5\">
         <div class=\"card border-primary mb-3\" style=\"max-width: 20rem;\">
           <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
             <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
@@ -136,7 +137,8 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
         </div>
       </div>
     </div>
-  </div>    
+  </div>
+</div>      
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -158,7 +160,7 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
 
     public function getDebugInfo()
     {
-        return array (  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  95 => 11,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -170,23 +172,24 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
 {% endblock %}
 
 {% block body %}
-  <div class=\"container-fluide\">
-    <div class=\"jumbotron mt-4 bg-white\">
+<div class=\"bg-home hv-100\">  
+  <div class=\"container-fluid \">
+    <div class=\"jumbotron mt-4 bg-transparent\">
       <h1 class=\"display-3 text-center\">{{ title }}</h1>
         <p class=\"lead text-center\">Association sportif de tennis avec un esprit de famille, venez rejoindre le club pour passer un bon moment au club et jouer avec la bonne humeur.</p>
         <hr class=\"my-4\">
         <p class=\"text-center\">Vous pouvez aussi réserver un terrain directement de ce site.</p>
         <p class=\"lead text-center\">
-          <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Venez</a>
+          <a class=\"btn btn-warning btn-lg\" href=\"#\" role=\"button\">Venez</a>
         </p> 
       </div>
   </div>
   <div class=\"container\">
     <hr class=\"my-5\">
-    <h2 class=\"h1 mt-3 mb-4\">Derniers événements :</h2>
+    <h2 class=\"h1 mt-3 mb-4 text-white\">Derniers événements :</h2>
     <div class=\"row\">
-      <div class=\"col-md-4\">
-        <div class=\"card border-primary mb-3\" style=\"max-width: 20rem;\">
+      <div class=\"col-md-4 py-5\">
+        <div class=\"card border-primary mb-3 \" style=\"max-width: 20rem;\">
           <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
             <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
             <div class=\"card-body\">
@@ -195,8 +198,8 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
             </div>
         </div>
       </div>
-      <div class=\"col-md-4\">
-        <div class=\"card border-primary mb-3\" style=\"max-width: 20rem;\">
+      <div class=\"col-md-4 py-5\">
+        <div class=\"card mb-3\" style=\"max-width: 20rem;\">
           <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
             <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
             <div class=\"card-body\">
@@ -205,7 +208,7 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
             </div>
         </div>
       </div>
-      <div class=\"col-md-4\">
+      <div class=\"col-md-4 py-5\">
         <div class=\"card border-primary mb-3\" style=\"max-width: 20rem;\">
           <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
             <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
@@ -216,7 +219,8 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
         </div>
       </div>
     </div>
-  </div>    
+  </div>
+</div>      
 {% endblock %}
 
 ", "home.html.twig", "/var/www/site/tcs/templates/home.html.twig");

@@ -18,7 +18,7 @@ class ReservationType extends ApplicationType
     {
         $builder
             ->add('nom',TextType::class, $this->getConfiguration("Nom :", "Entrez votre nom"))
-            ->add('jour',IntegerType::class, $this->getConfiguration('Jour :',"Entrez le jour"))
+            ->add('jour',TextType::class, $this->getConfiguration('Jour :',"Entrez le jour"))
             ->add('semaine',IntegerType::class, $this->getConfiguration("Semaine", "Entrez le numero de semaine"))
             ->add('heureDebut',IntegerType::class, $this->getConfiguration("Heure de début :", "Entrez l'heure de début"))
             ->add('heureFin',IntegerType::class, $this->getConfiguration("Heure de fin :", "Entrez l'heure de fin"))

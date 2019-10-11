@@ -14,6 +14,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AccountController extends AbstractController
@@ -55,6 +57,7 @@ class AccountController extends AbstractController
      * Permet d'afficher le registre d'inscription
      * 
      * @Route("/register", name="account_register")
+     * @IsGranted("ROLE_ADMIN")
      * 
      * @return Response
      */
@@ -91,6 +94,7 @@ class AccountController extends AbstractController
      * Permet d'afficher et modifier son profile
      * 
      * @Route("/account/profile", name="account_profile")
+     * @IsGranted("ROLE_USER")
      * 
      * @return Response
      */
@@ -123,6 +127,7 @@ class AccountController extends AbstractController
      * Permet la modification du mot de passe
      * 
      * @Route("/account/password-update", name="account_password")
+     * IsGranted("ROLE_USER")
      * 
      * @return Response
      */

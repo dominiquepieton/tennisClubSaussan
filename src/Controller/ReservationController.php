@@ -10,6 +10,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ReservationController extends AbstractController
@@ -33,6 +35,8 @@ class ReservationController extends AbstractController
      * Permet de créer une réservation de terrain
      * 
      * @Route("/reservation/new", name="reservation_create")
+     * @IsGranted("ROLE_USER")
+     * 
      * @return Response
      */
     public function create(Request $request, ObjectManager $manager) {
@@ -80,6 +84,8 @@ class ReservationController extends AbstractController
      * 
      * @Route("/reservation/{id}/edit", name="reservation_edit")
      * 
+     * @Security("is_granted('ROLE_USER') and user === reservation.getReserve()", message="Cette réservation n'est pas la vôtre,Choisissez une révervation qui vous appartient.....")
+     * 
      * @return Response
      */
     public function edit(Reservation $reservation, Request $request, ObjectManager $manager){
@@ -123,6 +129,33 @@ class ReservationController extends AbstractController
         return $this->render('reservation/show.html.twig', [
             'reservation' => $reservation
         ]);
+    }
+
+
+    /**
+     * Permet de supprimer la reservation
+     * 
+     * @Route("/reservation/{id}/delete", name="reservation_delete")
+     * @Security("is_granted('ROLE_USER') and user == reservation.getReserve()", message="Vous n'avez pas le droit de supprimer cette réservation")
+     * 
+     * @param Reservation $reservation
+     * @param ObjectManager $manager
+     * @return Response
+     */
+    public function delete(Reservation $reservation, ObjectManager $manager) {
+        // demande au manager de supprimer la réservation
+        $manager->remove($reservation);
+        $manager->flush();
+
+        //message flash
+        $this->addFlash(
+            'success',
+            "La réservation a bien été supprimée !"
+        );
+
+        // fait une redirection aprés avoir supprimer
+        return $this->redirectToRoute("homepage");
+
     }
 
 }

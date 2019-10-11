@@ -146,7 +146,7 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
                 <li class=\"nav-item mx-auto\">
                     <a class=\"btn btn-dark\" href=\"";
         // line 44
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
         echo "\">Retour</a>
                 </li>
                 <li class=\"nav-item mx-auto\">
@@ -154,6 +154,12 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
         // line 47
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 47, $this->source); })()), "id", [], "any", false, false, false, 47)]), "html", null, true);
         echo "\">réedit</a>
+                </li>
+                <li class=\"nav-item\"> 
+                    <a class=\"btn btn-danger\" href=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 50, $this->source); })()), "id", [], "any", false, false, false, 50)]), "html", null, true);
+        echo "\" onclick=\"return confirm(`Êtes-vous sur de vouloir supprimer votre réservation ?`)\">delete</a>
                 </li>
             </ul>
         </div>
@@ -179,7 +185,7 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
 
     public function getDebugInfo()
     {
-        return array (  155 => 47,  149 => 44,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  161 => 50,  155 => 47,  149 => 44,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -227,10 +233,13 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
         <div class=\"mx-auto\">
             <ul class=\"nav\">
                 <li class=\"nav-item mx-auto\">
-                    <a class=\"btn btn-dark\" href=\"{{ path('reservation') }}\">Retour</a>
+                    <a class=\"btn btn-dark\" href=\"{{ path('homepage') }}\">Retour</a>
                 </li>
                 <li class=\"nav-item mx-auto\">
                     <a class=\"btn btn-dark\" href=\"{{ path('reservation_edit',{'id' : reservation.id}) }}\">réedit</a>
+                </li>
+                <li class=\"nav-item\"> 
+                    <a class=\"btn btn-danger\" href=\"{{ path('reservation_delete',{'id' : reservation.id}) }}\" onclick=\"return confirm(`Êtes-vous sur de vouloir supprimer votre réservation ?`)\">delete</a>
                 </li>
             </ul>
         </div>

@@ -32,7 +32,7 @@ class Reservation
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\LessThan(value = 31,message="la date est trop grande pas possible")
-     * @Assert\GreaterThan(value = 1, message ="la date est trop petit")
+     * @Assert\GreaterThan(value = 0, message ="la date est trop petit")
      */
     private $jour;
 

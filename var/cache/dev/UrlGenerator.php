@@ -25,5 +25,6 @@ return [
     'reservation_create' => [[], ['_controller' => 'App\\Controller\\ReservationController::create'], [], [['text', '/reservation/new']], [], []],
     'reservation_edit' => [['id'], ['_controller' => 'App\\Controller\\ReservationController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/reservation']], [], []],
     'reservation_show' => [['id'], ['_controller' => 'App\\Controller\\ReservationController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/reservation']], [], []],
+    'reservation_delete' => [['id'], ['_controller' => 'App\\Controller\\ReservationController::delete'], [], [['text', '/delete'], ['variable', '/', '[^/]++', 'id', true], ['text', '/reservation']], [], []],
     'user_show' => [['firstName'], ['_controller' => 'App\\Controller\\UserController::index'], [], [['variable', '/', '[^/]++', 'firstName', true], ['text', '/user']], [], []],
 ];

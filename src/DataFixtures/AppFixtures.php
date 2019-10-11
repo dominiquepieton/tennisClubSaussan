@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use Faker\Factory;
+use App\Entity\Role;
 use App\Entity\Adherent;
 use App\Entity\Reservation;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -20,6 +21,27 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr-FR');
+        //creation du role administrateur
+        $adminRole = new Role();
+        // donne le titre du role
+        $adminRole->setTitle('ROLE_ADMIN');
+        // dit à manager de persister le adminRole
+        $manager->persist($adminRole);
+        
+        //Creation du nouveau administrateur
+        $adminUser = new Adherent();
+        // on lui passe le valeur correspondante
+        $adminUser->setFirstName('domi')
+                  ->setLastName('pieton')
+                  ->setEmail('pietondominique70@gmail.com')
+                  ->setHash($this->encoder->encodePassword($adminUser, 'oceane1940'))
+                  ->setPicture('https://img.icons8.com/color/48/000000/person-male')
+                  ->addAdherentRole($adminRole);
+                  
+        $manager->persist($adminUser);
+
+
+
         //creation d'ahdérents
         $adherents = []; // array pour rentrer les adherents
 

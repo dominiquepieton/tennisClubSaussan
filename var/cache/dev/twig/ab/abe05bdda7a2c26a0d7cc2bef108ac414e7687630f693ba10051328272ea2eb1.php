@@ -40,7 +40,7 @@ class __TwigTemplate_270084631c6a9f58bbacfe255e77bf55afb35362090bed7c0a28a6493c2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "partials/footer.html.twig"));
 
         // line 1
-        echo "<footer class=\"mt-5 bg-light py-5\">
+        echo "<footer class=\"bg-light py-2  border border-top border-dark\">
     <div class=\"row\">
         <div class=\"col-md-4\">
         </div>
@@ -89,7 +89,7 @@ class __TwigTemplate_270084631c6a9f58bbacfe255e77bf55afb35362090bed7c0a28a6493c2
 
     public function getSourceContext()
     {
-        return new Source("<footer class=\"mt-5 bg-light py-5\">
+        return new Source("<footer class=\"bg-light py-2  border border-top border-dark\">
     <div class=\"row\">
         <div class=\"col-md-4\">
         </div>

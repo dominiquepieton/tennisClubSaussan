@@ -92,7 +92,7 @@ class __TwigTemplate_5680578af0a301f9341ee19d41d8c4f78d1ce89f2c84691f03d9a931fa8
                 <img src=\"";
         // line 9
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["adherent"]) || array_key_exists("adherent", $context) ? $context["adherent"] : (function () { throw new RuntimeError('Variable "adherent" does not exist.', 9, $this->source); })()), "picture", [], "any", false, false, false, 9), "html", null, true);
-        echo "\" class=\"mb-3\" alt=\"Avatar de ";
+        echo "\" class=\"mb-3 avatar avatar-meduim\" alt=\"Avatar de ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["adherent"]) || array_key_exists("adherent", $context) ? $context["adherent"] : (function () { throw new RuntimeError('Variable "adherent" does not exist.', 9, $this->source); })()), "lastName", [], "any", false, false, false, 9), "html", null, true);
         echo " ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["adherent"]) || array_key_exists("adherent", $context) ? $context["adherent"] : (function () { throw new RuntimeError('Variable "adherent" does not exist.', 9, $this->source); })()), "firstName", [], "any", false, false, false, 9), "html", null, true);
@@ -142,60 +142,71 @@ class __TwigTemplate_5680578af0a301f9341ee19d41d8c4f78d1ce89f2c84691f03d9a931fa8
                                 <th class=\"text-center\">Heure de fin</th>
                                 <th class=\"text-center\">semaine</th>
                                 <th class=\"text-center\">terrain</th>
+                                <th class=\"text-center\">modifier</th>
                             </tr>
                         </thead>    
                         <tbody>
                             ";
-            // line 41
+            // line 42
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["adherent"]) || array_key_exists("adherent", $context) ? $context["adherent"] : (function () { throw new RuntimeError('Variable "adherent" does not exist.', 41, $this->source); })()), "reservations", [], "any", false, false, false, 41));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["adherent"]) || array_key_exists("adherent", $context) ? $context["adherent"] : (function () { throw new RuntimeError('Variable "adherent" does not exist.', 42, $this->source); })()), "reservations", [], "any", false, false, false, 42));
             foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-                // line 42
+                // line 43
                 echo "                            <tr>
                                 <td class=\"text-center\">";
-                // line 43
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "jour", [], "any", false, false, false, 43), "html", null, true);
-                echo "</td>
-                                <td class=\"text-center\">";
                 // line 44
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "heuredebut", [], "any", false, false, false, 44), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "jour", [], "any", false, false, false, 44), "html", null, true);
                 echo "</td>
                                 <td class=\"text-center\">";
                 // line 45
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "heurefin", [], "any", false, false, false, 45), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "heuredebut", [], "any", false, false, false, 45), "html", null, true);
                 echo "</td>
                                 <td class=\"text-center\">";
                 // line 46
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "semaine", [], "any", false, false, false, 46), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "heurefin", [], "any", false, false, false, 46), "html", null, true);
                 echo "</td>
                                 <td class=\"text-center\">";
                 // line 47
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "terrain", [], "any", false, false, false, 47), "html", null, true);
-                echo "</td>     
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "semaine", [], "any", false, false, false, 47), "html", null, true);
+                echo "</td>
+                                <td class=\"text-center\">";
+                // line 48
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "terrain", [], "any", false, false, false, 48), "html", null, true);
+                echo "</td>
+                                <td>
+                                    <ul class=\"nav\">
+                                        <li class=\"nav-item mx-auto\">
+                                            <a class=\"btn btn-dark\" href=\"";
+                // line 52
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 52)]), "html", null, true);
+                echo "\">réedit</a>
+                                        </li>
+                                    </ul>
+                                </td>     
                             </tr>
                             ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 50
+            // line 58
             echo "                        </tbody>
                     </table>
                 </div>
             ";
         } else {
-            // line 54
+            // line 62
             echo "                <div class=\"alert alert-warning\">
                     <p>
                         <strong>";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["adherent"]) || array_key_exists("adherent", $context) ? $context["adherent"] : (function () { throw new RuntimeError('Variable "adherent" does not exist.', 56, $this->source); })()), "firstName", [], "any", false, false, false, 56), "html", null, true);
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["adherent"]) || array_key_exists("adherent", $context) ? $context["adherent"] : (function () { throw new RuntimeError('Variable "adherent" does not exist.', 64, $this->source); })()), "firstName", [], "any", false, false, false, 64), "html", null, true);
             echo "</strong>, vous n'avez pas encore fait de réservation....
                     </p>
                 </div>
             ";
         }
-        // line 60
+        // line 68
         echo "    </div>
 
 
@@ -222,7 +233,7 @@ class __TwigTemplate_5680578af0a301f9341ee19d41d8c4f78d1ce89f2c84691f03d9a931fa8
 
     public function getDebugInfo()
     {
-        return array (  199 => 60,  192 => 56,  188 => 54,  182 => 50,  173 => 47,  169 => 46,  165 => 45,  161 => 44,  157 => 43,  154 => 42,  150 => 41,  136 => 29,  134 => 28,  124 => 21,  118 => 18,  110 => 15,  104 => 12,  94 => 9,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  210 => 68,  203 => 64,  199 => 62,  193 => 58,  181 => 52,  174 => 48,  170 => 47,  166 => 46,  162 => 45,  158 => 44,  155 => 43,  151 => 42,  136 => 29,  134 => 28,  124 => 21,  118 => 18,  110 => 15,  104 => 12,  94 => 9,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -235,7 +246,7 @@ class __TwigTemplate_5680578af0a301f9341ee19d41d8c4f78d1ce89f2c84691f03d9a931fa8
     <div class=\"container\">
         <div class=\"row align-item-center\">
             <div class=\"col-md-3 text-center\">
-                <img src=\"{{adherent.picture}}\" class=\"mb-3\" alt=\"Avatar de {{adherent.lastName}} {{adherent.firstName}}\">
+                <img src=\"{{adherent.picture}}\" class=\"mb-3 avatar avatar-meduim\" alt=\"Avatar de {{adherent.lastName}} {{adherent.firstName}}\">
                 <br>
                 <!-- nbre de reservation faite -->
                 <span class=\"badge badge-primary\">{{adherent.reservations | length }} réservations</span>
@@ -264,6 +275,7 @@ class __TwigTemplate_5680578af0a301f9341ee19d41d8c4f78d1ce89f2c84691f03d9a931fa8
                                 <th class=\"text-center\">Heure de fin</th>
                                 <th class=\"text-center\">semaine</th>
                                 <th class=\"text-center\">terrain</th>
+                                <th class=\"text-center\">modifier</th>
                             </tr>
                         </thead>    
                         <tbody>
@@ -273,7 +285,14 @@ class __TwigTemplate_5680578af0a301f9341ee19d41d8c4f78d1ce89f2c84691f03d9a931fa8
                                 <td class=\"text-center\">{{ reservation.heuredebut }}</td>
                                 <td class=\"text-center\">{{ reservation.heurefin }}</td>
                                 <td class=\"text-center\">{{ reservation.semaine }}</td>
-                                <td class=\"text-center\">{{ reservation.terrain }}</td>     
+                                <td class=\"text-center\">{{ reservation.terrain }}</td>
+                                <td>
+                                    <ul class=\"nav\">
+                                        <li class=\"nav-item mx-auto\">
+                                            <a class=\"btn btn-dark\" href=\"{{ path('reservation_edit',{'id' : reservation.id}) }}\">réedit</a>
+                                        </li>
+                                    </ul>
+                                </td>     
                             </tr>
                             {% endfor %}
                         </tbody>

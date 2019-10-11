@@ -25,15 +25,15 @@
                     {% if app.user %}
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdown">
-                                <img src="{{app.user.picture}}" class="avatar" alt="Avatar de {{app.user.lastName}} {{app.user.firstName}}">&nbsp;  {{app.user.lastName}}  {{app.user.firstName}} 
+                                <img src="{{app.user.picture}}" class="avatar avatar-mini" alt="Avatar de {{app.user.lastName}} {{app.user.firstName}}">&nbsp;  {{app.user.lastName}}  {{app.user.firstName}} 
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
+                                <a href="{{ path('reservation_create') }}" class="dropdown-item">réserver terrain</a>
                                 <a href="{{ path('user_show',{'firstName' : app.user.firstname }) }}" class="dropdown-item">Mon profil</a>
                                 <a href="{{ path('account_profile')}}" class="dropdown-item">Modifier mon profile</a>
-                                <a href="{{ path('account_password')}}" class="dropdown-item">Modifier mon password</a>                                
-                                <a href="{{ path('reservation_create') }}" class="dropdown-item">réserver terrain</a>
+                                <a href="{{ path('account_password')}}" class="dropdown-item">Modifier mon password</a>                                                                
                                 <div class="dropdown-divider"></div>
-                                <a href="{{ path('account_logout') }}" class="nav-link">Déconnection</a>
+                                <a href="{{ path('account_logout') }}" class="nav-link">Déconnexion</a>
                             </div>
                         </li>
                     {% else %}

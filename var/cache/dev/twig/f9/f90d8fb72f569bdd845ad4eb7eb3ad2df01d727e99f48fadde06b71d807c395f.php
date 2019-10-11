@@ -85,7 +85,7 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
                                 <img src=\"";
             // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "user", [], "any", false, false, false, 28), "picture", [], "any", false, false, false, 28), "html", null, true);
-            echo "\" class=\"avatar\" alt=\"Avatar de ";
+            echo "\" class=\"avatar avatar-mini\" alt=\"Avatar de ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "user", [], "any", false, false, false, 28), "lastName", [], "any", false, false, false, 28), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "user", [], "any", false, false, false, 28), "firstName", [], "any", false, false, false, 28), "html", null, true);
@@ -98,25 +98,25 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
                             <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"accountDropdown\">
                                 <a href=\"";
             // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["firstName" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31), "firstname", [], "any", false, false, false, 31)]), "html", null, true);
-            echo "\" class=\"dropdown-item\">Mon profil</a>
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_create");
+            echo "\" class=\"dropdown-item\">réserver terrain</a>
                                 <a href=\"";
             // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["firstName" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32), "firstname", [], "any", false, false, false, 32)]), "html", null, true);
+            echo "\" class=\"dropdown-item\">Mon profil</a>
+                                <a href=\"";
+            // line 33
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_profile");
             echo "\" class=\"dropdown-item\">Modifier mon profile</a>
                                 <a href=\"";
-            // line 33
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_password");
-            echo "\" class=\"dropdown-item\">Modifier mon password</a>                                
-                                <a href=\"";
             // line 34
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_create");
-            echo "\" class=\"dropdown-item\">réserver terrain</a>
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_password");
+            echo "\" class=\"dropdown-item\">Modifier mon password</a>                                                                
                                 <div class=\"dropdown-divider\"></div>
                                 <a href=\"";
             // line 36
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_logout");
-            echo "\" class=\"nav-link\">Déconnection</a>
+            echo "\" class=\"nav-link\">Déconnexion</a>
                             </div>
                         </li>
                     ";
@@ -224,15 +224,15 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
                     {% if app.user %}
                         <li class=\"nav-item dropdown\">
                             <a href=\"#\" class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" id=\"accountDropdown\">
-                                <img src=\"{{app.user.picture}}\" class=\"avatar\" alt=\"Avatar de {{app.user.lastName}} {{app.user.firstName}}\">&nbsp;  {{app.user.lastName}}  {{app.user.firstName}} 
+                                <img src=\"{{app.user.picture}}\" class=\"avatar avatar-mini\" alt=\"Avatar de {{app.user.lastName}} {{app.user.firstName}}\">&nbsp;  {{app.user.lastName}}  {{app.user.firstName}} 
                             </a>
                             <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"accountDropdown\">
+                                <a href=\"{{ path('reservation_create') }}\" class=\"dropdown-item\">réserver terrain</a>
                                 <a href=\"{{ path('user_show',{'firstName' : app.user.firstname }) }}\" class=\"dropdown-item\">Mon profil</a>
                                 <a href=\"{{ path('account_profile')}}\" class=\"dropdown-item\">Modifier mon profile</a>
-                                <a href=\"{{ path('account_password')}}\" class=\"dropdown-item\">Modifier mon password</a>                                
-                                <a href=\"{{ path('reservation_create') }}\" class=\"dropdown-item\">réserver terrain</a>
+                                <a href=\"{{ path('account_password')}}\" class=\"dropdown-item\">Modifier mon password</a>                                                                
                                 <div class=\"dropdown-divider\"></div>
-                                <a href=\"{{ path('account_logout') }}\" class=\"nav-link\">Déconnection</a>
+                                <a href=\"{{ path('account_logout') }}\" class=\"nav-link\">Déconnexion</a>
                             </div>
                         </li>
                     {% else %}

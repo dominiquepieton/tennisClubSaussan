@@ -40,10 +40,13 @@ return [
                     .')'
                 .')'
                 .'|/reservation/([^/]++)(?'
-                    .'|/edit(*:198)'
-                    .'|(*:206)'
+                    .'|/(?'
+                        .'|edit(*:201)'
+                        .'|delete(*:215)'
+                    .')'
+                    .'|(*:224)'
                 .')'
-                .'|/user/([^/]++)(*:229)'
+                .'|/user/([^/]++)(*:247)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -54,9 +57,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        198 => [[['_route' => 'reservation_edit', '_controller' => 'App\\Controller\\ReservationController::edit'], ['id'], null, null, false, false, null]],
-        206 => [[['_route' => 'reservation_show', '_controller' => 'App\\Controller\\ReservationController::show'], ['id'], null, null, false, true, null]],
-        229 => [
+        201 => [[['_route' => 'reservation_edit', '_controller' => 'App\\Controller\\ReservationController::edit'], ['id'], null, null, false, false, null]],
+        215 => [[['_route' => 'reservation_delete', '_controller' => 'App\\Controller\\ReservationController::delete'], ['id'], null, null, false, false, null]],
+        224 => [[['_route' => 'reservation_show', '_controller' => 'App\\Controller\\ReservationController::show'], ['id'], null, null, false, true, null]],
+        247 => [
             [['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::index'], ['firstName'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

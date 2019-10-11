@@ -2,8 +2,9 @@ div.container{
     margin-top:20px;
 }
 
-.bg-hero{
+.bg-home{
     background-image: url('/img/fond.jpg');
+    background-size: cover;
 }
 
 div.reservation-hero{

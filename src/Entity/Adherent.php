@@ -65,9 +65,15 @@ class Adherent implements UserInterface
      */
     private $reservations;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Role", mappedBy="users")
+     */
+    private $adherentRoles;
+
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
+        $this->adherentRoles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -169,8 +175,18 @@ class Adherent implements UserInterface
 
     // les fonctions suivantes sont liés à UserInterface
 
-    public function getRoles() {     //utile pour le role user ou administrator
-        return ['ROLE_USER'];
+    public function getRoles() {    /* utile pour le role user ou administrator
+        * permet de récuperer les titre de role dans une collection grace à map avec un parametre:
+        * une fonction (parametre role) et on le remet dans un array apres traitement
+        */
+
+        $roles = $this->adherentRoles->map(function($role){
+            return $role->getTitle();
+        })->toArray();
+        
+        $roles[] = 'ROLE_USER';
+
+        return $roles;
     }
 
     public function getPassword() {
@@ -184,5 +200,33 @@ class Adherent implements UserInterface
     }
     
     public function eraseCredentials() {}
+
+    /**
+     * @return Collection|Role[]
+     */
+    public function getAdherentRoles(): Collection
+    {
+        return $this->adherentRoles;
+    }
+
+    public function addAdherentRole(Role $adherentRole): self
+    {
+        if (!$this->adherentRoles->contains($adherentRole)) {
+            $this->adherentRoles[] = $adherentRole;
+            $adherentRole->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdherentRole(Role $adherentRole): self
+    {
+        if ($this->adherentRoles->contains($adherentRole)) {
+            $this->adherentRoles->removeElement($adherentRole);
+            $adherentRole->removeUser($this);
+        }
+
+        return $this;
+    }
 
 }

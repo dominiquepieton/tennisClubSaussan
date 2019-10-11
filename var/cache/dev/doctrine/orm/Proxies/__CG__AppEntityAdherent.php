@@ -64,10 +64,10 @@ class Adherent extends \App\Entity\Adherent implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'firstName', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'lastName', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'picture', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'hash', 'passwordConfirm', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'reservations'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'firstName', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'lastName', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'picture', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'hash', 'passwordConfirm', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'reservations', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'adherentRoles'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'firstName', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'lastName', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'picture', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'hash', 'passwordConfirm', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'reservations'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'firstName', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'lastName', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'picture', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'hash', 'passwordConfirm', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'reservations', '' . "\0" . 'App\\Entity\\Adherent' . "\0" . 'adherentRoles'];
     }
 
     /**
@@ -384,6 +384,39 @@ class Adherent extends \App\Entity\Adherent implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'eraseCredentials', []);
 
         return parent::eraseCredentials();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAdherentRoles(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAdherentRoles', []);
+
+        return parent::getAdherentRoles();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAdherentRole(\App\Entity\Role $adherentRole): \App\Entity\Adherent
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAdherentRole', [$adherentRole]);
+
+        return parent::addAdherentRole($adherentRole);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAdherentRole(\App\Entity\Role $adherentRole): \App\Entity\Adherent
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAdherentRole', [$adherentRole]);
+
+        return parent::removeAdherentRole($adherentRole);
     }
 
 }
