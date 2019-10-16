@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos événements sur tcs{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">Les événements au Tennis Club Saussan :</h1>
+        <div class="row mt-5">
+            {% for article in articles %}
+            {% set lien = path('article_show', {'slug': article.slug}) %}
+                <div class="col-md-4">    
+                    <div class="card mb-3">
+                        <div class="header text-center">
+                            <h5 class="card-title"><a href="{{ lien }}">{{ article.title }}</a></h5>
+                        </div>
+                        <img class="card-img-top" src="{{ article.image }}" alt="image sport" style="height: 200px; width: 100%; display: block">
+                        <div class="card-body">
+                            <p class="card-text">{{ article.intro }}</p>
+                            <a href="{{ lien }}" class="btn btn-warning">En savoir plus</a>
+                            <p class="card-text"><small class="text-muted">{{ article.dateCreated | date('d/m/Y') }}</small></p>
+                        </div>
+                    </div>    
+                </div>       
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

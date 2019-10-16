@@ -1,0 +1,55 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Pré-inscription annuelle{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="title-reservation bg rounded mb-5">
+            <h1 class="text-center">Pré-inscription n° : {{preRegistration.id}}</h1>
+        </div>
+        <div class="container w-25">
+            <table class="table table-borderless bg-light shadow p-3 mb-5 rounded">
+                <tbody>
+                    <tr>
+                        <th>prénom</th>
+                        <td>{{ preRegistration.firstname }}</td>
+                    </tr>
+                    <tr>
+                        <th>nom</th>
+                        <td>{{ preRegistration.lastname }}</td>
+                    </tr>
+                    <tr>
+                        <th>date d'anniversaire</th>
+                        <td>{{ preRegistration.birthday | date('d/m/Y') }}</td>
+                    </tr>
+                    <tr>
+                        <th>email</th>
+                        <td>{{ preRegistration.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>apte au sport</th>
+                        <td>{{ preRegistration.aptSport }}</td>
+                    </tr>
+                    <tr>
+                        <th>nom du responsable légale</th>
+                        <td>{{ preRegistration.lastnameResponsable }}</td>
+                    </tr>   
+                </tbody>
+            </table>
+        </div>
+        <div class="mx-auto">
+            <ul class="nav">
+                <li class="nav-item mx-auto">
+                    <a class="btn btn-dark" href="{{ path('admin_registration_index') }}">Retour</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a class="btn btn-dark" href="{{ path('admin_registration_edit',{'id' : preRegistration.id}) }}">réedit</a>
+                </li>
+                <li class="nav-item"> 
+                    <a class="btn btn-danger" href="{{ path('admin_registration_delete',{'id' : preRegistration.id}) }}" onclick="return confirm(`Êtes-vous sur de vouloir supprimer la pré-inscription ?`)">delete</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

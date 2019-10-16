@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use DateTime;
 use Faker\Factory;
 use App\Entity\Role;
 use App\Entity\Adherent;
@@ -61,16 +62,19 @@ class AppFixtures extends Fixture
         }
 
         //creation des reservations
+        $faker = Factory::create('fr-FR');
         for($i = 1;$i <= 30;$i++){
             $reservation = new Reservation(); // creation de fausse reservation 
 
             $adherent = $adherents[mt_rand(0,count($adherents) - 1)];
 
+            $date = $faker->date();
+
+            $dateJour = new DateTime($date);
             $reservation->setNom($faker->firstname)
-                        ->setJour(mt_rand(1, 31))
+                        ->setJour($dateJour)
                         ->setHeureDebut(mt_rand(8,22))
                         ->setHeureFin(mt_rand(8, 22))
-                        ->setSemaine(mt_rand(1, 52))
                         ->setTerrain(mt_rand(1, 3))
                         ->setReserve($adherent);
 

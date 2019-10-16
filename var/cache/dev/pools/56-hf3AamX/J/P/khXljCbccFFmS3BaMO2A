@@ -5,28 +5,22 @@ namespace Symfony\Component\VarExporter\Internal;
 return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     $o = [
         clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? Registry::p('Doctrine\\ORM\\Mapping\\Column')),
-        clone ($p['Symfony\\Component\\Validator\\Constraints\\LessThan'] ?? Registry::p('Symfony\\Component\\Validator\\Constraints\\LessThan')),
         clone ($p['Symfony\\Component\\Validator\\Constraints\\GreaterThan'] ?? Registry::p('Symfony\\Component\\Validator\\Constraints\\GreaterThan')),
     ],
     null,
     [
         'stdClass' => [
-            'length' => [
-                255,
+            'type' => [
+                'date',
             ],
             'message' => [
-                1 => 'la date est trop grande pas possible',
-                'la date est trop petit',
+                1 => 'Vous ne pouvez pas réserver un terrain pour le passé......',
             ],
             'value' => [
-                1 => 31,
-                0,
+                1 => 'today',
             ],
             'groups' => [
                 1 => [
-                    'Default',
-                ],
-                [
                     'Default',
                 ],
             ],
@@ -35,7 +29,6 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     [
         $o[0],
         $o[1],
-        $o[2],
     ],
     []
 );

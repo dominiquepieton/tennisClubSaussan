@@ -1,0 +1,45 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Pré-inscription annuelle{% endblock %}
+
+{% block body %}
+
+
+    <h1></h1>
+    <div class="container-fluid">
+        <h1 class="my-5"> La liste des pré-inscrits :</h1>
+         <table class="table table-hover">
+            <thead class="bg-secondary">
+                <tr>
+                    <th class="text-center">id</th>
+                    <th class="text-center">firstName</th>
+                    <th class="text-center">lastname</th>
+                    <th class="text-center">email</th>
+                    <th class="text-center">birthday</th>
+                    <th class="text-center">apte au sport</th>
+                    <th class="text-center">nom du responsable légale</th>
+                    <th class="text-center">réediter / supprimer</th>
+                </tr> 
+            </thead>
+            <tbody>
+                {% for preRegistrations in preRegistration %}
+                <tr>
+                    <td class="text-center">{{preRegistrations.id}}</td>
+                    <td class="text-center">{{preRegistrations.firstname}}</td>
+                    <td class="text-center">{{preRegistrations.lastname}}</td>
+                    <td class="text-center">{{preRegistrations.email}}</td>
+                    <td class="text-center">{{preRegistrations.birthday | date('d/m/Y')}}</td>
+                    <td class="text-center">{{preRegistrations.aptSport}}</td>
+                    <td class="text-center">{{preRegistrations.lastnameResponsable}}</td>
+                    <td class="text-center">
+                        <a href="{{ path('admin_registration_edit',{'id' : preRegistrations.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                        <a href="{{ path('admin_registration_delete',{'id' : preRegistrations.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div> 
+    </div>
+    
+{% endblock %}

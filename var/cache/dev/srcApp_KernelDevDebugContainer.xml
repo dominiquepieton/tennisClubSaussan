@@ -396,6 +396,46 @@
         <argument type="service" id=".service_locator.CDOTD6..App\Controller\AccountController"/>
       </call>
     </service>
+    <service id="App\Controller\AdminAccountController" class="App\Controller\AdminAccountController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="App\Controller\AdminAdherentController" class="App\Controller\AdminAdherentController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="App\Controller\AdminArticleController" class="App\Controller\AdminArticleController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="App\Controller\AdminContactController" class="App\Controller\AdminContactController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\AdminContactController"/>
+      </call>
+    </service>
+    <service id="App\Controller\AdminDashboardController" class="App\Controller\AdminDashboardController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\AdminDashboardController"/>
+      </call>
+    </service>
+    <service id="App\Controller\AdminPreRegistrationController" class="App\Controller\AdminPreRegistrationController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\AdminPreRegistrationController"/>
+      </call>
+    </service>
+    <service id="App\Controller\AdminRegistrationStageController" class="App\Controller\AdminRegistrationStageController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\AdminRegistrationStageController"/>
+      </call>
+    </service>
+    <service id="App\Controller\AdminResController" class="App\Controller\AdminResController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
@@ -420,7 +460,19 @@
     <service id="App\Form\AccountType" class="App\Form\AccountType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\AdminContactType" class="App\Form\AdminContactType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\AdminPreRegistrationType" class="App\Form\AdminPreRegistrationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\AdminRegistrationStageType" class="App\Form\AdminRegistrationStageType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ApplicationType" class="App\Form\ApplicationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ArticleType" class="App\Form\ArticleType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true">
@@ -436,11 +488,27 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\PasswordUpdateRepository" class="App\Repository\PasswordUpdateRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\PreRegistrationRepository" class="App\Repository\PreRegistrationRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ResgistrationStageRepository" class="App\Repository\ResgistrationStageRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -780,7 +848,11 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AccountType</argument>
+        <argument>App\Form\AdminContactType</argument>
+        <argument>App\Form\AdminPreRegistrationType</argument>
+        <argument>App\Form\AdminRegistrationStageType</argument>
         <argument>App\Form\ApplicationType</argument>
+        <argument>App\Form\ArticleType</argument>
         <argument>App\Form\PasswordUpdateType</argument>
         <argument>App\Form\RegistrationType</argument>
         <argument>App\Form\ReservationType</argument>
@@ -1049,7 +1121,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.RKCRhnI"/>
+      <argument type="service" id=".service_locator.YWHDO46"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2984,7 +3056,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.BzW5S8d"/>
+      <argument type="service" id=".service_locator.vMVHkD_"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3248,6 +3320,8 @@
     </service>
     <service id="security.authentication.manager" class="Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager" public="false">
       <argument type="iterator">
+        <argument type="service" id="security.authentication.provider.dao.admin"/>
+        <argument type="service" id="security.authentication.provider.anonymous.admin"/>
         <argument type="service" id="security.authentication.provider.dao.main"/>
         <argument type="service" id="security.authentication.provider.anonymous.main"/>
       </argument>
@@ -3304,9 +3378,10 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
     <service id="security.firewall.map" class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
-      <argument type="service" id=".service_locator.ko2dQVn"/>
+      <argument type="service" id=".service_locator.MamTLlI"/>
       <argument type="iterator">
         <argument key="security.firewall.map.context.dev" type="service" id=".security.request_matcher.Iy.T22O"/>
+        <argument key="security.firewall.map.context.admin" type="service" id=".security.request_matcher.B3ldH_a"/>
         <argument key="security.firewall.map.context.main">null</argument>
       </argument>
     </service>
@@ -3334,6 +3409,14 @@
       <argument type="service" id="request_stack" on-invalid="null"/>
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
+      <call method="registerListener">
+        <argument>admin</argument>
+        <argument>admin_account_logout</argument>
+        <argument>logout</argument>
+        <argument>_csrf_token</argument>
+        <argument>null</argument>
+        <argument>null</argument>
+      </call>
       <call method="registerListener">
         <argument>main</argument>
         <argument>account_logout</argument>
@@ -3398,7 +3481,22 @@
       <argument type="service" id="security.authentication.retry_entry_point"/>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.9czg417"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.token_storage"/>
@@ -3731,6 +3829,155 @@
       <argument>null</argument>
       <argument type="service" id="security.firewall.map.config.dev"/>
     </service>
+    <service id="security.firewall.map.config.admin" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
+      <argument>admin</argument>
+      <argument>security.user_checker</argument>
+      <argument>.security.request_matcher.B3ldH_a</argument>
+      <argument>true</argument>
+      <argument>false</argument>
+      <argument>security.user.provider.concrete.in_database</argument>
+      <argument>admin</argument>
+      <argument>security.authentication.form_entry_point.admin</argument>
+      <argument>null</argument>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument>form_login</argument>
+        <argument>anonymous</argument>
+      </argument>
+      <argument>null</argument>
+    </service>
+    <service id=".security.request_matcher.B3ldH_a" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin</argument>
+    </service>
+    <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="iterator">
+        <argument type="service" id="security.user.provider.concrete.in_memory"/>
+        <argument type="service" id="security.user.provider.concrete.in_database"/>
+      </argument>
+      <argument>admin</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+      <argument type="service" id="security.authentication.trust_resolver"/>
+    </service>
+    <service id="security.logout_listener.admin" class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="security.logout.success_handler.admin"/>
+      <argument type="collection">
+        <argument key="csrf_parameter">_csrf_token</argument>
+        <argument key="csrf_token_id">logout</argument>
+        <argument key="logout_path">admin_account_logout</argument>
+      </argument>
+      <call method="addHandler">
+        <argument type="service" id="security.logout.handler.csrf_token_clearing"/>
+      </call>
+      <call method="addHandler">
+        <argument type="service" id="security.logout.handler.session"/>
+      </call>
+    </service>
+    <service id="security.logout.success_handler.admin" class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
+      <argument type="service" id="security.http_utils"/>
+      <argument>homepage</argument>
+    </service>
+    <service id="security.authentication.provider.dao.admin" class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
+      <argument type="service" id="security.user.provider.concrete.in_database"/>
+      <argument type="service" id="security.user_checker"/>
+      <argument>admin</argument>
+      <argument type="service" id="security.encoder_factory.generic"/>
+      <argument>true</argument>
+    </service>
+    <service id="security.authentication.success_handler.admin.form_login" class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
+      <argument type="service" id="security.http_utils"/>
+      <argument type="collection"/>
+      <call method="setOptions">
+        <argument type="collection">
+          <argument key="login_path">admin_account_login</argument>
+          <argument key="always_use_default_target_path">false</argument>
+          <argument key="default_target_path">/</argument>
+          <argument key="target_path_parameter">_target_path</argument>
+          <argument key="use_referer">false</argument>
+        </argument>
+      </call>
+      <call method="setProviderKey">
+        <argument>admin</argument>
+      </call>
+    </service>
+    <service id="security.authentication.failure_handler.admin.form_login" class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler" public="false">
+      <argument type="service" id="http_kernel"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument type="collection"/>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <call method="setOptions">
+        <argument type="collection">
+          <argument key="login_path">admin_account_login</argument>
+          <argument key="failure_path">null</argument>
+          <argument key="failure_forward">false</argument>
+          <argument key="failure_path_parameter">_failure_path</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="security.authentication.listener.form.admin" class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
+      <tag name="security.remember_me_aware" id="admin" provider="security.user.provider.concrete.in_database"/>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.authentication.manager"/>
+      <argument type="service" id="security.authentication.session_strategy"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument>admin</argument>
+      <argument type="service" id="security.authentication.success_handler.admin.form_login"/>
+      <argument type="service" id="security.authentication.failure_handler.admin.form_login"/>
+      <argument type="collection">
+        <argument key="check_path">admin_account_login</argument>
+        <argument key="use_forward">false</argument>
+        <argument key="require_previous_session">false</argument>
+        <argument key="username_parameter">_username</argument>
+        <argument key="password_parameter">_password</argument>
+        <argument key="csrf_parameter">_csrf_token</argument>
+        <argument key="csrf_token_id">authenticate</argument>
+        <argument key="post_only">true</argument>
+      </argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+      <argument>null</argument>
+    </service>
+    <service id="security.authentication.form_entry_point.admin" class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
+      <argument type="service" id="http_kernel"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument>admin_account_login</argument>
+      <argument>false</argument>
+    </service>
+    <service id="security.authentication.listener.anonymous.admin" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
+      <argument type="service" id="security.token_storage"/>
+      <argument>%container.build_hash%</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument type="service" id="security.authentication.manager"/>
+    </service>
+    <service id="security.authentication.provider.anonymous.admin" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+      <argument>%container.build_hash%</argument>
+    </service>
+    <service id="security.exception_listener.admin" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument>admin</argument>
+      <argument type="service" id="security.authentication.form_entry_point.admin"/>
+      <argument>null</argument>
+      <argument>null</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument>false</argument>
+    </service>
+    <service id="security.firewall.map.context.admin" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false">
+      <argument type="iterator">
+        <argument type="service" id="security.channel_listener"/>
+        <argument type="service" id="security.context_listener.0"/>
+        <argument type="service" id="security.authentication.listener.form.admin"/>
+        <argument type="service" id="security.authentication.listener.anonymous.admin"/>
+        <argument type="service" id="security.access_listener"/>
+      </argument>
+      <argument type="service" id="security.exception_listener.admin"/>
+      <argument type="service" id="security.logout_listener.admin"/>
+      <argument type="service" id="security.firewall.map.config.admin"/>
+    </service>
     <service id="security.firewall.map.config.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
       <argument>main</argument>
       <argument>security.user_checker</argument>
@@ -3748,7 +3995,7 @@
       </argument>
       <argument>null</argument>
     </service>
-    <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
+    <service id="security.context_listener.1" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <argument type="service" id="security.token_storage"/>
       <argument type="iterator">
         <argument type="service" id="security.user.provider.concrete.in_memory"/>
@@ -3868,7 +4115,7 @@
     <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false">
       <argument type="iterator">
         <argument type="service" id="security.channel_listener"/>
-        <argument type="service" id="security.context_listener.0"/>
+        <argument type="service" id="security.context_listener.1"/>
         <argument type="service" id="security.authentication.listener.form.main"/>
         <argument type="service" id="security.authentication.listener.anonymous.main"/>
         <argument type="service" id="security.access_listener"/>
@@ -3877,12 +4124,19 @@
       <argument type="service" id="security.logout_listener.main"/>
       <argument type="service" id="security.firewall.map.config.main"/>
     </service>
-    <service id=".service_locator.ko2dQVn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.MamTLlI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="security.firewall.map.context.admin" type="service" id="security.firewall.map.context.admin"/>
         <argument key="security.firewall.map.context.dev" type="service" id="security.firewall.map.context.dev"/>
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
+    </service>
+    <service id=".security.request_matcher.9czg417" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin/login</argument>
+    </service>
+    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -4684,6 +4938,26 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AccountController" class="App\Controller\AccountController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AccountController" class="App\Controller\AccountController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AccountController" class="App\Controller\AccountController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\AdminAccountController" class="App\Controller\AdminAccountController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminAccountController" class="App\Controller\AdminAccountController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\AdminAdherentController" class="App\Controller\AdminAdherentController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminAdherentController" class="App\Controller\AdminAdherentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\AdminArticleController" class="App\Controller\AdminArticleController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminArticleController" class="App\Controller\AdminArticleController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminContactController" class="App\Controller\AdminContactController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminContactController" class="App\Controller\AdminContactController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminContactController" class="App\Controller\AdminContactController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminDashboardController" class="App\Controller\AdminDashboardController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminDashboardController" class="App\Controller\AdminDashboardController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminDashboardController" class="App\Controller\AdminDashboardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminPreRegistrationController" class="App\Controller\AdminPreRegistrationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminPreRegistrationController" class="App\Controller\AdminPreRegistrationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminPreRegistrationController" class="App\Controller\AdminPreRegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminRegistrationStageController" class="App\Controller\AdminRegistrationStageController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminRegistrationStageController" class="App\Controller\AdminRegistrationStageController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminRegistrationStageController" class="App\Controller\AdminRegistrationStageController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\AdminResController" class="App\Controller\AdminResController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminResController" class="App\Controller\AdminResController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReservationController" class="App\Controller\ReservationController" autowire="true" abstract="true"/>
@@ -4696,8 +4970,16 @@
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AccountType" class="App\Form\AccountType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AccountType" class="App\Form\AccountType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AdminContactType" class="App\Form\AdminContactType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AdminContactType" class="App\Form\AdminContactType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AdminPreRegistrationType" class="App\Form\AdminPreRegistrationType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AdminPreRegistrationType" class="App\Form\AdminPreRegistrationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AdminRegistrationStageType" class="App\Form\AdminRegistrationStageType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AdminRegistrationStageType" class="App\Form\AdminRegistrationStageType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ApplicationType" class="App\Form\ApplicationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ApplicationType" class="App\Form\ApplicationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ArticleType" class="App\Form\ArticleType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ArticleType" class="App\Form\ArticleType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" abstract="true"/>
@@ -4706,10 +4988,18 @@
     <service id=".abstract.instanceof.App\Form\ReservationType" class="App\Form\ReservationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdherentRepository" class="App\Repository\AdherentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdherentRepository" class="App\Repository\AdherentRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PasswordUpdateRepository" class="App\Repository\PasswordUpdateRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PasswordUpdateRepository" class="App\Repository\PasswordUpdateRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PreRegistrationRepository" class="App\Repository\PreRegistrationRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PreRegistrationRepository" class="App\Repository\PreRegistrationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ReservationRepository" class="App\Repository\ReservationRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResgistrationStageRepository" class="App\Repository\ResgistrationStageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ResgistrationStageRepository" class="App\Repository\ResgistrationStageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
@@ -4893,6 +5183,75 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.kcjQ1sU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="util" type="service" id="security.authentication_utils"/>
+      </argument>
+    </service>
+    <service id=".service_locator.w_YMdhQ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\AdherentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.hsWoe8a" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\ArticleRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.NUP9Hmn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="article" type="service" id=".errored..service_locator.NUP9Hmn.App\Entity\Article"/>
+      </argument>
+    </service>
+    <service id=".service_locator.KCHKJ05" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\ContactRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.EoCOyLv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="contact" type="service" id=".errored..service_locator.EoCOyLv.App\Entity\Contact"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Kw5txLV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\PreRegistrationRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.JPJWVg8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="preRegistration" type="service" id=".errored..service_locator.JPJWVg8.App\Entity\PreRegistration"/>
+      </argument>
+    </service>
+    <service id=".service_locator.yzsP7J6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\ResgistrationStageRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ZfQYXUg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="registrationStage" type="service" id=".errored..service_locator.ZfQYXUg.App\Entity\ResgistrationStage"/>
+      </argument>
+    </service>
+    <service id=".service_locator.oIzDkdn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\ReservationRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.xJY1n8m" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4912,13 +5271,35 @@
         <argument key="adherent" type="service" id=".errored..service_locator.eLkT6Tb.App\Entity\Adherent"/>
       </argument>
     </service>
-    <service id=".service_locator.oyHKlEl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.oMun1HL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AccountController::login" type="service" id=".service_locator.oHXyyai"/>
         <argument key="App\Controller\AccountController::profile" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AccountController::register" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\AccountController::updatePassword" type="service" id=".service_locator.czKK4py"/>
+        <argument key="App\Controller\AdminAccountController::login" type="service" id=".service_locator.kcjQ1sU"/>
+        <argument key="App\Controller\AdminAdherentController::index" type="service" id=".service_locator.w_YMdhQ"/>
+        <argument key="App\Controller\AdminArticleController::create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminArticleController::index" type="service" id=".service_locator.hsWoe8a"/>
+        <argument key="App\Controller\AdminArticleController::show" type="service" id=".service_locator.NUP9Hmn"/>
+        <argument key="App\Controller\AdminContactController::create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminContactController::delete" type="service" id=".service_locator.EoCOyLv"/>
+        <argument key="App\Controller\AdminContactController::edit" type="service" id=".service_locator.EoCOyLv"/>
+        <argument key="App\Controller\AdminContactController::index" type="service" id=".service_locator.KCHKJ05"/>
+        <argument key="App\Controller\AdminContactController::show" type="service" id=".service_locator.KCHKJ05"/>
+        <argument key="App\Controller\AdminDashboardController::index" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminPreRegistrationController::create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminPreRegistrationController::delete" type="service" id=".service_locator.JPJWVg8"/>
+        <argument key="App\Controller\AdminPreRegistrationController::edit" type="service" id=".service_locator.JPJWVg8"/>
+        <argument key="App\Controller\AdminPreRegistrationController::index" type="service" id=".service_locator.Kw5txLV"/>
+        <argument key="App\Controller\AdminPreRegistrationController::show" type="service" id=".service_locator.Kw5txLV"/>
+        <argument key="App\Controller\AdminRegistrationStageController::create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminRegistrationStageController::delete" type="service" id=".service_locator.ZfQYXUg"/>
+        <argument key="App\Controller\AdminRegistrationStageController::edit" type="service" id=".service_locator.ZfQYXUg"/>
+        <argument key="App\Controller\AdminRegistrationStageController::index" type="service" id=".service_locator.yzsP7J6"/>
+        <argument key="App\Controller\AdminRegistrationStageController::show" type="service" id=".service_locator.yzsP7J6"/>
+        <argument key="App\Controller\AdminResController::index" type="service" id=".service_locator.oIzDkdn"/>
         <argument key="App\Controller\ReservationController::create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\ReservationController::delete" type="service" id=".service_locator.xJY1n8m"/>
         <argument key="App\Controller\ReservationController::edit" type="service" id=".service_locator.xJY1n8m"/>
@@ -4928,6 +5309,28 @@
         <argument key="App\Controller\AccountController:profile" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AccountController:register" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\AccountController:updatePassword" type="service" id=".service_locator.czKK4py"/>
+        <argument key="App\Controller\AdminAccountController:login" type="service" id=".service_locator.kcjQ1sU"/>
+        <argument key="App\Controller\AdminAdherentController:index" type="service" id=".service_locator.w_YMdhQ"/>
+        <argument key="App\Controller\AdminArticleController:create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminArticleController:index" type="service" id=".service_locator.hsWoe8a"/>
+        <argument key="App\Controller\AdminArticleController:show" type="service" id=".service_locator.NUP9Hmn"/>
+        <argument key="App\Controller\AdminContactController:create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminContactController:delete" type="service" id=".service_locator.EoCOyLv"/>
+        <argument key="App\Controller\AdminContactController:edit" type="service" id=".service_locator.EoCOyLv"/>
+        <argument key="App\Controller\AdminContactController:index" type="service" id=".service_locator.KCHKJ05"/>
+        <argument key="App\Controller\AdminContactController:show" type="service" id=".service_locator.KCHKJ05"/>
+        <argument key="App\Controller\AdminDashboardController:index" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminPreRegistrationController:create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminPreRegistrationController:delete" type="service" id=".service_locator.JPJWVg8"/>
+        <argument key="App\Controller\AdminPreRegistrationController:edit" type="service" id=".service_locator.JPJWVg8"/>
+        <argument key="App\Controller\AdminPreRegistrationController:index" type="service" id=".service_locator.Kw5txLV"/>
+        <argument key="App\Controller\AdminPreRegistrationController:show" type="service" id=".service_locator.Kw5txLV"/>
+        <argument key="App\Controller\AdminRegistrationStageController:create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminRegistrationStageController:delete" type="service" id=".service_locator.ZfQYXUg"/>
+        <argument key="App\Controller\AdminRegistrationStageController:edit" type="service" id=".service_locator.ZfQYXUg"/>
+        <argument key="App\Controller\AdminRegistrationStageController:index" type="service" id=".service_locator.yzsP7J6"/>
+        <argument key="App\Controller\AdminRegistrationStageController:show" type="service" id=".service_locator.yzsP7J6"/>
+        <argument key="App\Controller\AdminResController:index" type="service" id=".service_locator.oIzDkdn"/>
         <argument key="App\Controller\ReservationController:create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\ReservationController:delete" type="service" id=".service_locator.xJY1n8m"/>
         <argument key="App\Controller\ReservationController:edit" type="service" id=".service_locator.xJY1n8m"/>
@@ -4994,11 +5397,15 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.RKCRhnI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.YWHDO46" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AccountType" type="service" id="App\Form\AccountType"/>
+        <argument key="App\Form\AdminContactType" type="service" id="App\Form\AdminContactType"/>
+        <argument key="App\Form\AdminPreRegistrationType" type="service" id="App\Form\AdminPreRegistrationType"/>
+        <argument key="App\Form\AdminRegistrationStageType" type="service" id="App\Form\AdminRegistrationStageType"/>
         <argument key="App\Form\ApplicationType" type="service" id="App\Form\ApplicationType"/>
+        <argument key="App\Form\ArticleType" type="service" id="App\Form\ArticleType"/>
         <argument key="App\Form\PasswordUpdateType" type="service" id="App\Form\PasswordUpdateType"/>
         <argument key="App\Form\RegistrationType" type="service" id="App\Form\RegistrationType"/>
         <argument key="App\Form\ReservationType" type="service" id="App\Form\ReservationType"/>
@@ -5014,12 +5421,16 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.BzW5S8d" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.vMVHkD_" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdherentRepository" type="service" id="App\Repository\AdherentRepository"/>
+        <argument key="App\Repository\ArticleRepository" type="service" id="App\Repository\ArticleRepository"/>
+        <argument key="App\Repository\ContactRepository" type="service" id="App\Repository\ContactRepository"/>
         <argument key="App\Repository\PasswordUpdateRepository" type="service" id="App\Repository\PasswordUpdateRepository"/>
+        <argument key="App\Repository\PreRegistrationRepository" type="service" id="App\Repository\PreRegistrationRepository"/>
         <argument key="App\Repository\ReservationRepository" type="service" id="App\Repository\ReservationRepository"/>
+        <argument key="App\Repository\ResgistrationStageRepository" type="service" id="App\Repository\ResgistrationStageRepository"/>
         <argument key="App\Repository\RoleRepository" type="service" id="App\Repository\RoleRepository"/>
       </argument>
     </service>
@@ -5225,6 +5636,30 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.CDOTD6." method="withContext"/>
     </service>
+    <service id=".service_locator.CDOTD6..App\Controller\AdminContactController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AdminContactController"/>
+      <argument>App\Controller\AdminContactController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
+    <service id=".service_locator.CDOTD6..App\Controller\AdminDashboardController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AdminDashboardController"/>
+      <argument>App\Controller\AdminDashboardController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
+    <service id=".service_locator.CDOTD6..App\Controller\AdminPreRegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AdminPreRegistrationController"/>
+      <argument>App\Controller\AdminPreRegistrationController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
+    <service id=".service_locator.CDOTD6..App\Controller\AdminRegistrationStageController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AdminRegistrationStageController"/>
+      <argument>App\Controller\AdminRegistrationStageController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
     <service id=".service_locator.CDOTD6..App\Controller\ReservationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\ReservationController"/>
       <argument>App\Controller\ReservationController</argument>
@@ -5330,12 +5765,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.oyHKlEl"/>
+      <argument type="service" id=".service_locator.oMun1HL"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.oyHKlEl"/>
+      <argument type="service" id=".service_locator.oMun1HL"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5359,6 +5794,10 @@
         <argument key="security.token_storage" type="service" id="security.token_storage"/>
       </argument>
     </service>
+    <service id=".errored..service_locator.NUP9Hmn.App\Entity\Article" class="App\Entity\Article"/>
+    <service id=".errored..service_locator.EoCOyLv.App\Entity\Contact" class="App\Entity\Contact"/>
+    <service id=".errored..service_locator.JPJWVg8.App\Entity\PreRegistration" class="App\Entity\PreRegistration"/>
+    <service id=".errored..service_locator.ZfQYXUg.App\Entity\ResgistrationStage" class="App\Entity\ResgistrationStage"/>
     <service id=".errored..service_locator.xJY1n8m.App\Entity\Reservation" class="App\Entity\Reservation"/>
     <service id=".errored..service_locator.eH1R0Zw.App\Entity\Reservation" class="App\Entity\Reservation"/>
     <service id=".errored..service_locator.eLkT6Tb.App\Entity\Adherent" class="App\Entity\Adherent"/>
@@ -5694,6 +6133,8 @@
     <service id="Symfony\Component\Security\Http\HttpUtils" alias="security.http_utils" public="false"/>
     <service id="Symfony\Component\Security\Guard\GuardAuthenticatorHandler" alias="security.authentication.guard_handler" public="false"/>
     <service id="security.firewall" alias="debug.security.firewall" public="false"/>
+    <service id="security.authentication.session_strategy.admin" alias="security.authentication.session_strategy"/>
+    <service id="security.user_checker.admin" alias="security.user_checker" public="false"/>
     <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
     <service id="security.user_checker.main" alias="security.user_checker" public="false"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
@@ -5713,7 +6154,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.oyHKlEl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.oMun1HL"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

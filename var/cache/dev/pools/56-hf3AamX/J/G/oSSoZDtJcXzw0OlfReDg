@@ -6,7 +6,6 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     $o = [
         clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? Registry::p('Doctrine\\ORM\\Mapping\\Column')),
         clone ($p['Symfony\\Component\\Validator\\Constraints\\LessThan'] ?? Registry::p('Symfony\\Component\\Validator\\Constraints\\LessThan')),
-        clone ($p['Symfony\\Component\\Validator\\Constraints\\GreaterThan'] ?? Registry::p('Symfony\\Component\\Validator\\Constraints\\GreaterThan')),
     ],
     null,
     [
@@ -15,18 +14,13 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
                 'integer',
             ],
             'message' => [
-                1 => 'l\'heure est trop grande pas possible',
-                'l\'heure est trop petit',
+                1 => 'l\'heure ne peut pas être plus grande que l\'heure de fin',
             ],
-            'value' => [
-                1 => 23,
-                7,
+            'propertyPath' => [
+                1 => 'heureFin',
             ],
             'groups' => [
                 1 => [
-                    'Default',
-                ],
-                [
                     'Default',
                 ],
             ],
@@ -35,7 +29,6 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     [
         $o[0],
         $o[1],
-        $o[2],
     ],
     []
 );

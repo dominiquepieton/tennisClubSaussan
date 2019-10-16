@@ -1,0 +1,94 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}TABLEAU DE BORD{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">  
+                <div class="card bg-primary text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-users fa-4x"></i>   
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.adherent }} Adhérents au site</h4>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="col">  
+                <div class="card bg-secondary text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-file-archive fa-4x"></i>   
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.reservation}} Réservation de terrains</h4>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="col">  
+                <div class="card bg-info text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-comments fa-4x"></i>   
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.contact }} Messages reçus</h4>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="col">  
+                <div class="card bg-primary text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-newspaper fa-4x"></i>   
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.article }} Articles publiés</h4>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="col">  
+                <div class="card bg-secondary text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-edit fa-4x"></i>   
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.registration }} Pré-inscrits pour l'année</h4>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="col">  
+                <div class="card bg-info text-white mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-edit fa-4x"></i>   
+                            </div>
+                            <div class="col-8">
+                                <h4 class="card-title">{{ stats.stage }} Inscrit au stage</h4>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

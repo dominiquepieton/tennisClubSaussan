@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{article.title}}{% endblock %}
+
+{% block body %}
+    
+    <div class="ad-title" style="background-image : url({{article.image}})">
+        <div class="container">
+            <h1>{{article.title}}</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                {{ article.content }}
+                {{ article.dateCreated | date('d/m/Y')}}
+            </div>
+            <div class="col-md-3 border-left">
+                <h5>Les articles :</h5>
+                <ul>
+                {% for article in article %}
+                    <li><a href="#" class="link">{{ articles.title }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+
+{% endblock %}

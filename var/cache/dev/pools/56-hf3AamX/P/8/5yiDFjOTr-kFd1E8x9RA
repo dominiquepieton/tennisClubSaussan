@@ -19,7 +19,6 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
             'fields' => [
                 1 => [
                     'jour',
-                    'semaine',
                     'heureDebut',
                     'heureFin',
                     'terrain',

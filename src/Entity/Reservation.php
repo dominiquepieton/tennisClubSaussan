@@ -2,15 +2,16 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use DateTimeInterface;
 
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert; // validation du formulaire si pas vide
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReservationRepository")
  * @UniqueEntity(
- *      fields={"jour","semaine","heureDebut","heureFin","terrain"},
+ *      fields={"jour","heureDebut","heureFin","terrain"},
  *      message = "Une reservation est déjà enregistrée dans les creneaux que vous avez selectionné."
  * )
  */
@@ -29,18 +30,15 @@ class Reservation
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     *
-     * @Assert\LessThan(value = 31,message="la date est trop grande pas possible")
-     * @Assert\GreaterThan(value = 0, message ="la date est trop petit")
+     * @ORM\Column(type="date")
+     *@Assert\GreaterThan("today",message="Vous ne pouvez pas réserver un terrain pour le passé......")
      */
     private $jour;
 
     /**
      * @ORM\Column(type="integer")
      * 
-     * @Assert\LessThan(value = 23,message="l'heure est trop grande pas possible")
-     * @Assert\GreaterThan(value = 7, message ="l'heure est trop petit")
+     * @Assert\LessThan(propertyPath="heureFin", message ="l'heure ne peut pas être plus grande que l'heure de fin")
      * 
      */
     private $heureDebut;
@@ -49,21 +47,13 @@ class Reservation
      * 
      * @ORM\Column(type="integer")
      * 
-     * @Assert\LessThan(value = 23,message="l'heure est trop grande pas possible")
-     * @Assert\GreaterThan(value = 7, message ="l'heure est trop petit")
+     * @Assert\GreaterThan(propertyPath="heureDebut",message="l'heure ne peut pas être plus petite que l'heure de debut")
+     * 
      *
      */
     private $heureFin;
 
-    /**
-     * @ORM\Column(type="integer")
-     * 
-     * @Assert\LessThan(value = 53,message="il n'y a que 52 semaines, pas possible")
-     * @Assert\GreaterThan(value = 0, message ="les semaine ne peut pas être négatif")
-     * 
-     */
-    private $semaine;
-
+    
     /**
      * @ORM\Column(type="integer")
      * 
@@ -96,12 +86,12 @@ class Reservation
         return $this;
     }
 
-    public function getJour(): ?string
+    public function getJour(): ?\DateTimeInterface
     {
         return $this->jour;
     }
 
-    public function setJour(string $jour): self
+    public function setJour(\DateTimeInterface $jour): self
     {
         $this->jour = $jour;
 
@@ -128,18 +118,6 @@ class Reservation
     public function setHeureFin(int $heureFin): self
     {
         $this->heureFin = $heureFin;
-
-        return $this;
-    }
-
-    public function getSemaine(): ?int
-    {
-        return $this->semaine;
-    }
-
-    public function setSemaine(int $semaine): self
-    {
-        $this->semaine = $semaine;
 
         return $this;
     }

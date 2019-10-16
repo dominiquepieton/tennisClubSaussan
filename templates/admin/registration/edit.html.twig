@@ -1,0 +1,22 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Pré-inscription annuelle{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div>
+            <h1>Modifier la pré-inscription :</h1>
+        {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary">Valider les modifications</button>
+        <ul class="nav">
+        <li class="nav-item mx-auto">
+            <a class="btn btn-dark" href="{{ path('admin_registration_index') }}">Retour</a>
+        </li>
+        </ul>
+        {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

@@ -107,7 +107,7 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
                         <th>jour</th>
                         <td>";
         // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 20, $this->source); })()), "jour", [], "any", false, false, false, 20), "html", null, true);
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 20, $this->source); })()), "jour", [], "any", false, false, false, 20), "d/m/Y"), "html", null, true);
         echo "</td>
                     </tr>
                     <tr>
@@ -125,17 +125,10 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
         echo "</td>
                     </tr>
                     <tr>
-                        <th>Semaine</th>
-                        <td>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 32, $this->source); })()), "semaine", [], "any", false, false, false, 32), "html", null, true);
-        echo "</td>
-                    </tr>
-                    <tr>
                         <th>terrain</th>
                         <td>";
-        // line 36
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 36, $this->source); })()), "terrain", [], "any", false, false, false, 36), "html", null, true);
+        // line 32
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 32, $this->source); })()), "terrain", [], "any", false, false, false, 32), "html", null, true);
         echo "</td>
                     </tr>
                 </tbody>
@@ -145,20 +138,20 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
             <ul class=\"nav\">
                 <li class=\"nav-item mx-auto\">
                     <a class=\"btn btn-dark\" href=\"";
-        // line 44
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
         echo "\">Retour</a>
                 </li>
                 <li class=\"nav-item mx-auto\">
                     <a class=\"btn btn-dark\" href=\"";
-        // line 47
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 47, $this->source); })()), "id", [], "any", false, false, false, 47)]), "html", null, true);
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 43, $this->source); })()), "id", [], "any", false, false, false, 43)]), "html", null, true);
         echo "\">réedit</a>
                 </li>
                 <li class=\"nav-item\"> 
                     <a class=\"btn btn-danger\" href=\"";
-        // line 50
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 50, $this->source); })()), "id", [], "any", false, false, false, 50)]), "html", null, true);
+        // line 46
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["reservation"]) || array_key_exists("reservation", $context) ? $context["reservation"] : (function () { throw new RuntimeError('Variable "reservation" does not exist.', 46, $this->source); })()), "id", [], "any", false, false, false, 46)]), "html", null, true);
         echo "\" onclick=\"return confirm(`Êtes-vous sur de vouloir supprimer votre réservation ?`)\">delete</a>
                 </li>
             </ul>
@@ -185,7 +178,7 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
 
     public function getDebugInfo()
     {
-        return array (  161 => 50,  155 => 47,  149 => 44,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  154 => 46,  148 => 43,  142 => 40,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -209,7 +202,7 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
                     </tr>
                     <tr>
                         <th>jour</th>
-                        <td>{{ reservation.jour }}</td>
+                        <td>{{ reservation.jour | date('d/m/Y') }}</td>
                     </tr>
                     <tr>
                         <th>heure de debut</th>
@@ -218,10 +211,6 @@ class __TwigTemplate_3d6c753bd3db190edb296ea0cafb636ddaab0ece66a17efc8f2c39588bf
                     <tr>
                         <th>heure de fin</th>
                         <td>{{ reservation.heureFin }}</td>
-                    </tr>
-                    <tr>
-                        <th>Semaine</th>
-                        <td>{{ reservation.semaine }}</td>
                     </tr>
                     <tr>
                         <th>terrain</th>

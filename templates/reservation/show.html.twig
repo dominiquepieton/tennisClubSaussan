@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <th>jour</th>
-                        <td>{{ reservation.jour }}</td>
+                        <td>{{ reservation.jour | date('d/m/Y') }}</td>
                     </tr>
                     <tr>
                         <th>heure de debut</th>
@@ -26,10 +26,6 @@
                     <tr>
                         <th>heure de fin</th>
                         <td>{{ reservation.heureFin }}</td>
-                    </tr>
-                    <tr>
-                        <th>Semaine</th>
-                        <td>{{ reservation.semaine }}</td>
                     </tr>
                     <tr>
                         <th>terrain</th>

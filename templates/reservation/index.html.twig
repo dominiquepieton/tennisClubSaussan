@@ -28,10 +28,9 @@
                 <tr>
                     <td class="text-center">{{ reservation.id }}</td>
                     <td class="text-center">{{ reservation.nom }}</td>
-                    <td class="text-center">{{ reservation.jour }}</td>
+                    <td class="text-center">{{ reservation.jour | date('d/m/Y')}}</td>
                     <td class="text-center">{{ reservation.heuredebut }}</td>
                     <td class="text-center">{{ reservation.heurefin }}</td>
-                    <td class="text-center">{{ reservation.semaine }}</td>
                     <td class="text-center">{{ reservation.terrain }}</td>
                     <td>
                         <ul class="nav">

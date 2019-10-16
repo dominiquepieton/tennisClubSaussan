@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}TCS{% endblock %}</title>
+        <!-- link css -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <!-- link icone -->
+        <link rel="stylesheet" href="/css/all.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% include 'admin/partials/header.html.twig' %}
+
+        {% block body %}{% endblock %}
+
+        {% include 'admin/partials/footer.html.twig' %}
+        
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/pooper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/all.js"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

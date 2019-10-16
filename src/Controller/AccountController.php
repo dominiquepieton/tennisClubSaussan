@@ -56,7 +56,7 @@ class AccountController extends AbstractController
     /**
      * Permet d'afficher le registre d'inscription
      * 
-     * @Route("/register", name="account_register")
+     * @Route("/admin/account/register", name="admin_account_register")
      * @IsGranted("ROLE_ADMIN")
      * 
      * @return Response
@@ -81,11 +81,11 @@ class AccountController extends AbstractController
                 "L'inscription est réussit......"    
             );
 
-            return $this->redirectToRoute('account_login');
+            return $this->redirectToRoute('admin_res_index');
 
         }
 
-        return $this->render('account/registration.html.twig',[
+        return $this->render('admin/account/registration.html.twig',[
             'form' => $form->createView()
         ]);
     }

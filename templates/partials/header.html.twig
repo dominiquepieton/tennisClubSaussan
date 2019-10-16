@@ -11,13 +11,11 @@
                         <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('reservation') }}">Reservation</a>
+                        <a class="nav-link" href="{{ path('index_article') }}">Événements</a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a href="{{ path('account_register') }}" class="nav-link">Inscription</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{{ path('contact_create')}}">Contact</a>
                     <li>  
                 </ul>
                 <!-- lien si l'adhérent se connecte -->
@@ -45,6 +43,7 @@
                     {% endif %}
             </div>
         </nav>
+
         <!-- error message -->
         {% for label, messages in app.flashes %}
             <div class="container">

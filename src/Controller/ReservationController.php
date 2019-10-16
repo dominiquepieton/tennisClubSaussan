@@ -65,6 +65,7 @@ class ReservationController extends AbstractController
             $this->addFlash(
                 'success',
                 "<strong>{$reservation->getNom()}</strong> : votre réservation a bien étè enregistrée."
+                
             );
             
             // gérer la redirection la redirection 

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} contactez nous{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>votre message</h1>
+            <div class="container w-25">
+            <table class="table table-borderless bg-light shadow p-3 mb-5 rounded">
+                <tbody>
+                    <tr>
+                        <th>prénom</th>
+                        <td>{{ contact.firstname }}</td>
+                    </tr>
+                    <tr>
+                        <th>nom</th>
+                        <td>{{ contact.lastname }}</td>
+                    </tr>
+                    <tr>
+                        <th>email</th>
+                        <td>{{ contact.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>message</th>
+                        <td>{{ contact.message }}</td>
+                    </tr>
+                    <tr>
+                        <th>date d'envois</th>
+                        <td>{{ contact.date | date('d/m/Y') }}</td>
+                    </tr>
+                      
+                </tbody>
+            </table>
+        </div>
+        <div class="mx-auto">
+            <ul class="nav">
+                <li class="nav-item mx-auto">
+                    <a class="btn btn-dark" href="{{ path('homepage') }}">Accueil</a>
+                </li>
+                <li class="nav-item mx-auto">
+                    <a class="btn btn-dark" href="{{ path('contact_edit',{'id' : contact.id}) }}">réedit</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+{% endblock %}

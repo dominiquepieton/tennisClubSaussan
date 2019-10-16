@@ -1,0 +1,86 @@
+        <!--  navbar for the site -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info shadow p-3 mb-5 border-bottom">
+            <a class="navbar-brand h2" href="{{ path('admin_dashboard') }}">TSC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- lien navigation de base  -->
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('admin_dashboard') }}">
+                            <i class="fas fa-chart-line fa-2x"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('admin_res_index') }}">
+                            <i class="fas fa-file-archive fa-2x"></i>Reservation</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{{ path('admin_contact_index')}}" class="nav-link">
+                            <i class="fas fa-comments fa-2x"></i>Message reçu</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="adDropdown1">
+                                <i class="fas fa-user-cog fa-2x"></i>création Compte Adhérent</a>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu" aria-labelledby="adDropdown1">
+                            <a href="{{ path('admin_adherent_index') }}" class="dropdown-item">Toutes les adhérents</a> 
+                            <a href="{{ path('admin_account_register') }}" class="dropdown-item">Création d'adhérent site</a>                                                                    
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{{ path('admin_article_create') }}" class="nav-link">
+                            <i class="fas fa-newspaper fa-2x"></i>Création d'article site</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="adminDropdown">
+                                <i class="fas fa-edit fa-2x"></i>Inscription Annuelles</a>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
+                            <a href="{{ path('admin_registration_index') }}" class="dropdown-item">Toutes les pre-inscriptions</a> 
+                            <a href="{{ path('admin_registration_create') }}" class="dropdown-item">Créer une inscription</a>                                                                    
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="adDropdown">
+                                <i class="fas fa-edit fa-2x"></i>Inscription stage</a>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu" aria-labelledby="adDropdown">
+                            <a href="{{ path('admin_stage_index') }}" class="dropdown-item">Toutes les inscriptions stages</a> 
+                            <a href="{{ path('admin_stage_create') }}" class="dropdown-item">Créer une inscription stage</a>                                                                    
+                        </div>
+                    </li>        
+                </ul>
+                <!-- lien si l'adhérent se connecte -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="{{ path('homepage') }}" target="_blank" class="nav-link">
+                            <i class="fas fa-eye fa-2x"></i>Site</a>
+                    </li>
+                    {% if app.user %}
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdown">
+                                <img src="{{app.user.picture}}" class="avatar avatar-mini" alt="Avatar de {{app.user.lastName}} {{app.user.firstName}}">&nbsp;  {{app.user.lastName}}  {{app.user.firstName}} 
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
+                                <a href="{{ path('reservation_create') }}" class="dropdown-item">réserver terrain</a>
+                                <a href="{{ path('user_show',{'firstName' : app.user.firstname }) }}" class="dropdown-item">
+                                    <i class="fas fa-user fa-2x"></i>Mon profil</a>                                                               
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ path('account_logout') }}" class="dropdown-item"><i class="fas fa-lock fa-2x"></i>Déconnexion</a>
+                            </div>
+                        </li>   
+                    {% endif %}
+            </div>
+        </nav>
+
+        <!-- error message -->
+        {% for label, messages in app.flashes %}
+            <div class="container">
+                <div class="alert alert-{{ label }}">
+                    {% for message in messages %}
+                        <p>{{ message | raw }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}

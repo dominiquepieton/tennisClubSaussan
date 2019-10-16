@@ -98,7 +98,7 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
         <hr class=\"my-4\">
         <p class=\"text-center\">Vous pouvez aussi réserver un terrain directement de ce site.</p>
         <p class=\"lead text-center\">
-          <a class=\"btn btn-warning btn-lg\" href=\"#\" role=\"button\">Venez</a>
+          <a class=\"btn btn-warning btn-lg anime\" href=\"#\" role=\"button\">Venez</a>
         </p> 
       </div>
   </div>
@@ -180,7 +180,7 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
         <hr class=\"my-4\">
         <p class=\"text-center\">Vous pouvez aussi réserver un terrain directement de ce site.</p>
         <p class=\"lead text-center\">
-          <a class=\"btn btn-warning btn-lg\" href=\"#\" role=\"button\">Venez</a>
+          <a class=\"btn btn-warning btn-lg anime\" href=\"#\" role=\"button\">Venez</a>
         </p> 
       </div>
   </div>
