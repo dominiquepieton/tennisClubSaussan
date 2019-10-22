@@ -96,7 +96,7 @@ class __TwigTemplate_679948cdac0a02baf8b6d38b2e0ba546d419a9a831d96374fddcd887da8
         // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
         echo "\" class=\"btn btn-link\">
-                                <i class=\"fas fa-arrow-circle-left fa-5x\"></i> Retour à l'Accueil</a>
+                        <i class=\"fas fa-arrow-circle-left fa-5x\"></i> Retour à l'Accueil</a>
                     </div>            
                 </div>
                 
@@ -180,8 +180,8 @@ class __TwigTemplate_679948cdac0a02baf8b6d38b2e0ba546d419a9a831d96374fddcd887da8
                         </div>
                     </form>
                     <div class=\"mx-auto\">
-                    <a href=\"{{ path('homepage' )}}\" class=\"btn btn-link\">
-                                <i class=\"fas fa-arrow-circle-left fa-5x\"></i> Retour à l'Accueil</a>
+                    <a href=\"{{ path('homepage')}}\" class=\"btn btn-link\">
+                        <i class=\"fas fa-arrow-circle-left fa-5x\"></i> Retour à l'Accueil</a>
                     </div>            
                 </div>
                 

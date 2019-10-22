@@ -107,7 +107,7 @@ class ReservationController extends AbstractController
                 "<strong>{$reservation->getNom()}</strong> : Les modifications de votre réservation ont bien étè enregistrée."
             );
             
-            // gérer la redirection la redirection 
+            // gérer la redirection 
             return $this->redirectToRoute('reservation_show', [
                 'id' =>$reservation->getId()
             ]);
@@ -120,7 +120,7 @@ class ReservationController extends AbstractController
 
 
     /**
-     * permet de voir une annonce 
+     * permet de voir une reservation 
      * 
      * @Route("/reservation/{id}", name="reservation_show")
      * 

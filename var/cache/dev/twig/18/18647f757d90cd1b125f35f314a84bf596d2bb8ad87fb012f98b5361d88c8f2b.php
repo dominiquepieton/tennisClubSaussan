@@ -86,31 +86,38 @@ class __TwigTemplate_03dd87785ca49f736182590d4e25c766948166b1680d9147d33157b68e3
 
         // line 6
         echo "    <div class=\"container\">
-        <div>
-            <h1>Modifier la pré-inscription :</h1>
-        ";
-        // line 9
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start');
+        <div class=\"row\">
+            <div class=\"col-md-3\">
+                <img src=\"/img/logo.jpg\" alt=\"logo club\">
+            </div>
+            <div class=\"col-md-8\">
+                <div class=\"shadow p-3 mb-5 bg-transparent\">
+                <h1>Modifier la pré-inscription :</h1>
+            ";
+        // line 14
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'form_start');
         echo "
 
-        ";
-        // line 11
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'widget');
-        echo "
-
-        <button type=\"submit\" class=\"btn btn-primary\">Valider les modifications</button>
-        <ul class=\"nav\">
-        <li class=\"nav-item mx-auto\">
-            <a class=\"btn btn-dark\" href=\"";
+            ";
         // line 16
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), 'widget');
+        echo "
+
+            <button type=\"submit\" class=\"btn btn-primary\">Valider les modifications</button>
+            <ul class=\"nav\">
+            <li class=\"nav-item mx-auto\">
+                <a class=\"btn btn-dark\" href=\"";
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_registration_index");
         echo "\">Retour</a>
-        </li>
-        </ul>
-        ";
-        // line 19
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
+            </li>
+            </ul>
+            ";
+        // line 24
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_end');
         echo "
+            </div>
+            <div class=\"col-md-1\">&nbsp;</div>
         </div>
     </div>
 ";
@@ -134,7 +141,7 @@ class __TwigTemplate_03dd87785ca49f736182590d4e25c766948166b1680d9147d33157b68e3
 
     public function getDebugInfo()
     {
-        return array (  112 => 19,  106 => 16,  98 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  117 => 24,  111 => 21,  103 => 16,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -145,19 +152,26 @@ class __TwigTemplate_03dd87785ca49f736182590d4e25c766948166b1680d9147d33157b68e3
 
 {% block body %}
     <div class=\"container\">
-        <div>
-            <h1>Modifier la pré-inscription :</h1>
-        {{ form_start(form) }}
+        <div class=\"row\">
+            <div class=\"col-md-3\">
+                <img src=\"/img/logo.jpg\" alt=\"logo club\">
+            </div>
+            <div class=\"col-md-8\">
+                <div class=\"shadow p-3 mb-5 bg-transparent\">
+                <h1>Modifier la pré-inscription :</h1>
+            {{ form_start(form) }}
 
-        {{ form_widget(form) }}
+            {{ form_widget(form) }}
 
-        <button type=\"submit\" class=\"btn btn-primary\">Valider les modifications</button>
-        <ul class=\"nav\">
-        <li class=\"nav-item mx-auto\">
-            <a class=\"btn btn-dark\" href=\"{{ path('admin_registration_index') }}\">Retour</a>
-        </li>
-        </ul>
-        {{ form_end(form) }}
+            <button type=\"submit\" class=\"btn btn-primary\">Valider les modifications</button>
+            <ul class=\"nav\">
+            <li class=\"nav-item mx-auto\">
+                <a class=\"btn btn-dark\" href=\"{{ path('admin_registration_index') }}\">Retour</a>
+            </li>
+            </ul>
+            {{ form_end(form) }}
+            </div>
+            <div class=\"col-md-1\">&nbsp;</div>
         </div>
     </div>
 {% endblock %}", "admin/registration/edit.html.twig", "/var/www/site/tcs/templates/admin/registration/edit.html.twig");

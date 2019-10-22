@@ -85,56 +85,92 @@ class __TwigTemplate_8cdc0021793f6f003ed50e089765c173e5bdc5fe06f4d06acff5a2aff25
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div class=\"container\">
-        <h1 class=\"text-center\">Les événements au Tennis Club Saussan :</h1>
-        <div class=\"row mt-5\">
-            ";
-        // line 9
+        echo "    <div class=\"container-fluid header-article\">
+        <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">
+            <ol class=\"carousel-indicators\">
+                <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
+                <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>
+                <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>
+            </ol>
+            <div class=\"carousel-inner\">
+                <div class=\"carousel-item active\">
+                    <img src=\"/img/1.jpg\" class=\"d-block w-100\" alt=\"...\">
+                </div>
+                <div class=\"carousel-item\">
+                    <img src=\"/img/3.jpg\" class=\"d-block w-100\" alt=\"...\">
+                </div>
+                <div class=\"carousel-item\">
+                    <img src=\"/img/2.jpg\" class=\"d-block w-100\" alt=\"...\">
+                </div>
+            </div>
+                <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
+                    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
+                    <span class=\"sr-only\">Previous</span>
+                </a>
+                <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">
+                    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
+                    <span class=\"sr-only\">Next</span>
+                </a>
+        </div>
+        <div class=\"title-article\">
+            <h1 class=\"text-center\">Les événements au Tennis Club Saussan :</h1>
+            <p>
+             Voici tous nos articles publiés depuis la créations du site bonne lecture.<br>
+            Laissez-nous un petit commentaire cela pour amélioré le site....
+            </p>    
+        </div>            
+
+    </div>
+            <div class=\"container\">
+            
+                <div class=\"row mt-5\">
+                    ";
+        // line 45
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 9, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 45, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 10
-            echo "            ";
-            $context["lien"] = $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["article"], "slug", [], "any", false, false, false, 10)]);
-            // line 11
-            echo "                <div class=\"col-md-4\">    
-                    <div class=\"card mb-3\">
-                        <div class=\"header text-center\">
-                            <h5 class=\"card-title\"><a href=\"";
-            // line 14
-            echo twig_escape_filter($this->env, (isset($context["lien"]) || array_key_exists("lien", $context) ? $context["lien"] : (function () { throw new RuntimeError('Variable "lien" does not exist.', 14, $this->source); })()), "html", null, true);
+            // line 46
+            echo "                    ";
+            $context["lien"] = $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["article"], "slug", [], "any", false, false, false, 46)]);
+            // line 47
+            echo "                        <div class=\"col-md-4\">    
+                            <div class=\"card mb-3\">
+                                <div class=\"header text-center\">
+                                    <h5 class=\"card-title\"><a href=\"";
+            // line 50
+            echo twig_escape_filter($this->env, (isset($context["lien"]) || array_key_exists("lien", $context) ? $context["lien"] : (function () { throw new RuntimeError('Variable "lien" does not exist.', 50, $this->source); })()), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 14), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 50), "html", null, true);
             echo "</a></h5>
-                        </div>
-                        <img class=\"card-img-top\" src=\"";
-            // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 16), "html", null, true);
+                                </div>
+                                <img class=\"card-img-top\" src=\"";
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 52), "html", null, true);
             echo "\" alt=\"image sport\" style=\"height: 200px; width: 100%; display: block\">
-                        <div class=\"card-body\">
-                            <p class=\"card-text\">";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "intro", [], "any", false, false, false, 18), "html", null, true);
+                                <div class=\"card-body\">
+                                    <p class=\"card-text\">";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "intro", [], "any", false, false, false, 54), "html", null, true);
             echo "</p>
-                            <a href=\"";
-            // line 19
-            echo twig_escape_filter($this->env, (isset($context["lien"]) || array_key_exists("lien", $context) ? $context["lien"] : (function () { throw new RuntimeError('Variable "lien" does not exist.', 19, $this->source); })()), "html", null, true);
+                                    <a href=\"";
+            // line 55
+            echo twig_escape_filter($this->env, (isset($context["lien"]) || array_key_exists("lien", $context) ? $context["lien"] : (function () { throw new RuntimeError('Variable "lien" does not exist.', 55, $this->source); })()), "html", null, true);
             echo "\" class=\"btn btn-warning\">En savoir plus</a>
-                            <p class=\"card-text\"><small class=\"text-muted\">";
-            // line 20
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "dateCreated", [], "any", false, false, false, 20), "d/m/Y"), "html", null, true);
+                                    <p class=\"card-text\"><small class=\"text-muted\">";
+            // line 56
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "dateCreated", [], "any", false, false, false, 56), "d/m/Y"), "html", null, true);
             echo "</small></p>
-                        </div>
-                    </div>    
-                </div>       
-            ";
+                                </div>
+                            </div>    
+                        </div>       
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
-        echo "        </div>
-    </div>
+        // line 61
+        echo "                </div>
+            </div>
 
 ";
         
@@ -157,7 +193,7 @@ class __TwigTemplate_8cdc0021793f6f003ed50e089765c173e5bdc5fe06f4d06acff5a2aff25
 
     public function getDebugInfo()
     {
-        return array (  136 => 25,  125 => 20,  121 => 19,  117 => 18,  112 => 16,  105 => 14,  100 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  172 => 61,  161 => 56,  157 => 55,  153 => 54,  148 => 52,  141 => 50,  136 => 47,  133 => 46,  129 => 45,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -167,27 +203,63 @@ class __TwigTemplate_8cdc0021793f6f003ed50e089765c173e5bdc5fe06f4d06acff5a2aff25
 {% block title %}Nos événements sur tcs{% endblock %}
 
 {% block body %}
-    <div class=\"container\">
-        <h1 class=\"text-center\">Les événements au Tennis Club Saussan :</h1>
-        <div class=\"row mt-5\">
-            {% for article in articles %}
-            {% set lien = path('article_show', {'slug': article.slug}) %}
-                <div class=\"col-md-4\">    
-                    <div class=\"card mb-3\">
-                        <div class=\"header text-center\">
-                            <h5 class=\"card-title\"><a href=\"{{ lien }}\">{{ article.title }}</a></h5>
-                        </div>
-                        <img class=\"card-img-top\" src=\"{{ article.image }}\" alt=\"image sport\" style=\"height: 200px; width: 100%; display: block\">
-                        <div class=\"card-body\">
-                            <p class=\"card-text\">{{ article.intro }}</p>
-                            <a href=\"{{ lien }}\" class=\"btn btn-warning\">En savoir plus</a>
-                            <p class=\"card-text\"><small class=\"text-muted\">{{ article.dateCreated | date('d/m/Y') }}</small></p>
-                        </div>
-                    </div>    
-                </div>       
-            {% endfor %}
+    <div class=\"container-fluid header-article\">
+        <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">
+            <ol class=\"carousel-indicators\">
+                <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
+                <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>
+                <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>
+            </ol>
+            <div class=\"carousel-inner\">
+                <div class=\"carousel-item active\">
+                    <img src=\"/img/1.jpg\" class=\"d-block w-100\" alt=\"...\">
+                </div>
+                <div class=\"carousel-item\">
+                    <img src=\"/img/3.jpg\" class=\"d-block w-100\" alt=\"...\">
+                </div>
+                <div class=\"carousel-item\">
+                    <img src=\"/img/2.jpg\" class=\"d-block w-100\" alt=\"...\">
+                </div>
+            </div>
+                <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
+                    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
+                    <span class=\"sr-only\">Previous</span>
+                </a>
+                <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">
+                    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
+                    <span class=\"sr-only\">Next</span>
+                </a>
         </div>
+        <div class=\"title-article\">
+            <h1 class=\"text-center\">Les événements au Tennis Club Saussan :</h1>
+            <p>
+             Voici tous nos articles publiés depuis la créations du site bonne lecture.<br>
+            Laissez-nous un petit commentaire cela pour amélioré le site....
+            </p>    
+        </div>            
+
     </div>
+            <div class=\"container\">
+            
+                <div class=\"row mt-5\">
+                    {% for article in articles %}
+                    {% set lien = path('article_show', {'slug': article.slug}) %}
+                        <div class=\"col-md-4\">    
+                            <div class=\"card mb-3\">
+                                <div class=\"header text-center\">
+                                    <h5 class=\"card-title\"><a href=\"{{ lien }}\">{{ article.title }}</a></h5>
+                                </div>
+                                <img class=\"card-img-top\" src=\"{{ article.image }}\" alt=\"image sport\" style=\"height: 200px; width: 100%; display: block\">
+                                <div class=\"card-body\">
+                                    <p class=\"card-text\">{{ article.intro }}</p>
+                                    <a href=\"{{ lien }}\" class=\"btn btn-warning\">En savoir plus</a>
+                                    <p class=\"card-text\"><small class=\"text-muted\">{{ article.dateCreated | date('d/m/Y') }}</small></p>
+                                </div>
+                            </div>    
+                        </div>       
+                    {% endfor %}
+                </div>
+            </div>
 
 {% endblock %}
 ", "ad/article.html.twig", "/var/www/site/tcs/templates/ad/article.html.twig");

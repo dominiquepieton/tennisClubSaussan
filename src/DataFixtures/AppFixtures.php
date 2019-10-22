@@ -46,7 +46,7 @@ class AppFixtures extends Fixture
         //creation d'ahdérents
         $adherents = []; // array pour rentrer les adherents
 
-        for($i = 1;$i <= 10; $i++) {
+        for($i = 1;$i <= 30; $i++) {
             $adherent = new Adherent();
             
             $hash = $this->encoder->encodePassword($adherent, 'password');

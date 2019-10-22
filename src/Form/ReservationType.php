@@ -21,7 +21,7 @@ class ReservationType extends ApplicationType
             ->add('nom',TextType::class, $this->getConfiguration("Nom :", "Entrez votre nom"))
             ->add('jour',DateType::class, [
                 'widget' => 'single_text',
-                'label' => 'date de creation'
+                'label' => 'date du jour'
                 ])
             ->add('heureDebut',IntegerType::class, $this->getConfiguration("Heure de début :", "Entrez l'heure de début"))
             ->add('heureFin',IntegerType::class, $this->getConfiguration("Heure de fin :", "Entrez l'heure de fin"))

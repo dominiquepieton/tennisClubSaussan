@@ -50,7 +50,7 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
             <!-- lien navigation de base  -->
-            <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
+            <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
                 <ul class=\"navbar-nav mr-auto\">
                     <li class=\"nav-item active\">
                         <a class=\"nav-link\" href=\"";
@@ -78,80 +78,88 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
         // line 23
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "user", [], "any", false, false, false, 23)) {
             // line 24
-            echo "                        <li class=\"nav-item dropdown\">
+            echo "                        <li class=\"nav-item\">
+                            <a href=\"";
+            // line 25
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_create");
+            echo "\" class=\"nav-link\">réserver terrain</a>
+                        </li>    
+                        <li class=\"nav-item dropdown\">
                             <a href=\"#\" class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" id=\"accountDropdown\">
                                 <img src=\"";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26), "picture", [], "any", false, false, false, 26), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "picture", [], "any", false, false, false, 29), "html", null, true);
             echo "\" class=\"avatar avatar-mini\" alt=\"Avatar de ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26), "lastName", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "lastName", [], "any", false, false, false, 29), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26), "firstName", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "firstName", [], "any", false, false, false, 29), "html", null, true);
             echo "\">&nbsp;  ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26), "lastName", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "lastName", [], "any", false, false, false, 29), "html", null, true);
             echo "  ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26), "firstName", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "firstName", [], "any", false, false, false, 29), "html", null, true);
             echo " 
                             </a>
                             <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"accountDropdown\">
                                 <a href=\"";
-            // line 29
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_create");
-            echo "\" class=\"dropdown-item\">réserver terrain</a>
-                                <a href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["firstName" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30), "firstname", [], "any", false, false, false, 30)]), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["firstName" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32), "firstname", [], "any", false, false, false, 32)]), "html", null, true);
             echo "\" class=\"dropdown-item\">Mon profil</a>
                                 <a href=\"";
-            // line 31
+            // line 33
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_profile");
             echo "\" class=\"dropdown-item\">Modifier mon profile</a>
                                 <a href=\"";
-            // line 32
+            // line 34
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_password");
             echo "\" class=\"dropdown-item\">Modifier mon password</a>                                                                
                                 <div class=\"dropdown-divider\"></div>
                                 <a href=\"";
-            // line 34
+            // line 36
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_logout");
             echo "\" class=\"nav-link\">Déconnexion</a>
                             </div>
                         </li>
                     ";
         } else {
-            // line 38
+            // line 40
             echo "                    <ul class=\"nav\">
                         <li class=\"nav-item\">
-                            <a href=\"";
-            // line 40
+                                <a href=\"";
+            // line 42
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_login");
-            echo "\" class=\"nav-link\">Connexion</a>
+            echo "\" class=\"nav-link\">Connexion</a>     
+                        </li>
+                        <li>
+                            <a href=\"";
+            // line 45
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_account_login");
+            echo "\" class=\"nav-link\">Admin</a>
                         </li>
                     </ul>    
                     ";
         }
-        // line 44
+        // line 49
         echo "            </div>
         </nav>
 
         <!-- error message -->
         ";
-        // line 48
+        // line 53
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "flashes", [], "any", false, false, false, 48));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "flashes", [], "any", false, false, false, 53));
         foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 49
+            // line 54
             echo "            <div class=\"container\">
                 <div class=\"alert alert-";
-            // line 50
+            // line 55
             echo twig_escape_filter($this->env, $context["label"], "html", null, true);
             echo "\">
                     ";
-            // line 51
+            // line 56
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 52
+                // line 57
                 echo "                        <p>";
                 echo $context["message"];
                 echo "</p>
@@ -160,7 +168,7 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 54
+            // line 59
             echo "                </div>
             </div>
         ";
@@ -168,7 +176,7 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 62
         echo "
        ";
         
@@ -191,7 +199,7 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
 
     public function getDebugInfo()
     {
-        return array (  172 => 57,  164 => 54,  155 => 52,  151 => 51,  147 => 50,  144 => 49,  140 => 48,  134 => 44,  127 => 40,  123 => 38,  116 => 34,  111 => 32,  107 => 31,  103 => 30,  99 => 29,  85 => 26,  81 => 24,  79 => 23,  71 => 18,  64 => 14,  58 => 11,  47 => 3,  43 => 1,);
+        return array (  180 => 62,  172 => 59,  163 => 57,  159 => 56,  155 => 55,  152 => 54,  148 => 53,  142 => 49,  135 => 45,  129 => 42,  125 => 40,  118 => 36,  113 => 34,  109 => 33,  105 => 32,  91 => 29,  84 => 25,  81 => 24,  79 => 23,  71 => 18,  64 => 14,  58 => 11,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -203,7 +211,7 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
             <!-- lien navigation de base  -->
-            <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
+            <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
                 <ul class=\"navbar-nav mr-auto\">
                     <li class=\"nav-item active\">
                         <a class=\"nav-link\" href=\"{{ path('homepage') }}\">Accueil</a>
@@ -219,12 +227,14 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
                 <!-- lien si l'adhérent se connecte -->
                 <ul class=\"navbar-nav ml-auto\">
                     {% if app.user %}
+                        <li class=\"nav-item\">
+                            <a href=\"{{ path('reservation_create') }}\" class=\"nav-link\">réserver terrain</a>
+                        </li>    
                         <li class=\"nav-item dropdown\">
                             <a href=\"#\" class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" id=\"accountDropdown\">
                                 <img src=\"{{app.user.picture}}\" class=\"avatar avatar-mini\" alt=\"Avatar de {{app.user.lastName}} {{app.user.firstName}}\">&nbsp;  {{app.user.lastName}}  {{app.user.firstName}} 
                             </a>
                             <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"accountDropdown\">
-                                <a href=\"{{ path('reservation_create') }}\" class=\"dropdown-item\">réserver terrain</a>
                                 <a href=\"{{ path('user_show',{'firstName' : app.user.firstname }) }}\" class=\"dropdown-item\">Mon profil</a>
                                 <a href=\"{{ path('account_profile')}}\" class=\"dropdown-item\">Modifier mon profile</a>
                                 <a href=\"{{ path('account_password')}}\" class=\"dropdown-item\">Modifier mon password</a>                                                                
@@ -235,7 +245,10 @@ class __TwigTemplate_b617ae2ae32544141570e653ee74ff326129f1fc7bcbacf3212fdc8d10a
                     {% else %}
                     <ul class=\"nav\">
                         <li class=\"nav-item\">
-                            <a href=\"{{ path('account_login') }}\" class=\"nav-link\">Connexion</a>
+                                <a href=\"{{ path('account_login') }}\" class=\"nav-link\">Connexion</a>     
+                        </li>
+                        <li>
+                            <a href=\"{{ path('admin_account_login') }}\" class=\"nav-link\">Admin</a>
                         </li>
                     </ul>    
                     {% endif %}

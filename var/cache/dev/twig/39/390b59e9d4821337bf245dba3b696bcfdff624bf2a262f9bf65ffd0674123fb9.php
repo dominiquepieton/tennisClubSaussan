@@ -54,38 +54,39 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
         echo "</title>
         <!-- link css -->
         <link rel=\"stylesheet\" href=\"/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" href=\"/css/style.css\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/style.css"), "html", null, true);
+        echo "\">
+        <link href=\"https://fonts.googleapis.com/css?family=Cinzel&display=swap\" rel=\"stylesheet\">
         <!-- link icone -->
         <link rel=\"stylesheet\" href=\"/css/all.css\">
         ";
-        // line 11
-        $this->displayBlock('stylesheets', $context, $blocks);
         // line 12
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 13
         echo "    </head>
     <body>
         ";
-        // line 14
-        $this->loadTemplate("admin/partials/header.html.twig", "admin/base.html.twig", 14)->display($context);
         // line 15
-        echo "
-        ";
+        $this->loadTemplate("admin/partials/header.html.twig", "admin/base.html.twig", 15)->display($context);
         // line 16
-        $this->displayBlock('body', $context, $blocks);
-        // line 17
         echo "
         ";
+        // line 17
+        $this->displayBlock('body', $context, $blocks);
         // line 18
-        $this->loadTemplate("admin/partials/footer.html.twig", "admin/base.html.twig", 18)->display($context);
-        // line 19
-        echo "        
+        echo "
+
+        
         <script src=\"/js/jquery.min.js\"></script>
         <script src=\"/js/pooper.min.js\"></script>
         <script src=\"/js/bootstrap.min.js\"></script>
         <script src=\"/js/all.js\"></script>
         ";
-        // line 24
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 25
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 26
         echo "    </body>
 </html>
 ";
@@ -116,7 +117,7 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
 
     }
 
-    // line 11
+    // line 12
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -134,7 +135,7 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
 
     }
 
-    // line 16
+    // line 17
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -152,7 +153,7 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
 
     }
 
-    // line 24
+    // line 25
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -182,7 +183,7 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
 
     public function getDebugInfo()
     {
-        return array (  156 => 24,  138 => 16,  120 => 11,  101 => 5,  89 => 25,  87 => 24,  80 => 19,  78 => 18,  75 => 17,  73 => 16,  70 => 15,  68 => 14,  64 => 12,  62 => 11,  53 => 5,  47 => 1,);
+        return array (  157 => 25,  139 => 17,  121 => 12,  102 => 5,  90 => 26,  88 => 25,  79 => 18,  77 => 17,  74 => 16,  72 => 15,  68 => 13,  66 => 12,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -194,7 +195,8 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
         <title>{% block title %}TCS{% endblock %}</title>
         <!-- link css -->
         <link rel=\"stylesheet\" href=\"/css/bootstrap.min.css\">
-        <link rel=\"stylesheet\" href=\"/css/style.css\">
+        <link rel=\"stylesheet\" href=\"{{asset('/css/style.css')}}\">
+        <link href=\"https://fonts.googleapis.com/css?family=Cinzel&display=swap\" rel=\"stylesheet\">
         <!-- link icone -->
         <link rel=\"stylesheet\" href=\"/css/all.css\">
         {% block stylesheets %}{% endblock %}
@@ -204,7 +206,7 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
 
         {% block body %}{% endblock %}
 
-        {% include 'admin/partials/footer.html.twig' %}
+
         
         <script src=\"/js/jquery.min.js\"></script>
         <script src=\"/js/pooper.min.js\"></script>

@@ -20,8 +20,11 @@ class AdminContactType extends ApplicationType
             ->add('firstname',TextType::class, $this->getConfiguration('prénom','Entrez votre prénom...'))
             ->add('lastname',TextType::class, $this->getConfiguration('nom','Entrez votre nom...'))
             ->add('email',EmailType::class, $this->getConfiguration('email','Entrez votre email...'))
-            ->add('message',TextareaType::class, $this->getConfiguration('message', 'entrez votre message...'))
-            ->add('date', DateType::class, $this->getConfiguration('date', "Entrez la date du jour"))
+            ->add('message',TextareaType::class, $this->getConfiguration('message : 255 mots maximun', 'entrez votre message...'))
+            ->add('date', DateType::class, [
+                'widget' => 'single_text',
+                'label' => 'date du jour'
+                ])
         ;
     }
 

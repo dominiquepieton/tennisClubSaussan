@@ -87,58 +87,72 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
-        echo "<div class=\"bg-home hv-100\">  
-  <div class=\"container-fluid \">
-    <div class=\"jumbotron mt-4 bg-transparent\">
-      <h1 class=\"display-3 text-center\">";
-        // line 11
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 11, $this->source); })()), "html", null, true);
-        echo "</h1>
-        <p class=\"lead text-center\">Association sportif de tennis avec un esprit de famille, venez rejoindre le club pour passer un bon moment au club et jouer avec la bonne humeur.</p>
-        <hr class=\"my-4\">
-        <p class=\"text-center\">Vous pouvez aussi réserver un terrain directement de ce site.</p>
-        <p class=\"lead text-center\">
-          <a class=\"btn btn-warning btn-lg anime\" href=\"#\" role=\"button\">Venez</a>
-        </p> 
-      </div>
-  </div>
-  <div class=\"container\">
-    <hr class=\"my-5\">
-    <h2 class=\"h1 mt-3 mb-4 text-white\">Derniers événements :</h2>
-    <div class=\"row\">
-      <div class=\"col-md-4 py-5\">
-        <div class=\"card border-primary mb-3 \" style=\"max-width: 20rem;\">
-          <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
-            <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
-            <div class=\"card-body\">
-              <p class=\"card-text\">Voila l'annèe viens juste de debuter, <strong>n'oubliez pas vous inscrire</strong></p>
-              <a href=\"#\" class=\"btn btn-info\">Plus d'info</a>
-            </div>
-        </div>
-      </div>
-      <div class=\"col-md-4 py-5\">
-        <div class=\"card mb-3\" style=\"max-width: 20rem;\">
-          <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
-            <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
-            <div class=\"card-body\">
-              <p class=\"card-text\">Voila l'annèe viens juste de debuter, <strong>n'oubliez pas vous inscrire</strong></p>
-              <a href=\"#\" class=\"btn btn-info\">Plus d'info</a>
-            </div>
-        </div>
-      </div>
-      <div class=\"col-md-4 py-5\">
-        <div class=\"card border-primary mb-3\" style=\"max-width: 20rem;\">
-          <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
-            <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
-            <div class=\"card-body\">
-              <p class=\"card-text\">Voila l'annèe viens juste de debuter, <strong>n'oubliez pas vous inscrire</strong></p>
-              <a href=\"#\" class=\"btn btn-info\">Plus d'info</a>
-            </div>
-        </div>
-      </div>
+        echo "  <section class=\"container-fluid banner\">
+    <div class=\"bann\">
+    
+    <div class=\"inner-banner\">
+      <h1>Tennis Club Saussan</h1>
+      <hr class=\"separator\">
+      <p class=\"justify-content-center\">
+      Rejoignez notre club de <strong>tennis</strong>,vous pourrez apprendre à jouer dans un cadre familliale ou progresser grâce au compétence de notre entraineur.<br>
+      Nos cours commencent à partir de 17h, Génial pour vos enfants aprés l'école on pratique le tennis le tout dans la bonne humeur....
+      </p>
+      <button class=\"btn btn-banner\"><a href=\"";
+        // line 18
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_create");
+        echo "\" class=\"text-dark\">Contactez-nous</a></button>
     </div>
-  </div>
-</div>      
+    </div>
+  </section>
+  <section class=\"container-fluid about\">
+    <hr class=\"separator\">
+    <div class=\"container\">
+        <h2>À propos de nous</h2>
+        <div class=\"row\">
+            <div class=\"col-md-4 col-lg-4 col-xs-12 col-sm-12 city\">
+                <img src=\"/img/ball.jpg\" alt=\"balle de tennis\">
+            </div>
+            <div class=\"col-md-4 col-lg-4 col-xs-12 col-sm-12 reprise\">
+                <img src=\"/img/reprise.jpg\" alt=\"joueur de tennis\">
+            </div>
+            <div class=\"col-md-4 col-lg-4 col-xs-12 col-sm-12 texte\">
+                <p>
+                  Nous sommes une <strong>association sportive</strong> crée en 1983,notre nombre s'eleve à 80 adhérents.
+                  Les enfants peuvent commencer à partir de 5 ans pour faire un an de découvert du tennis avec un apprentissage ludique.
+                  Nous possédons 3 terrains (2 en dur et 1 en gazon synthétique) et il est possible de <strong>réserver le terrain</strong> 
+                  à partir du site pour les adhérents du club, et bien sur en fonction des entrainements,il y aura toujours un terrain pour exercer
+                  votre passion.
+                  n'hesitez pas à nous <a href=\"";
+        // line 40
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_create");
+        echo "\">contacter</a> pour avoir des renseignements complémentaire, on vous répondra .....   
+                </p>
+            </div> 
+        </div>
+    </div>
+  </section>
+  <section class=\"container-fluid contact\">
+    <div class=\"container\">
+        <div class=\"row\">
+          <div class=\"col-md-6 col-lg-6 col-sx-12 col-sm-12 joie\">
+            <img src=\"/img/joie.jpg\" alt=\"joueur de tennis\" >
+          </div>
+          <div class=\"col-md-5 col-lg-6 col-sx-12 col-sm-12 \">
+            <div class=\"contact-text\">
+              <h2>Contact :</h2>
+                <ul>
+                  <li>président: MR Raspaud Frédéric</li>
+                  <li>Adresse :</li>
+                  <li>  6 Allée de Maguelone</li>
+                  <li>      34570 Saussan</li>
+                  <li>Téléphone : <li>
+                        <li>04/67/27/33/10</li>
+              </p>
+            </div>    
+          </div>
+        </div>
+    </div>
+  </section>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -160,7 +174,7 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
 
     public function getDebugInfo()
     {
-        return array (  95 => 11,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  127 => 40,  102 => 18,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -172,57 +186,66 @@ class __TwigTemplate_aaa2bd187d50f2e138b1de86cbe22d7055ccd50791f2403d2265a0501a6
 {% endblock %}
 
 {% block body %}
-<div class=\"bg-home hv-100\">  
-  <div class=\"container-fluid \">
-    <div class=\"jumbotron mt-4 bg-transparent\">
-      <h1 class=\"display-3 text-center\">{{ title }}</h1>
-        <p class=\"lead text-center\">Association sportif de tennis avec un esprit de famille, venez rejoindre le club pour passer un bon moment au club et jouer avec la bonne humeur.</p>
-        <hr class=\"my-4\">
-        <p class=\"text-center\">Vous pouvez aussi réserver un terrain directement de ce site.</p>
-        <p class=\"lead text-center\">
-          <a class=\"btn btn-warning btn-lg anime\" href=\"#\" role=\"button\">Venez</a>
-        </p> 
-      </div>
-  </div>
-  <div class=\"container\">
-    <hr class=\"my-5\">
-    <h2 class=\"h1 mt-3 mb-4 text-white\">Derniers événements :</h2>
-    <div class=\"row\">
-      <div class=\"col-md-4 py-5\">
-        <div class=\"card border-primary mb-3 \" style=\"max-width: 20rem;\">
-          <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
-            <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
-            <div class=\"card-body\">
-              <p class=\"card-text\">Voila l'annèe viens juste de debuter, <strong>n'oubliez pas vous inscrire</strong></p>
-              <a href=\"#\" class=\"btn btn-info\">Plus d'info</a>
-            </div>
-        </div>
-      </div>
-      <div class=\"col-md-4 py-5\">
-        <div class=\"card mb-3\" style=\"max-width: 20rem;\">
-          <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
-            <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
-            <div class=\"card-body\">
-              <p class=\"card-text\">Voila l'annèe viens juste de debuter, <strong>n'oubliez pas vous inscrire</strong></p>
-              <a href=\"#\" class=\"btn btn-info\">Plus d'info</a>
-            </div>
-        </div>
-      </div>
-      <div class=\"col-md-4 py-5\">
-        <div class=\"card border-primary mb-3\" style=\"max-width: 20rem;\">
-          <div class=\"card-header text-center\"><h4 class=\"card-title\">Reprise des entrainements :</h4></div>
-            <img src=\"http://placehold.it/200x200\" alt=\"Image de tennis\" style=\"height: 200px; width: 100%; display: block\"> 
-            <div class=\"card-body\">
-              <p class=\"card-text\">Voila l'annèe viens juste de debuter, <strong>n'oubliez pas vous inscrire</strong></p>
-              <a href=\"#\" class=\"btn btn-info\">Plus d'info</a>
-            </div>
-        </div>
-      </div>
+  <section class=\"container-fluid banner\">
+    <div class=\"bann\">
+    
+    <div class=\"inner-banner\">
+      <h1>Tennis Club Saussan</h1>
+      <hr class=\"separator\">
+      <p class=\"justify-content-center\">
+      Rejoignez notre club de <strong>tennis</strong>,vous pourrez apprendre à jouer dans un cadre familliale ou progresser grâce au compétence de notre entraineur.<br>
+      Nos cours commencent à partir de 17h, Génial pour vos enfants aprés l'école on pratique le tennis le tout dans la bonne humeur....
+      </p>
+      <button class=\"btn btn-banner\"><a href=\"{{ path('contact_create')}}\" class=\"text-dark\">Contactez-nous</a></button>
     </div>
-  </div>
-</div>      
-{% endblock %}
-
-", "home.html.twig", "/var/www/site/tcs/templates/home.html.twig");
+    </div>
+  </section>
+  <section class=\"container-fluid about\">
+    <hr class=\"separator\">
+    <div class=\"container\">
+        <h2>À propos de nous</h2>
+        <div class=\"row\">
+            <div class=\"col-md-4 col-lg-4 col-xs-12 col-sm-12 city\">
+                <img src=\"/img/ball.jpg\" alt=\"balle de tennis\">
+            </div>
+            <div class=\"col-md-4 col-lg-4 col-xs-12 col-sm-12 reprise\">
+                <img src=\"/img/reprise.jpg\" alt=\"joueur de tennis\">
+            </div>
+            <div class=\"col-md-4 col-lg-4 col-xs-12 col-sm-12 texte\">
+                <p>
+                  Nous sommes une <strong>association sportive</strong> crée en 1983,notre nombre s'eleve à 80 adhérents.
+                  Les enfants peuvent commencer à partir de 5 ans pour faire un an de découvert du tennis avec un apprentissage ludique.
+                  Nous possédons 3 terrains (2 en dur et 1 en gazon synthétique) et il est possible de <strong>réserver le terrain</strong> 
+                  à partir du site pour les adhérents du club, et bien sur en fonction des entrainements,il y aura toujours un terrain pour exercer
+                  votre passion.
+                  n'hesitez pas à nous <a href=\"{{ path('contact_create')}}\">contacter</a> pour avoir des renseignements complémentaire, on vous répondra .....   
+                </p>
+            </div> 
+        </div>
+    </div>
+  </section>
+  <section class=\"container-fluid contact\">
+    <div class=\"container\">
+        <div class=\"row\">
+          <div class=\"col-md-6 col-lg-6 col-sx-12 col-sm-12 joie\">
+            <img src=\"/img/joie.jpg\" alt=\"joueur de tennis\" >
+          </div>
+          <div class=\"col-md-5 col-lg-6 col-sx-12 col-sm-12 \">
+            <div class=\"contact-text\">
+              <h2>Contact :</h2>
+                <ul>
+                  <li>président: MR Raspaud Frédéric</li>
+                  <li>Adresse :</li>
+                  <li>  6 Allée de Maguelone</li>
+                  <li>      34570 Saussan</li>
+                  <li>Téléphone : <li>
+                        <li>04/67/27/33/10</li>
+              </p>
+            </div>    
+          </div>
+        </div>
+    </div>
+  </section>
+{% endblock %}", "home.html.twig", "/var/www/site/tcs/templates/home.html.twig");
     }
 }

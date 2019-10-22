@@ -3,19 +3,21 @@
 {% block title %} Création d'article {% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 bg-transparent">
-                <h1 class="text-center ">Créer un nouveau article pour le site :</h1>
-                <div class="shadow p-3 mb-5 rouded">
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <button type="submit" class="btn btn-primary">Créer l'article</button>
-            {{ form_end(form) }}
+            <div class="col-md-3">
+                <img src="/img/logo.jpg" alt="logo club">
+            </div>
+            <div class="col-md-7 bg-transparent">
+                <h1 class="text-center ">Créer un événement pour le site :</h1>
+                <div class="shadow p-3 mb-5 rounded">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary">Créer</button>
+                    {{ form_end(form) }}
                 </div>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
         </div>    
     </div>
 {% endblock %}

@@ -48,40 +48,46 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 <html>
     <head>
         <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+
         <title>";
-        // line 5
+        // line 7
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+
+        <link href=\"https://fonts.googleapis.com/css?family=Cinzel&display=swap\" rel=\"stylesheet\">
         <link rel=\"stylesheet\" href=\"/css/bootstrap.min.css\">
         <link rel=\"stylesheet\" href=\"/css/style.css\">
+
+        
         ";
-        // line 8
+        // line 14
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 9
+        // line 15
         echo "    </head>
     <body>
         ";
-        // line 11
-        $this->loadTemplate("partials/header.html.twig", "base.html.twig", 11)->display($context);
-        // line 12
+        // line 17
+        $this->loadTemplate("partials/header.html.twig", "base.html.twig", 17)->display($context);
+        // line 18
         echo "
         ";
-        // line 13
+        // line 19
         $this->displayBlock('body', $context, $blocks);
-        // line 14
+        // line 20
         echo "
         ";
-        // line 15
-        $this->loadTemplate("partials/footer.html.twig", "base.html.twig", 15)->display($context);
-        // line 16
+        // line 21
+        $this->loadTemplate("partials/footer.html.twig", "base.html.twig", 21)->display($context);
+        // line 22
         echo "        
         <script src=\"/js/jquery.min.js\"></script>
         <script src=\"/js/pooper.min.js\"></script>
         <script src=\"/js/bootstrap.min.js\"></script>
         ";
-        // line 20
+        // line 26
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 21
+        // line 27
         echo "    </body>
 </html>
 ";
@@ -93,7 +99,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 5
+    // line 7
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -112,7 +118,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 8
+    // line 14
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -130,7 +136,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 13
+    // line 19
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -148,7 +154,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 20
+    // line 26
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -178,7 +184,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     public function getDebugInfo()
     {
-        return array (  152 => 20,  134 => 13,  116 => 8,  97 => 5,  85 => 21,  83 => 20,  77 => 16,  75 => 15,  72 => 14,  70 => 13,  67 => 12,  65 => 11,  61 => 9,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  158 => 26,  140 => 19,  122 => 14,  103 => 7,  91 => 27,  89 => 26,  83 => 22,  81 => 21,  78 => 20,  76 => 19,  73 => 18,  71 => 17,  67 => 15,  65 => 14,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -187,9 +193,15 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 <html>
     <head>
         <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+
         <title>{% block title %}TCS{% endblock %}</title>
+
+        <link href=\"https://fonts.googleapis.com/css?family=Cinzel&display=swap\" rel=\"stylesheet\">
         <link rel=\"stylesheet\" href=\"/css/bootstrap.min.css\">
         <link rel=\"stylesheet\" href=\"/css/style.css\">
+
+        
         {% block stylesheets %}{% endblock %}
     </head>
     <body>

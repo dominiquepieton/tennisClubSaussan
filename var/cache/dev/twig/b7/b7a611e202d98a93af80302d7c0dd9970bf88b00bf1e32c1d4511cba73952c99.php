@@ -86,47 +86,50 @@ class __TwigTemplate_d108f88ea72d76a509f47c706b1f32272827b338b512bfd8299957f9d67
 
         // line 6
         echo "    
-    <div class=\"ad-title\" style=\"background-image : url(";
-        // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "image", [], "any", false, false, false, 7), "html", null, true);
-        echo ")\">
-        <div class=\"container\">
+    <div class=\"container-fluid\">
+        <div class=\"show-banner\">
+            <img src=\"/img/1.jpg\" alt=\"joueuse de tennis\" >
+        </div>
+        <div class=\"show-bann\">
             <h1>";
-        // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 9, $this->source); })()), "title", [], "any", false, false, false, 9), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 12, $this->source); })()), "title", [], "any", false, false, false, 12), "html", null, true);
         echo "</h1>
         </div>
     </div>
-    <div class=\"container\">
+    <div class=\"container-fluid bg-light\">
         <div class=\"row\">
-            <div class=\"col-md-9 mb-3\">
-                ";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 15, $this->source); })()), "content", [], "any", false, false, false, 15), "html", null, true);
-        echo "
-                ";
-        // line 16
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 16, $this->source); })()), "dateCreated", [], "any", false, false, false, 16), "d/m/Y"), "html", null, true);
-        echo "
+            <div class=\"col-md-4 col-lg-4 col-sx-12 col-sm-12 show-img mt-5\">
+                <img src=\"/img/1.jpg\" alt=\"joueuse de tennis\" >
             </div>
-            <div class=\"col-md-3 border-left\">
+            <div class=\"col-md-6 col-lg-6 col-sx-12 col-sm-12 show-text\">
+                <p>";
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 21, $this->source); })()), "content", [], "any", false, false, false, 21), "html", null, true);
+        echo "</p>
+                <p>";
+        // line 22
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 22, $this->source); })()), "dateCreated", [], "any", false, false, false, 22), "d/m/Y"), "html", null, true);
+        echo "</p>
+            </div>
+            <div class=\"col-md-2 col-lg-2 col-sx-12 col-sm-12 border-left\">
                 <h5>Les articles :</h5>
                 <ul>
                 ";
-        // line 21
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["article"]);
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 22
+            // line 28
             echo "                    <li><a href=\"#\" class=\"link\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 22, $this->source); })()), "title", [], "any", false, false, false, 22), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 28, $this->source); })()), "title", [], "any", false, false, false, 28), "html", null, true);
             echo "</a></li>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 30
         echo "                </ul>
             </div>
         </div>
@@ -155,7 +158,7 @@ class __TwigTemplate_d108f88ea72d76a509f47c706b1f32272827b338b512bfd8299957f9d67
 
     public function getDebugInfo()
     {
-        return array (  130 => 24,  121 => 22,  117 => 21,  109 => 16,  105 => 15,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  133 => 30,  124 => 28,  120 => 27,  112 => 22,  108 => 21,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -166,18 +169,24 @@ class __TwigTemplate_d108f88ea72d76a509f47c706b1f32272827b338b512bfd8299957f9d67
 
 {% block body %}
     
-    <div class=\"ad-title\" style=\"background-image : url({{article.image}})\">
-        <div class=\"container\">
+    <div class=\"container-fluid\">
+        <div class=\"show-banner\">
+            <img src=\"/img/1.jpg\" alt=\"joueuse de tennis\" >
+        </div>
+        <div class=\"show-bann\">
             <h1>{{article.title}}</h1>
         </div>
     </div>
-    <div class=\"container\">
+    <div class=\"container-fluid bg-light\">
         <div class=\"row\">
-            <div class=\"col-md-9 mb-3\">
-                {{ article.content }}
-                {{ article.dateCreated | date('d/m/Y')}}
+            <div class=\"col-md-4 col-lg-4 col-sx-12 col-sm-12 show-img mt-5\">
+                <img src=\"/img/1.jpg\" alt=\"joueuse de tennis\" >
             </div>
-            <div class=\"col-md-3 border-left\">
+            <div class=\"col-md-6 col-lg-6 col-sx-12 col-sm-12 show-text\">
+                <p>{{ article.content }}</p>
+                <p>{{ article.dateCreated | date('d/m/Y')}}</p>
+            </div>
+            <div class=\"col-md-2 col-lg-2 col-sx-12 col-sm-12 border-left\">
                 <h5>Les articles :</h5>
                 <ul>
                 {% for article in article %}

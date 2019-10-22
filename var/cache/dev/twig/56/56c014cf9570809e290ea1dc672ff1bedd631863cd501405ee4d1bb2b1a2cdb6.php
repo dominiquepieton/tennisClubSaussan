@@ -86,26 +86,32 @@ class __TwigTemplate_05bc0b0ca7d565082dac93960c4a24cf1c1f50547334145d55295e6cd2d
 
         // line 6
         echo "
-    <div class=\"container\">
+    <div class=\"container-fluid\">
         <div class=\"row\">
-            <div class=\"col-md-2\">&nbsp;</div>
-            <div class=\"col-md-7\">
+            <div class=\"col-md-2\">
+                <img src=\"/img/logo.jpg\"  alt=\"logo\">
+            </div>
+            <div class=\"col-md-7 bg-transparent\">
+            <div class=\"shadow p-3 mb-5 mx-auto\">
         <h1>Inscription d'un nouveau adhérent :</h1>
         ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start');
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_start');
         echo "
         ";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'widget');
+        // line 16
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), 'widget');
         echo "
         <button type=\"submit\" class=\"btn btn-primary\">Inscrire</button>
         ";
-        // line 15
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_end');
+        // line 18
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_end');
         echo "
+            </div>    
             </div>
-            <div class=\"col-md-3\">&nbsp;</div>
+            <div class=\"col-md-3 adherent\">
+                <img src=\"/img/1.jpg\" alt=\"\" >
+            </div>
         </div>
     </div>
 ";
@@ -129,7 +135,7 @@ class __TwigTemplate_05bc0b0ca7d565082dac93960c4a24cf1c1f50547334145d55295e6cd2d
 
     public function getDebugInfo()
     {
-        return array (  105 => 15,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  108 => 18,  103 => 16,  99 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -140,17 +146,23 @@ class __TwigTemplate_05bc0b0ca7d565082dac93960c4a24cf1c1f50547334145d55295e6cd2d
 
 {% block body %}
 
-    <div class=\"container\">
+    <div class=\"container-fluid\">
         <div class=\"row\">
-            <div class=\"col-md-2\">&nbsp;</div>
-            <div class=\"col-md-7\">
+            <div class=\"col-md-2\">
+                <img src=\"/img/logo.jpg\"  alt=\"logo\">
+            </div>
+            <div class=\"col-md-7 bg-transparent\">
+            <div class=\"shadow p-3 mb-5 mx-auto\">
         <h1>Inscription d'un nouveau adhérent :</h1>
         {{ form_start(form) }}
         {{ form_widget(form) }}
         <button type=\"submit\" class=\"btn btn-primary\">Inscrire</button>
         {{ form_end(form) }}
+            </div>    
             </div>
-            <div class=\"col-md-3\">&nbsp;</div>
+            <div class=\"col-md-3 adherent\">
+                <img src=\"/img/1.jpg\" alt=\"\" >
+            </div>
         </div>
     </div>
 {% endblock %}", "admin/account/registration.html.twig", "/var/www/site/tcs/templates/admin/account/registration.html.twig");

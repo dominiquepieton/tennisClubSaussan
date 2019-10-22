@@ -18,12 +18,12 @@ class ArticleType extends ApplicationType
     {
         $builder
             ->add('title',TextType::class, $this->getConfiguration("Titre", "Entrez un titre"))
-            ->add('slug',TextType::class, $this->getConfiguration("Chaine URL", "Adresse web : (automatique)"))
-            ->add('intro',TextType::class, $this->getConfiguration("Introduction", "Entrez un résumé de l'article"))
-            ->add('content',TextareaType::class, $this->getConfiguration("Article", "Entrez votre texte pour l'article"))
+            ->add('slug',TextType::class, $this->getConfiguration("evenement", "nom d'evenement"))
+            ->add('intro',TextType::class, $this->getConfiguration("Introduction limite de 255 caractéres maximun", "Entrez un résumé de l'article"))
+            ->add('content',TextareaType::class, $this->getConfiguration("contenu", "Entrez votre texte pour l'article"))
             ->add('dateCreated',DateType::class, [
                 'widget' => 'single_text',
-                'label' => 'date de creation'
+                'label' => 'date du jour'
                 ])
             ->add('image',UrlType::class, $this->getConfiguration("Image :", "Entrez une url des votre image"));
         

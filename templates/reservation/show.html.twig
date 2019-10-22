@@ -5,10 +5,9 @@
 {% block body %}
     <div class="container">
         <div class="title-reservation bg rounded mb-5">
-            <h1 class="text-center">Reservation n° : {{reservation.id}}</h1>
-            <p class="text-center"> voila toutes vos reservation que vous avez faites</p>
+            <h1 class="text-center">Reservation :</h1>
         </div>
-        <div class="container w-25">
+        <div class="container w-50">
             <table class="table table-borderless bg-light shadow p-3 mb-5 rounded">
                 <tbody>
                     <tr>
@@ -34,13 +33,10 @@
                 </tbody>
             </table>
         </div>
-        <div class="mx-auto">
+        <div class="d-flex justify-content-center">
             <ul class="nav">
-                <li class="nav-item mx-auto">
-                    <a class="btn btn-dark" href="{{ path('homepage') }}">Retour</a>
-                </li>
-                <li class="nav-item mx-auto">
-                    <a class="btn btn-dark" href="{{ path('reservation_edit',{'id' : reservation.id}) }}">réedit</a>
+                <li class="nav-item mr-5">
+                    <a class="btn btn-dark" href="{{ path('homepage') }}">Valider</a>
                 </li>
                 <li class="nav-item"> 
                     <a class="btn btn-danger" href="{{ path('reservation_delete',{'id' : reservation.id}) }}" onclick="return confirm(`Êtes-vous sur de vouloir supprimer votre réservation ?`)">delete</a>

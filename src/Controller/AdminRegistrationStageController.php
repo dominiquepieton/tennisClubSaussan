@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\service\Pagination;
 use App\Entity\ResgistrationStage;
 use App\Form\AdminRegistrationStageType;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,12 +17,17 @@ class AdminRegistrationStageController extends AbstractController
     /**
      * Permet de voir toutes les inscription au stage
      * 
-     * @Route("/admin/stage", name="admin_stage_index")
+     * @Route("/admin/stage/{page<\d+>?1}", name="admin_stage_index")
      */
-    public function index(ResgistrationStageRepository $repo)
+    public function index(ResgistrationStageRepository $repo, $page, Pagination $pagination)
     {
+        $pagination->setEntityClass(ResgistrationStage::class)
+                   ->setPage($page); 
+
         return $this->render('admin/stage/index.html.twig', [
-            'registrationStage' =>$repo->findAll()
+            'registrationStage' =>$pagination->getData(),
+            'pages'  => $pagination->getPages(),
+            'page'   => $page
         ]);
     }
 
@@ -116,9 +122,9 @@ class AdminRegistrationStageController extends AbstractController
    /**
      * Permet de supprimer une pré-inscription
      * 
-     * @Route("/reservation/delete/{id}", name="admin_stage_delete")
+     * @Route("/admin/stage/delete/{id}", name="admin_stage_delete")
      * 
-     * @param ResgistrationStage $preRegistration
+     * @param ResgistrationStage $Registration
      * @param ObjectManager $manager
      * @return Response
      */
@@ -130,7 +136,7 @@ class AdminRegistrationStageController extends AbstractController
         //message flash
         $this->addFlash(
             'success',
-            "La réservation a bien été supprimée !"
+            "L'inscription au stage a bien été supprimée !"
         );
 
         // fait une redirection aprés avoir supprimer

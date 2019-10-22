@@ -1,13 +1,18 @@
 {% extends 'admin/base.html.twig' %}
 
-{% block title %}Contactez-nous !{% endblock %}
+{% block title %}Message reçus{% endblock %}
 
 {% block body %}
     <h1>Message reçu :</h1>
     <div class="container-fluid">
-        <div class="row">    
-            {% for contacts in contact %}
-                <div class="col-md-2">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="/img/logo.jpg" alt="logo club"> 
+            </div>
+            <div class="col-md-10">
+            <div class="row">
+                {% for contacts in contact %}
+                <div class="col-md-4">
                     <div class="card" style="width: 18rem;">
                         <div class="card-header text-center">
                             <h5 class="card-title">{{ contacts.firstname }}  {{ contacts.lastname }}</h5>
@@ -17,13 +22,49 @@
                             <p class="card-text">{{ contacts.date | date('d/m/Y')}}</p>
                             <p class="card-text">{{ contacts.message }}</p>
                         
-                            <a href="#" class="btn btn-dark">OUVRIR</a>
-                            <a href="#" class="card-link">Another link</a>
+                            <a class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">OUVRIR</a>
+                            <a href="{{ path('admin_contact_delete' ,{'id': contacts.id }) }}" class="btn btn-danger" onclick="return confirm(`Êtes-vous sur de vouloir supprimer le message ?`)">supprimer</a>
                         </div>
                     </div>
-                </div>    
-            {% endfor %}       
+ 
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title" id="exampleModalCenterTitle">votre message</h1>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {% include('contact/show.html.twig') %}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                {% endfor %}         
+            </div>
+            </div> 
         </div>
-    </div>
-
+        <div class="d-flex justify-content-center mt-4">
+            <ul class="pagination">
+                <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                    <a class="page-link" href="{{ path('admin_contact_index', {'page': page - 1 }) }}">&laquo;</a>
+                </li>
+                {% for i in 1..pages %}
+                <li class="page-item {% if page == i %}active{% endif %}">
+                    <a class="page-link" href="{{ path('admin_contact_index', {'page': i }) }}">{{ i }}</a>
+                </li>
+                {% endfor %}
+                <li class="page-item {% if page == pages %}disabled{% endif %}">
+                    <a class="page-link" href="{{ path('admin_contact_index', {'page': page + 1 }) }}">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+    </div>    
 {% endblock %}

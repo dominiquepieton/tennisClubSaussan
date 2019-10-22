@@ -3,10 +3,12 @@
 {% block title %}Pré-inscription annuelle{% endblock %}
 
 {% block body %}
-        <div class="container">
+        <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 bg-transparent">
+            <div class="col-md-3">
+                <img src="/img/logo.jpg" alt="logo club">
+            </div>
+            <div class="col-md-8 bg-transparent">
                 <h1 class="text-center ">Créer une pré-inscription annuelle :</h1>
                 <div class="shadow p-3 mb-5 rouded">
             {{ form_start(form) }}
@@ -16,7 +18,7 @@
             {{ form_end(form) }}
                 </div>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-1"></div>
         </div>    
     </div>
 {% endblock %}

@@ -85,28 +85,30 @@ class __TwigTemplate_7f472c0b717096e078da7509c546b3381e819f0eb7b749593eae40351fa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div class=\"container\">
+        echo "    <div class=\"container-fluid\">
         <div class=\"row\">
-            <div class=\"col-md-3\"></div>
-            <div class=\"col-md-6 bg-transparent\">
-                <h1 class=\"text-center \">Créer un nouveau article pour le site :</h1>
-                <div class=\"shadow p-3 mb-5 rouded\">
-            ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start');
+            <div class=\"col-md-3\">
+                <img src=\"/img/logo.jpg\" alt=\"logo club\">
+            </div>
+            <div class=\"col-md-7 bg-transparent\">
+                <h1 class=\"text-center \">Créer un événement pour le site :</h1>
+                <div class=\"shadow p-3 mb-5 rounded\">
+                    ";
+        // line 14
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'form_start');
         echo "
-            ";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'widget');
-        echo "
-            <button type=\"submit\" class=\"btn btn-primary\">Créer l'article</button>
-            ";
+                    ";
         // line 15
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_end');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'widget');
+        echo "
+            <button type=\"submit\" class=\"btn btn-primary\">Créer</button>
+                    ";
+        // line 17
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'form_end');
         echo "
                 </div>
             </div>
-            <div class=\"col-md-3\"></div>
+            <div class=\"col-md-2\"></div>
         </div>    
     </div>
 ";
@@ -130,7 +132,7 @@ class __TwigTemplate_7f472c0b717096e078da7509c546b3381e819f0eb7b749593eae40351fa
 
     public function getDebugInfo()
     {
-        return array (  105 => 15,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  107 => 17,  102 => 15,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -140,19 +142,21 @@ class __TwigTemplate_7f472c0b717096e078da7509c546b3381e819f0eb7b749593eae40351fa
 {% block title %} Création d'article {% endblock %}
 
 {% block body %}
-    <div class=\"container\">
+    <div class=\"container-fluid\">
         <div class=\"row\">
-            <div class=\"col-md-3\"></div>
-            <div class=\"col-md-6 bg-transparent\">
-                <h1 class=\"text-center \">Créer un nouveau article pour le site :</h1>
-                <div class=\"shadow p-3 mb-5 rouded\">
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <button type=\"submit\" class=\"btn btn-primary\">Créer l'article</button>
-            {{ form_end(form) }}
+            <div class=\"col-md-3\">
+                <img src=\"/img/logo.jpg\" alt=\"logo club\">
+            </div>
+            <div class=\"col-md-7 bg-transparent\">
+                <h1 class=\"text-center \">Créer un événement pour le site :</h1>
+                <div class=\"shadow p-3 mb-5 rounded\">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+            <button type=\"submit\" class=\"btn btn-primary\">Créer</button>
+                    {{ form_end(form) }}
                 </div>
             </div>
-            <div class=\"col-md-3\"></div>
+            <div class=\"col-md-2\"></div>
         </div>    
     </div>
 {% endblock %}", "admin/article/new.html.twig", "/var/www/site/tcs/templates/admin/article/new.html.twig");

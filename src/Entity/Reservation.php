@@ -39,7 +39,7 @@ class Reservation
      * @ORM\Column(type="integer")
      * 
      * @Assert\LessThan(propertyPath="heureFin", message ="l'heure ne peut pas être plus grande que l'heure de fin")
-     * 
+     * @Assert\GreaterThan(value = 7, message ="l'heure est trop petit")
      */
     private $heureDebut;
 
@@ -48,7 +48,7 @@ class Reservation
      * @ORM\Column(type="integer")
      * 
      * @Assert\GreaterThan(propertyPath="heureDebut",message="l'heure ne peut pas être plus petite que l'heure de debut")
-     * 
+     *@Assert\LessThan(value = 22,message="l'heure est trop grand pas possible") 
      *
      */
     private $heureFin;

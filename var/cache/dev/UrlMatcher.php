@@ -20,17 +20,13 @@ return [
         '/account/password-update' => [[['_route' => 'account_password', '_controller' => 'App\\Controller\\AccountController::updatePassword'], null, null, null, false, false, null]],
         '/admin/login' => [[['_route' => 'admin_account_login', '_controller' => 'App\\Controller\\AdminAccountController::login'], null, null, null, false, false, null]],
         '/admin/logout' => [[['_route' => 'admin_account_logout', '_controller' => 'App\\Controller\\AdminAccountController::logout'], null, null, null, false, false, null]],
-        '/admin/adherents' => [[['_route' => 'admin_adherent_index', '_controller' => 'App\\Controller\\AdminAdherentController::index'], null, null, null, false, false, null]],
         '/ad/article' => [[['_route' => 'index_article', '_controller' => 'App\\Controller\\AdminArticleController::index'], null, null, null, false, false, null]],
+        '/admin/article/index' => [[['_route' => 'admin_index_article', '_controller' => 'App\\Controller\\AdminArticleController::adminIndex'], null, null, null, false, false, null]],
         '/admin/article/new' => [[['_route' => 'admin_article_create', '_controller' => 'App\\Controller\\AdminArticleController::create'], null, null, null, false, false, null]],
-        '/admin/contact' => [[['_route' => 'admin_contact_index', '_controller' => 'App\\Controller\\AdminContactController::index'], null, null, null, false, false, null]],
         '/contact/new' => [[['_route' => 'contact_create', '_controller' => 'App\\Controller\\AdminContactController::create'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin_dashboard', '_controller' => 'App\\Controller\\AdminDashboardController::index'], null, null, null, false, false, null]],
-        '/admin/registration' => [[['_route' => 'admin_registration_index', '_controller' => 'App\\Controller\\AdminPreRegistrationController::index'], null, null, null, false, false, null]],
         '/admin/registration/new' => [[['_route' => 'admin_registration_create', '_controller' => 'App\\Controller\\AdminPreRegistrationController::create'], null, null, null, false, false, null]],
-        '/admin/stage' => [[['_route' => 'admin_stage_index', '_controller' => 'App\\Controller\\AdminRegistrationStageController::index'], null, null, null, false, false, null]],
         '/admin/stage/new' => [[['_route' => 'admin_stage_create', '_controller' => 'App\\Controller\\AdminRegistrationStageController::create'], null, null, null, false, false, null]],
-        '/admin/res' => [[['_route' => 'admin_res_index', '_controller' => 'App\\Controller\\AdminResController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'homepage', '_controller' => 'App\\Controller\\HomeController::home'], null, null, null, false, false, null]],
         '/reservation' => [[['_route' => 'reservation', '_controller' => 'App\\Controller\\ReservationController::index'], null, null, null, false, false, null]],
         '/reservation/new' => [[['_route' => 'reservation_create', '_controller' => 'App\\Controller\\ReservationController::create'], null, null, null, false, false, null]],
@@ -53,33 +49,60 @@ return [
                     .')'
                 .')'
                 .'|/ad(?'
-                    .'|/([^/]++)(*:184)'
                     .'|min/(?'
-                        .'|registration/(?'
-                            .'|([^/]++)(*:223)'
-                            .'|edit/([^/]++)(*:244)'
+                        .'|a(?'
+                            .'|dherent(?'
+                                .'|s(?:/(\\d+))?(*:208)'
+                                .'|/([^/]++)/delete(*:232)'
+                            .')'
+                            .'|rticle/([^/]++)/delete(*:263)'
                         .')'
-                        .'|stage/(?'
-                            .'|([^/]++)(*:270)'
-                            .'|edit/([^/]++)(*:291)'
+                        .'|contact(?'
+                            .'|(?:/(\\d+))?(*:293)'
+                            .'|/(?'
+                                .'|([^/]++)(*:313)'
+                                .'|delete/([^/]++)(*:336)'
+                            .')'
+                        .')'
+                        .'|re(?'
+                            .'|gistration(?'
+                                .'|(?:/(\\d+))?(*:375)'
+                                .'|/(?'
+                                    .'|([^/]++)(*:395)'
+                                    .'|edit/([^/]++)(*:416)'
+                                .')'
+                            .')'
+                            .'|s(?'
+                                .'|(?:/(\\d+))?(*:441)'
+                                .'|/([^/]++)/(?'
+                                    .'|edit(*:466)'
+                                    .'|delete(*:480)'
+                                .')'
+                            .')'
+                        .')'
+                        .'|stage(?'
+                            .'|(?:/(\\d+))?(*:510)'
+                            .'|/(?'
+                                .'|([^/]++)(*:530)'
+                                .'|edit/([^/]++)(*:551)'
+                                .'|delete/([^/]++)(*:574)'
+                            .')'
                         .')'
                     .')'
+                    .'|/([^/]++)(*:594)'
                 .')'
-                .'|/contact/([^/]++)(*:319)'
-                .'|/edit/([^/]++)(*:341)'
+                .'|/edit/([^/]++)(*:617)'
                 .'|/reservation/(?'
-                    .'|delete/([^/]++)(?'
-                        .'|(*:383)'
-                    .')'
+                    .'|delete/([^/]++)(*:656)'
                     .'|([^/]++)(?'
                         .'|/(?'
-                            .'|edit(*:411)'
-                            .'|delete(*:425)'
+                            .'|edit(*:683)'
+                            .'|delete(*:697)'
                         .')'
-                        .'|(*:434)'
+                        .'|(*:706)'
                     .')'
                 .')'
-                .'|/user/([^/]++)(*:458)'
+                .'|/user/([^/]++)(*:730)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -90,22 +113,29 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        184 => [[['_route' => 'article_show', '_controller' => 'App\\Controller\\AdminArticleController::show'], ['slug'], null, null, false, true, null]],
-        223 => [[['_route' => 'admin_registration_show', '_controller' => 'App\\Controller\\AdminPreRegistrationController::show'], ['id'], null, null, false, true, null]],
-        244 => [[['_route' => 'admin_registration_edit', '_controller' => 'App\\Controller\\AdminPreRegistrationController::edit'], ['id'], null, null, false, true, null]],
-        270 => [[['_route' => 'admin_stage_show', '_controller' => 'App\\Controller\\AdminRegistrationStageController::show'], ['id'], null, null, false, true, null]],
-        291 => [[['_route' => 'admin_stage_edit', '_controller' => 'App\\Controller\\AdminRegistrationStageController::edit'], ['id'], null, null, false, true, null]],
-        319 => [[['_route' => 'contact_show', '_controller' => 'App\\Controller\\AdminContactController::show'], ['id'], null, null, false, true, null]],
-        341 => [[['_route' => 'contact_edit', '_controller' => 'App\\Controller\\AdminContactController::edit'], ['id'], null, null, false, true, null]],
-        383 => [
-            [['_route' => 'admin_contact_delete', '_controller' => 'App\\Controller\\AdminContactController::delete'], ['id'], null, null, false, true, null],
-            [['_route' => 'admin_registration_delete', '_controller' => 'App\\Controller\\AdminPreRegistrationController::delete'], ['id'], null, null, false, true, null],
-            [['_route' => 'admin_stage_delete', '_controller' => 'App\\Controller\\AdminRegistrationStageController::delete'], ['id'], null, null, false, true, null],
-        ],
-        411 => [[['_route' => 'reservation_edit', '_controller' => 'App\\Controller\\ReservationController::edit'], ['id'], null, null, false, false, null]],
-        425 => [[['_route' => 'reservation_delete', '_controller' => 'App\\Controller\\ReservationController::delete'], ['id'], null, null, false, false, null]],
-        434 => [[['_route' => 'reservation_show', '_controller' => 'App\\Controller\\ReservationController::show'], ['id'], null, null, false, true, null]],
-        458 => [
+        208 => [[['_route' => 'admin_adherent_index', 'page' => '1', '_controller' => 'App\\Controller\\AdminAdherentController::index'], ['page'], null, null, false, true, null]],
+        232 => [[['_route' => 'admin_adherent_delete', '_controller' => 'App\\Controller\\AdminAdherentController::delete'], ['id'], null, null, false, false, null]],
+        263 => [[['_route' => 'admin_article_delete', '_controller' => 'App\\Controller\\AdminArticleController::delete'], ['id'], null, null, false, false, null]],
+        293 => [[['_route' => 'admin_contact_index', 'page' => '1', '_controller' => 'App\\Controller\\AdminContactController::index'], ['page'], null, null, false, true, null]],
+        313 => [[['_route' => 'admin_contact_show', '_controller' => 'App\\Controller\\AdminContactController::show'], ['id'], null, null, false, true, null]],
+        336 => [[['_route' => 'admin_contact_delete', '_controller' => 'App\\Controller\\AdminContactController::delete'], ['id'], null, null, false, true, null]],
+        375 => [[['_route' => 'admin_registration_index', 'page' => '1', '_controller' => 'App\\Controller\\AdminPreRegistrationController::index'], ['page'], null, null, false, true, null]],
+        395 => [[['_route' => 'admin_registration_show', '_controller' => 'App\\Controller\\AdminPreRegistrationController::show'], ['id'], null, null, false, true, null]],
+        416 => [[['_route' => 'admin_registration_edit', '_controller' => 'App\\Controller\\AdminPreRegistrationController::edit'], ['id'], null, null, false, true, null]],
+        441 => [[['_route' => 'admin_res_index', 'page' => '1', '_controller' => 'App\\Controller\\AdminResController::index'], ['page'], null, null, false, true, null]],
+        466 => [[['_route' => 'admin_res_edit', '_controller' => 'App\\Controller\\AdminResController::edit'], ['id'], null, null, false, false, null]],
+        480 => [[['_route' => 'admin_res_delete', '_controller' => 'App\\Controller\\AdminResController::delete'], ['id'], null, null, false, false, null]],
+        510 => [[['_route' => 'admin_stage_index', 'page' => '1', '_controller' => 'App\\Controller\\AdminRegistrationStageController::index'], ['page'], null, null, false, true, null]],
+        530 => [[['_route' => 'admin_stage_show', '_controller' => 'App\\Controller\\AdminRegistrationStageController::show'], ['id'], null, null, false, true, null]],
+        551 => [[['_route' => 'admin_stage_edit', '_controller' => 'App\\Controller\\AdminRegistrationStageController::edit'], ['id'], null, null, false, true, null]],
+        574 => [[['_route' => 'admin_stage_delete', '_controller' => 'App\\Controller\\AdminRegistrationStageController::delete'], ['id'], null, null, false, true, null]],
+        594 => [[['_route' => 'article_show', '_controller' => 'App\\Controller\\AdminArticleController::show'], ['slug'], null, null, false, true, null]],
+        617 => [[['_route' => 'contact_edit', '_controller' => 'App\\Controller\\AdminContactController::edit'], ['id'], null, null, false, true, null]],
+        656 => [[['_route' => 'admin_registration_delete', '_controller' => 'App\\Controller\\AdminPreRegistrationController::delete'], ['id'], null, null, false, true, null]],
+        683 => [[['_route' => 'reservation_edit', '_controller' => 'App\\Controller\\ReservationController::edit'], ['id'], null, null, false, false, null]],
+        697 => [[['_route' => 'reservation_delete', '_controller' => 'App\\Controller\\ReservationController::delete'], ['id'], null, null, false, false, null]],
+        706 => [[['_route' => 'reservation_show', '_controller' => 'App\\Controller\\ReservationController::show'], ['id'], null, null, false, true, null]],
+        730 => [
             [['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::index'], ['firstName'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

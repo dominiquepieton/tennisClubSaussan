@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\GreaterThan;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
@@ -33,6 +35,7 @@ class Contact
 
     /**
      * @ORM\Column(type="text")
+     *
      */
     private $message;
 

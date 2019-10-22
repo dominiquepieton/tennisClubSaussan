@@ -18,7 +18,10 @@ class AdminPreRegistrationType extends ApplicationType
         $builder
             ->add('firstname', TextType::class, $this->getConfiguration('Prénom', 'Entrez le Prénom....'))
             ->add('lastname', TextType::class, $this->getConfiguration('Nom', 'Entrez le Nom de famille...'))
-            ->add('birthday', DateType::class, $this->getConfiguration('Date de naissance','Entrez la date de naissance...'))
+            ->add('birthday', DateType::class, [
+                'widget' => 'single_text',
+                'label' => 'date de naissance'
+                ])
             ->add('email', TextType::class, $this->getConfiguration('Email','Entrez un email valide...'))
             ->add('aptSport', ChoiceType::class, [
                 'choices'  => [

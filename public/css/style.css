@@ -1,81 +1,246 @@
-div.container, div.container-fluid{
-    margin-top:20px;
+/* base 
+    font-family: 'Cinzel', serif;
+    gris clair-> #c9cbcb 
+    vert -> #b8f214 
+    gris foncé -> ##1B1E1C     
+*/
+/****************    home page **********************/
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Cinzel', serif;
 }
 
-.bg-home{
-    background-image: url('/img/fond.jpg');
+.container-fluid{
+    padding: 0;
+    margin:  0;
+}
+
+.separator{
+    height: 2px;
+    width: 50%;
+    border: none;
+    box-shadow: none;
+    background-color: #b8f214;
+}
+
+/* banniere */
+.bann {
+    background-image:url('/img/fond.jpg');
+    width :100%;
+    max-width: 100%;
+    height: 900px;
+    max-height: 100%;
     background-size: cover;
 }
 
-div.reservation-hero{
-    padding: 4em;
+.inner-banner{
+    position: absolute;
+    top:30%;
+    width:100%;
+    text-align: center;
 }
 
-div.reservation-hero h1, div.reservation-hero p{
-    color: white;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+.inner-banner h1{
+    color:#ffffff;
+    text-shadow: 2px 2px 10px #000000;
+    font-weight: bold;   
 }
 
-div.title-reservation{
-    padding: 3em;
+.inner-banner p{
+    color:#ffffff;
+    text-shadow: 2px 2px 20px #000000;
 }
 
-
-div.title-reservation h1, div.title-reservation p{
-    color: white;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+.btn-banner{
+    background-color: #b8f214;
+    color : #000000;
 }
 
-.bg{
-    background-color: black;
+.btn-banner:hover{
+    background-color:#bed67b;
 }
 
-/* faire l'arrondi de l'avatar */
+/* about */
 
-.avatar {
-    max-width: 130px;
-    max-height: 130px;
-    border:solid 1px black;
-    border-radius: 50%;
-    box-shadow: 5px 1px 1px black;
+.about{
+    background-color: #c9cbcb;
+    width: 100%;
+    padding : 1%;
+    
 }
 
-.avatar-medium {
-    max-width: 65px;
-    max-height: 65px;
+.about h2{
+    font-weight: bold;
+    padding:2%;
+
 }
 
-.avatar-mini{
-    max-width: 32px;
-    max-height: 32px;
+.city{
+    width: 150px;
+    transform: rotate(-10deg);
+    /*box-shadow : 1px 1px 5px #000000;*/
 }
 
-/* formulaire */
-
-input[type="text"]{
-    background-color: #87CEFA;
+.reprise{
+    width: 300px;
+    transform: rotate(5deg);
 }
 
+.reprise p{
+    visibility: hidden;
+}
 
+.texte {
+    color:#000000;
 
-/* animation */
-.anime{
-	transition: all 2s;
+}
+.texte p{
+    padding:10%;
+    color:#000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow : 1px 1px 20px #ffffff;
+}
+
+/* contact */ 
+
+.contact{
+    width: 100%;
+    padding : 2%; 
+}
+
+.joie img{
+    box-shadow : 2px 2px 10px #000000;
+    transform: rotate(15deg);
+}
+
+.contact-text h2{
+    text-align: center;
+}
+
+.contact-text li{
+    text-decoration: none;
+    text-align: center;
+    list-style: none;
+}
+
+/****************************** evenement *******************************************/
+.header-article{
+    width:100%;
+    max-width:100%;
     position: relative;
-    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
-    -webkit-animation-delay: 3s;
-    animation: mymove 5s infinite;
-    animation-delay: 3s;
+}
+
+
+
+.title-article {
+    position: absolute;
+    top:50%;
+    width:100%;
+    text-align:center;
+    color:#ffffff;
+}
+
+/****************************************** article seul ************************************/
+.show-banner {
+    width: 100%;
+    max-width: 100%;
+    
 
 }
 
-@-webkit-keyframes mymove {
-    from {left: 0px;}
-    to {left: 200px;}
-  }
-  
-  @keyframes mymove {
-    from {left: 0px;}
-    to {left: 200px;}
-  }
+.show-banner img {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    position : relative;
+}
+
+.show-bann {
+    position: absolute;
+    top:20%;
+    width:100%;
+    text-align: center;
+    color:#ffffff;
+}
+
+.show-img img{
+    width: 600px;
+    margin-top:60%;
+    transform: rotate(-10deg);
+}
+
+.show-text {
+    margin-top:3%;
+    text-shadow: 2px 2px 10px #ffffff;
+    font-weight: bold;
+}
+
+/********************* contact ********************************************/
+
+.cont{
+    margin-top:10%;
+    margin-bottom: 0px;
+    transform: rotate(-10deg);
+}
+
+.cont img {
+    height:50%;
+    margin-left:30%;
+}
+
+.cont-form {
+    margin-top: 30%;
+    margin-bottom: 0px;
+
+}
+
+.adress-text li {
+    text-decoration: none;
+    text-align: center;
+    list-style: none;
+}
+
+.adress {
+    margin-top: 30%;
+    margin-right:90%;
+    margin-bottom: 0px;
+    
+
+}
+
+.adress img {
+    width:500px;
+
+    margin-right:90%;
+}
+
+
+
+/************** dashboard ********************************************/
+.nav-links{
+    margin-left:0px;
+    margin-right:0px;
+    
+}
+
+.carte a{
+    text-decoration: none;
+}
+
+/************************* adherent *************************************/
+
+.adherent img {
+    width: 450px;
+    transform: rotate(-20deg);
+    margin-top: 30%;
+}
+
+
+/************************ login user ****************************/
+.login{
+    margin-top: 5%;
+    margin-bottom: 9%;
+}
 

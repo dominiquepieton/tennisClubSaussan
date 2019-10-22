@@ -435,6 +435,10 @@
     </service>
     <service id="App\Controller\AdminResController" class="App\Controller\AdminResController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\AdminResController"/>
+      </call>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -515,6 +519,9 @@
     <service id="App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\service\Pagination" class="App\service\Pagination" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -1237,7 +1244,7 @@
       <argument></argument>
     </service>
     <service id="assets._default_package" class="Symfony\Component\Asset\PathPackage" public="false">
-      <argument></argument>
+      <argument>/assets</argument>
       <argument type="service" id="assets.empty_version_strategy"/>
       <argument type="service" id="assets.context"/>
     </service>
@@ -3893,8 +3900,8 @@
       <call method="setOptions">
         <argument type="collection">
           <argument key="login_path">admin_account_login</argument>
+          <argument key="default_target_path">admin_dashboard</argument>
           <argument key="always_use_default_target_path">false</argument>
-          <argument key="default_target_path">/</argument>
           <argument key="target_path_parameter">_target_path</argument>
           <argument key="use_referer">false</argument>
         </argument>
@@ -4956,7 +4963,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminRegistrationStageController" class="App\Controller\AdminRegistrationStageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminRegistrationStageController" class="App\Controller\AdminRegistrationStageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminRegistrationStageController" class="App\Controller\AdminRegistrationStageController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\AdminResController" class="App\Controller\AdminResController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminResController" class="App\Controller\AdminResController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminResController" class="App\Controller\AdminResController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminResController" class="App\Controller\AdminResController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5189,10 +5197,18 @@
         <argument key="util" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.w_YMdhQ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.MkYQhkN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="pagination" type="service" id="App\service\Pagination"/>
         <argument key="repo" type="service" id="App\Repository\AdherentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.X2y5U8b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="adherents" type="service" id=".errored..service_locator.X2y5U8b.App\Entity\Adherent"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
     <service id=".service_locator.hsWoe8a" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5205,6 +5221,20 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="article" type="service" id=".errored..service_locator.NUP9Hmn.App\Entity\Article"/>
+      </argument>
+    </service>
+    <service id=".service_locator.5aciI7K" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="article" type="service" id=".errored..service_locator.5aciI7K.App\Entity\Article"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.cJim291" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="pagination" type="service" id="App\service\Pagination"/>
+        <argument key="repo" type="service" id="App\Repository\ContactRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KCHKJ05" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5220,6 +5250,13 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.ca.lr_R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="pagination" type="service" id="App\service\Pagination"/>
+        <argument key="repo" type="service" id="App\Repository\PreRegistrationRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.Kw5txLV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5231,6 +5268,13 @@
       <argument type="collection">
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
         <argument key="preRegistration" type="service" id=".errored..service_locator.JPJWVg8.App\Entity\PreRegistration"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ED.u2GL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="pagination" type="service" id="App\service\Pagination"/>
+        <argument key="repo" type="service" id="App\Repository\ResgistrationStageRepository"/>
       </argument>
     </service>
     <service id=".service_locator.yzsP7J6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5246,9 +5290,10 @@
         <argument key="registrationStage" type="service" id=".errored..service_locator.ZfQYXUg.App\Entity\ResgistrationStage"/>
       </argument>
     </service>
-    <service id=".service_locator.oIzDkdn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.6GO0nSZ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="pagination" type="service" id="App\service\Pagination"/>
         <argument key="repo" type="service" id="App\Repository\ReservationRepository"/>
       </argument>
     </service>
@@ -5271,7 +5316,7 @@
         <argument key="adherent" type="service" id=".errored..service_locator.eLkT6Tb.App\Entity\Adherent"/>
       </argument>
     </service>
-    <service id=".service_locator.oMun1HL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.1TM4VTk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AccountController::login" type="service" id=".service_locator.oHXyyai"/>
@@ -5279,27 +5324,32 @@
         <argument key="App\Controller\AccountController::register" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\AccountController::updatePassword" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\AdminAccountController::login" type="service" id=".service_locator.kcjQ1sU"/>
-        <argument key="App\Controller\AdminAdherentController::index" type="service" id=".service_locator.w_YMdhQ"/>
+        <argument key="App\Controller\AdminAdherentController::delete" type="service" id=".service_locator.X2y5U8b"/>
+        <argument key="App\Controller\AdminAdherentController::index" type="service" id=".service_locator.MkYQhkN"/>
+        <argument key="App\Controller\AdminArticleController::adminIndex" type="service" id=".service_locator.hsWoe8a"/>
         <argument key="App\Controller\AdminArticleController::create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminArticleController::delete" type="service" id=".service_locator.5aciI7K"/>
         <argument key="App\Controller\AdminArticleController::index" type="service" id=".service_locator.hsWoe8a"/>
         <argument key="App\Controller\AdminArticleController::show" type="service" id=".service_locator.NUP9Hmn"/>
         <argument key="App\Controller\AdminContactController::create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AdminContactController::delete" type="service" id=".service_locator.EoCOyLv"/>
         <argument key="App\Controller\AdminContactController::edit" type="service" id=".service_locator.EoCOyLv"/>
-        <argument key="App\Controller\AdminContactController::index" type="service" id=".service_locator.KCHKJ05"/>
+        <argument key="App\Controller\AdminContactController::index" type="service" id=".service_locator.cJim291"/>
         <argument key="App\Controller\AdminContactController::show" type="service" id=".service_locator.KCHKJ05"/>
         <argument key="App\Controller\AdminDashboardController::index" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AdminPreRegistrationController::create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AdminPreRegistrationController::delete" type="service" id=".service_locator.JPJWVg8"/>
         <argument key="App\Controller\AdminPreRegistrationController::edit" type="service" id=".service_locator.JPJWVg8"/>
-        <argument key="App\Controller\AdminPreRegistrationController::index" type="service" id=".service_locator.Kw5txLV"/>
+        <argument key="App\Controller\AdminPreRegistrationController::index" type="service" id=".service_locator.ca.lr_R"/>
         <argument key="App\Controller\AdminPreRegistrationController::show" type="service" id=".service_locator.Kw5txLV"/>
         <argument key="App\Controller\AdminRegistrationStageController::create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AdminRegistrationStageController::delete" type="service" id=".service_locator.ZfQYXUg"/>
         <argument key="App\Controller\AdminRegistrationStageController::edit" type="service" id=".service_locator.ZfQYXUg"/>
-        <argument key="App\Controller\AdminRegistrationStageController::index" type="service" id=".service_locator.yzsP7J6"/>
+        <argument key="App\Controller\AdminRegistrationStageController::index" type="service" id=".service_locator.ED.u2GL"/>
         <argument key="App\Controller\AdminRegistrationStageController::show" type="service" id=".service_locator.yzsP7J6"/>
-        <argument key="App\Controller\AdminResController::index" type="service" id=".service_locator.oIzDkdn"/>
+        <argument key="App\Controller\AdminResController::delete" type="service" id=".service_locator.xJY1n8m"/>
+        <argument key="App\Controller\AdminResController::edit" type="service" id=".service_locator.xJY1n8m"/>
+        <argument key="App\Controller\AdminResController::index" type="service" id=".service_locator.6GO0nSZ"/>
         <argument key="App\Controller\ReservationController::create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\ReservationController::delete" type="service" id=".service_locator.xJY1n8m"/>
         <argument key="App\Controller\ReservationController::edit" type="service" id=".service_locator.xJY1n8m"/>
@@ -5310,27 +5360,32 @@
         <argument key="App\Controller\AccountController:register" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\AccountController:updatePassword" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\AdminAccountController:login" type="service" id=".service_locator.kcjQ1sU"/>
-        <argument key="App\Controller\AdminAdherentController:index" type="service" id=".service_locator.w_YMdhQ"/>
+        <argument key="App\Controller\AdminAdherentController:delete" type="service" id=".service_locator.X2y5U8b"/>
+        <argument key="App\Controller\AdminAdherentController:index" type="service" id=".service_locator.MkYQhkN"/>
+        <argument key="App\Controller\AdminArticleController:adminIndex" type="service" id=".service_locator.hsWoe8a"/>
         <argument key="App\Controller\AdminArticleController:create" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\AdminArticleController:delete" type="service" id=".service_locator.5aciI7K"/>
         <argument key="App\Controller\AdminArticleController:index" type="service" id=".service_locator.hsWoe8a"/>
         <argument key="App\Controller\AdminArticleController:show" type="service" id=".service_locator.NUP9Hmn"/>
         <argument key="App\Controller\AdminContactController:create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AdminContactController:delete" type="service" id=".service_locator.EoCOyLv"/>
         <argument key="App\Controller\AdminContactController:edit" type="service" id=".service_locator.EoCOyLv"/>
-        <argument key="App\Controller\AdminContactController:index" type="service" id=".service_locator.KCHKJ05"/>
+        <argument key="App\Controller\AdminContactController:index" type="service" id=".service_locator.cJim291"/>
         <argument key="App\Controller\AdminContactController:show" type="service" id=".service_locator.KCHKJ05"/>
         <argument key="App\Controller\AdminDashboardController:index" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AdminPreRegistrationController:create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AdminPreRegistrationController:delete" type="service" id=".service_locator.JPJWVg8"/>
         <argument key="App\Controller\AdminPreRegistrationController:edit" type="service" id=".service_locator.JPJWVg8"/>
-        <argument key="App\Controller\AdminPreRegistrationController:index" type="service" id=".service_locator.Kw5txLV"/>
+        <argument key="App\Controller\AdminPreRegistrationController:index" type="service" id=".service_locator.ca.lr_R"/>
         <argument key="App\Controller\AdminPreRegistrationController:show" type="service" id=".service_locator.Kw5txLV"/>
         <argument key="App\Controller\AdminRegistrationStageController:create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\AdminRegistrationStageController:delete" type="service" id=".service_locator.ZfQYXUg"/>
         <argument key="App\Controller\AdminRegistrationStageController:edit" type="service" id=".service_locator.ZfQYXUg"/>
-        <argument key="App\Controller\AdminRegistrationStageController:index" type="service" id=".service_locator.yzsP7J6"/>
+        <argument key="App\Controller\AdminRegistrationStageController:index" type="service" id=".service_locator.ED.u2GL"/>
         <argument key="App\Controller\AdminRegistrationStageController:show" type="service" id=".service_locator.yzsP7J6"/>
-        <argument key="App\Controller\AdminResController:index" type="service" id=".service_locator.oIzDkdn"/>
+        <argument key="App\Controller\AdminResController:delete" type="service" id=".service_locator.xJY1n8m"/>
+        <argument key="App\Controller\AdminResController:edit" type="service" id=".service_locator.xJY1n8m"/>
+        <argument key="App\Controller\AdminResController:index" type="service" id=".service_locator.6GO0nSZ"/>
         <argument key="App\Controller\ReservationController:create" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\ReservationController:delete" type="service" id=".service_locator.xJY1n8m"/>
         <argument key="App\Controller\ReservationController:edit" type="service" id=".service_locator.xJY1n8m"/>
@@ -5660,6 +5715,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.CDOTD6." method="withContext"/>
     </service>
+    <service id=".service_locator.CDOTD6..App\Controller\AdminResController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AdminResController"/>
+      <argument>App\Controller\AdminResController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
     <service id=".service_locator.CDOTD6..App\Controller\ReservationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\ReservationController"/>
       <argument>App\Controller\ReservationController</argument>
@@ -5765,12 +5826,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.oMun1HL"/>
+      <argument type="service" id=".service_locator.1TM4VTk"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.oMun1HL"/>
+      <argument type="service" id=".service_locator.1TM4VTk"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5794,7 +5855,9 @@
         <argument key="security.token_storage" type="service" id="security.token_storage"/>
       </argument>
     </service>
+    <service id=".errored..service_locator.X2y5U8b.App\Entity\Adherent" class="App\Entity\Adherent"/>
     <service id=".errored..service_locator.NUP9Hmn.App\Entity\Article" class="App\Entity\Article"/>
+    <service id=".errored..service_locator.5aciI7K.App\Entity\Article" class="App\Entity\Article"/>
     <service id=".errored..service_locator.EoCOyLv.App\Entity\Contact" class="App\Entity\Contact"/>
     <service id=".errored..service_locator.JPJWVg8.App\Entity\PreRegistration" class="App\Entity\PreRegistration"/>
     <service id=".errored..service_locator.ZfQYXUg.App\Entity\ResgistrationStage" class="App\Entity\ResgistrationStage"/>
@@ -6154,7 +6217,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.oMun1HL"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.1TM4VTk"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

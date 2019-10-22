@@ -123,7 +123,7 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
             echo "</td>
                     <td class=\"text-center\">";
             // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "jour", [], "any", false, false, false, 31), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "jour", [], "any", false, false, false, 31), "d/m/Y"), "html", null, true);
             echo "</td>
                     <td class=\"text-center\">";
             // line 32
@@ -135,18 +135,14 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
             echo "</td>
                     <td class=\"text-center\">";
             // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "semaine", [], "any", false, false, false, 34), "html", null, true);
-            echo "</td>
-                    <td class=\"text-center\">";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "terrain", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "terrain", [], "any", false, false, false, 34), "html", null, true);
             echo "</td>
                     <td>
                         <ul class=\"nav\">
                             <li class=\"mx-auto\">
                                 <a class=\"btn btn-dark\" href=\"";
-            // line 39
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 39)]), "html", null, true);
+            // line 38
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 38)]), "html", null, true);
             echo "\">show</a>
                             </li>
                         </ul>
@@ -157,7 +153,7 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 44
         echo "                </tbody>
             </table>
         </div>        
@@ -183,7 +179,7 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
 
     public function getDebugInfo()
     {
-        return array (  161 => 45,  149 => 39,  142 => 35,  138 => 34,  134 => 33,  130 => 32,  126 => 31,  122 => 30,  118 => 29,  115 => 28,  111 => 27,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  157 => 44,  145 => 38,  138 => 34,  134 => 33,  130 => 32,  126 => 31,  122 => 30,  118 => 29,  115 => 28,  111 => 27,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -218,10 +214,9 @@ class __TwigTemplate_7a3eab6f19b4b0b174038003d1cfa12ead8c7ee99ffec496117df3c615d
                 <tr>
                     <td class=\"text-center\">{{ reservation.id }}</td>
                     <td class=\"text-center\">{{ reservation.nom }}</td>
-                    <td class=\"text-center\">{{ reservation.jour }}</td>
+                    <td class=\"text-center\">{{ reservation.jour | date('d/m/Y')}}</td>
                     <td class=\"text-center\">{{ reservation.heuredebut }}</td>
                     <td class=\"text-center\">{{ reservation.heurefin }}</td>
-                    <td class=\"text-center\">{{ reservation.semaine }}</td>
                     <td class=\"text-center\">{{ reservation.terrain }}</td>
                     <td>
                         <ul class=\"nav\">

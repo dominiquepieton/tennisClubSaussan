@@ -3,42 +3,61 @@
 {% block title %}Pré-inscription annuelle{% endblock %}
 
 {% block body %}
-
-
-    <h1></h1>
     <div class="container-fluid">
-        <h1 class="my-5"> La liste des pré-inscrits :</h1>
-         <table class="table table-hover">
-            <thead class="bg-secondary">
-                <tr>
-                    <th class="text-center">id</th>
-                    <th class="text-center">firstName</th>
-                    <th class="text-center">lastname</th>
-                    <th class="text-center">email</th>
-                    <th class="text-center">birthday</th>
-                    <th class="text-center">apte au sport</th>
-                    <th class="text-center">nom du responsable légale</th>
-                    <th class="text-center">réediter / supprimer</th>
-                </tr> 
-            </thead>
-            <tbody>
-                {% for preRegistrations in preRegistration %}
-                <tr>
-                    <td class="text-center">{{preRegistrations.id}}</td>
-                    <td class="text-center">{{preRegistrations.firstname}}</td>
-                    <td class="text-center">{{preRegistrations.lastname}}</td>
-                    <td class="text-center">{{preRegistrations.email}}</td>
-                    <td class="text-center">{{preRegistrations.birthday | date('d/m/Y')}}</td>
-                    <td class="text-center">{{preRegistrations.aptSport}}</td>
-                    <td class="text-center">{{preRegistrations.lastnameResponsable}}</td>
-                    <td class="text-center">
-                        <a href="{{ path('admin_registration_edit',{'id' : preRegistrations.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                        <a href="{{ path('admin_registration_delete',{'id' : preRegistrations.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
+        <h1 class="my-5 text-center"> La liste des pré-inscrits :</h1>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="/img/logo.jpg" alt="logo tennis club">
+            </div>
+            <div col="col-md-7">
+                <table class="table table-hover">
+                    <thead class="bg-secondary">
+                    <tr>
+                        <th class="text-center">id</th>
+                        <th class="text-center">firstName</th>
+                        <th class="text-center">lastname</th>
+                        <th class="text-center">email</th>
+                        <th class="text-center">birthday</th>
+                        <th class="text-center">apte au sport</th>
+                        <th class="text-center">nom du responsable légale</th>
+                        <th class="text-center">réediter / supprimer</th>
+                    </tr> 
+                    </thead>
+                    <tbody>
+                        {% for preRegistrations in preRegistration %}
+                    <tr>
+                        <td class="text-center">{{preRegistrations.id}}</td>
+                        <td class="text-center">{{preRegistrations.firstname}}</td>
+                        <td class="text-center">{{preRegistrations.lastname}}</td>
+                        <td class="text-center">{{preRegistrations.email}}</td>
+                        <td class="text-center">{{preRegistrations.birthday | date('d/m/Y')}}</td>
+                        <td class="text-center">{{preRegistrations.aptSport}}</td>
+                        <td class="text-center">{{preRegistrations.lastnameResponsable}}</td>
+                        <td class="text-center">
+                            <a href="{{ path('admin_registration_edit',{'id' : preRegistrations.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                            <a href="{{ path('admin_registration_delete',{'id' : preRegistrations.id}) }}" class="btn btn-danger" onclick="return confirm(`Êtes-vous sur de vouloir supprimer le message ?`)"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-2">&nbsp;</div>
+        </div>    
+        <div class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                    <a class="page-link" href="{{ path('admin_registration_index', {'page': page - 1 }) }}">&laquo;</a>
+                </li>
+                {% for i in 1..pages %}
+                <li class="page-item {% if page == i %}active{% endif %}">
+                    <a class="page-link" href="{{ path('admin_registration_index', {'page': i }) }}">{{ i }}</a>
+                </li>
                 {% endfor %}
-            </tbody>
-        </table>
+                <li class="page-item {% if page == pages %}disabled{% endif %}">
+                    <a class="page-link" href="{{ path('admin_registration_index', {'page': page + 1 }) }}">&raquo;</a>
+                </li>
+            </ul>
         </div> 
     </div>
     

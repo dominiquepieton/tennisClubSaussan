@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\service\Pagination;
 use App\Form\AdminContactType;
 use App\Repository\ContactRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,14 +18,17 @@ class AdminContactController extends AbstractController
      * Permet la récupartion de tous les messages envoyés
      * 
      * 
-     * @Route("/admin/contact", name="admin_contact_index")
+     * @Route("/admin/contact/{page<\d+>?1}", name="admin_contact_index")
      */
-    public function index(ContactRepository $repo)
+    public function index(ContactRepository $repo, $page, Pagination $pagination)
     {
-        $contact = $repo->findAll();
+        $pagination->setEntityClass(Contact::class)
+                   ->setPage($page);
 
         return $this->render('admin/contact/index.html.twig', [
-            'contact' => $contact
+            'contact' => $pagination->getData(),
+            'pages'   => $pagination->getPages(),
+            'page'    => $page
         ]);
     }
 
@@ -56,9 +60,7 @@ class AdminContactController extends AbstractController
             );
             
             // gérer la redirection la redirection 
-            return $this->redirectToRoute('contact_show', [
-                'id' =>$contact->getId()
-            ]);
+            return $this->redirectToRoute('contact_create');
         }
 
         return $this->render('contact/new.html.twig', [
@@ -69,14 +71,14 @@ class AdminContactController extends AbstractController
     /**
      * permet de voir un message contact
      * 
-     * @Route("/contact/{id}", name="contact_show")
+     * @Route("/admin/contact/{id}", name="admin_contact_show")
      * 
      * @return Response
      */
     public function show($id, ContactRepository $repo){
-        $contact = $repo->findOneById($id);
+        $contacts = $repo->findOneById($id);
         return $this->render('contact/show.html.twig', [
-            'contact' => $contact
+            'id' =>$contacts->getId()
         ]);
     }
 
@@ -118,7 +120,7 @@ class AdminContactController extends AbstractController
    /**
      * Permet de supprimer un message
      * 
-     * @Route("/reservation/delete/{id}", name="admin_contact_delete")
+     * @Route("admin/contact/delete/{id}", name="admin_contact_delete")
      * 
      * @param Contact $contact
      * @param ObjectManager $manager

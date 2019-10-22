@@ -40,23 +40,26 @@ class __TwigTemplate_270084631c6a9f58bbacfe255e77bf55afb35362090bed7c0a28a6493c2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "partials/footer.html.twig"));
 
         // line 1
-        echo "<footer class=\"bg-light py-2  border border-top border-dark\">
+        echo "<footer class=\"bg-transparent py-2 border-top\">
     <div class=\"row\">
         <div class=\"col-md-4\">
         </div>
         <div class=\"col-md-4 mb-4\">
             <ul class=\"nav mx-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
+                    <a class=\"nav-link text-dark\" href=\"";
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
         echo "\">Accueil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Mention légale</a>
+                    <a class=\"nav-link text-dark\" href=\"#\">Mention légale</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Contact</a>
+                    <a class=\"nav-link text-dark\" href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_create");
+        echo "\">Contact</a>
                 </li>
             </ul> 
         </div>
@@ -84,25 +87,25 @@ class __TwigTemplate_270084631c6a9f58bbacfe255e77bf55afb35362090bed7c0a28a6493c2
 
     public function getDebugInfo()
     {
-        return array (  52 => 8,  43 => 1,);
+        return array (  61 => 14,  52 => 8,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<footer class=\"bg-light py-2  border border-top border-dark\">
+        return new Source("<footer class=\"bg-transparent py-2 border-top\">
     <div class=\"row\">
         <div class=\"col-md-4\">
         </div>
         <div class=\"col-md-4 mb-4\">
             <ul class=\"nav mx-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{ path('homepage') }}\">Accueil</a>
+                    <a class=\"nav-link text-dark\" href=\"{{ path('homepage') }}\">Accueil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Mention légale</a>
+                    <a class=\"nav-link text-dark\" href=\"#\">Mention légale</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Contact</a>
+                    <a class=\"nav-link text-dark\" href=\"{{ path('contact_create')}}\">Contact</a>
                 </li>
             </ul> 
         </div>

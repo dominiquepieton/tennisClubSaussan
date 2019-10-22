@@ -20,7 +20,6 @@ class AdminDashboardController extends AbstractController
         $article = $manager->createQuery('SELECT COUNT(d) FROM App\Entity\Article d')->getSingleScalarResult();
         $registration = $manager->createQuery('SELECT COUNT(e) FROM App\Entity\PreRegistration e')->getSingleScalarResult();
         $stage = $manager->createQuery('SELECT COUNT(f) FROM App\Entity\ResgistrationStage f')->getSingleScalarResult();
-        
         return $this->render('admin/dashboard/index.html.twig', [
             //On met les valeurs des variables dans un tableau grace à la function compact qui permet de mettre plusieur clé en meme temps
             'stats' => compact('adherent', 'reservation', 'contact', 'article', 'registration', 'stage')

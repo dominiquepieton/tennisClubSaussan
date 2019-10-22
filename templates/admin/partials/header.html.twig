@@ -5,7 +5,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- lien navigation de base  -->
-            <div class="collapse navbar-collapse" id="navbarColor02">
+            <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ path('admin_dashboard') }}">
@@ -28,9 +28,13 @@
                             <a href="{{ path('admin_account_register') }}" class="dropdown-item">Création d'adhérent site</a>                                                                    
                         </div>
                     </li>
-                    <li class="nav-item active">
-                        <a href="{{ path('admin_article_create') }}" class="nav-link">
-                            <i class="fas fa-newspaper fa-2x"></i>Création d'article site</a>
+                    <li class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="adDropdown2">
+                            <i class="fas fa-newspaper fa-2x"></i>Création d'évènements</a>
+                        <div class="dropdown-menu dropdown-menu" aria-labelledby="adDropdown2">
+                            <a href="{{ path('admin_index_article') }}" class="dropdown-item">Toutes les évènements</a> 
+                            <a href="{{ path('admin_article_create') }}" class="dropdown-item">Création d'évènement</a>                                                                    
+                        </div>    
                     </li>
                     <li class="nav-item dropdown active">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="adminDropdown">

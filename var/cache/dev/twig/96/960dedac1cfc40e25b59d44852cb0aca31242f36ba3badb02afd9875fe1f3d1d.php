@@ -85,44 +85,70 @@ class __TwigTemplate_8a85b6fa8c70e0c6adf1e1bdb1d4de90a0011e94e474cd0e86bb0a6710d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container\">
-    <div class=\"row\">
-        <div class=\"col-md-3\">&nbsp;</div>
-        <div class=\"col-md-6\">
-            <div class=\"bg-light py-3 px-3\">
-            <h1>Connectez-vous :</h1>
-                ";
-        // line 12
-        if ((isset($context["hasError"]) || array_key_exists("hasError", $context) ? $context["hasError"] : (function () { throw new RuntimeError('Variable "hasError" does not exist.', 12, $this->source); })())) {
-            // line 13
-            echo "                    <div class=\"alert alert-danger\">
-                        <p><strong>Une erreur est survenue, l'email ou le mot de passe est invalide</strong></p>
-                    </div>
-                ";
+        echo "                
+                <div class=\"container-fluid login\">
+                    <h1>Connexion :</h1>
+                    <div class=\"row\">
+                        <div class=\"col-md-3\">
+                            <img src=\"/img/logo.jpg\" alt=\"logo club\">
+                        </div>
+                        <div class=\"col-md-5\">
+                            <div>
+                                ";
+        // line 15
+        if ((isset($context["hasError"]) || array_key_exists("hasError", $context) ? $context["hasError"] : (function () { throw new RuntimeError('Variable "hasError" does not exist.', 15, $this->source); })())) {
+            // line 16
+            echo "                                    <div class=\"alert alert-danger\">
+                                        <p><strong>Une erreur est survenue, l'email ou le mot de passe est invalide</strong></p>
+                                    </div>
+                                ";
         }
-        // line 17
-        echo "            <form action=\"";
+        // line 20
+        echo "                            </div>
+                            <div class=\"login-form\">
+                                <form action=\"";
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_login");
         echo "\" method=\"post\">
-                <div class=\"form-group\">
-                    <label for=\"email\">Email :</label>
-                    <input type=\"text\" name=\"_username\" id=\"email\" class=\"form-control\" placeholder=\"Adresse email...\" value=\"";
-        // line 20
-        echo twig_escape_filter($this->env, (isset($context["username"]) || array_key_exists("username", $context) ? $context["username"] : (function () { throw new RuntimeError('Variable "username" does not exist.', 20, $this->source); })()), "html", null, true);
+                                    <div class=\"form-group\">
+                                        <label for=\"email\">Email :</label>
+                                        <input type=\"text\" name=\"_username\" id=\"email\" class=\"form-control\" placeholder=\"Adresse email...\" value=\"";
+        // line 25
+        echo twig_escape_filter($this->env, (isset($context["username"]) || array_key_exists("username", $context) ? $context["username"] : (function () { throw new RuntimeError('Variable "username" does not exist.', 25, $this->source); })()), "html", null, true);
         echo "\" required>  
+                                    </div>
+                                    <div class=\"form-group\">
+                                        <label for=\"password\">Mot de passe :</label>
+                                        <input type=\"password\" name=\"_password\" id=\"password\" class=\"form-control\" placeholder=\"Mot de passe...\" required>
+                                    </div>
+                                    <div class=\"form-group\">
+                                        <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>    
+                        <div class=\"col-md-4\">
+                            <img src=\"/img/joie.jpg\" alt=\"joueur heureux\">
+                        </div>
+                    </div>    
                 </div>
-                <div class=\"form-group\">
-                    <label for=\"password\">Mot de passe :</label>
-                    <input type=\"password\" name=\"_password\" id=\"password\" class=\"form-control\" placeholder=\"Mot de passe...\" required>
-                </div>
-                <div class=\"form-group\">
-                    <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
-                </div>
-            </form>
-            </div>
-        </div>
-    </div>
-</div>        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+   
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -144,7 +170,7 @@ class __TwigTemplate_8a85b6fa8c70e0c6adf1e1bdb1d4de90a0011e94e474cd0e86bb0a6710d
 
     public function getDebugInfo()
     {
-        return array (  111 => 20,  104 => 17,  98 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  117 => 25,  111 => 22,  107 => 20,  101 => 16,  99 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -154,34 +180,59 @@ class __TwigTemplate_8a85b6fa8c70e0c6adf1e1bdb1d4de90a0011e94e474cd0e86bb0a6710d
 {% block title %}Connexion au site{% endblock %}
 
 {% block body %}
-<div class=\"container\">
-    <div class=\"row\">
-        <div class=\"col-md-3\">&nbsp;</div>
-        <div class=\"col-md-6\">
-            <div class=\"bg-light py-3 px-3\">
-            <h1>Connectez-vous :</h1>
-                {% if hasError %}
-                    <div class=\"alert alert-danger\">
-                        <p><strong>Une erreur est survenue, l'email ou le mot de passe est invalide</strong></p>
-                    </div>
-                {% endif %}
-            <form action=\"{{ path('account_login') }}\" method=\"post\">
-                <div class=\"form-group\">
-                    <label for=\"email\">Email :</label>
-                    <input type=\"text\" name=\"_username\" id=\"email\" class=\"form-control\" placeholder=\"Adresse email...\" value=\"{{username}}\" required>  
+                
+                <div class=\"container-fluid login\">
+                    <h1>Connexion :</h1>
+                    <div class=\"row\">
+                        <div class=\"col-md-3\">
+                            <img src=\"/img/logo.jpg\" alt=\"logo club\">
+                        </div>
+                        <div class=\"col-md-5\">
+                            <div>
+                                {% if hasError %}
+                                    <div class=\"alert alert-danger\">
+                                        <p><strong>Une erreur est survenue, l'email ou le mot de passe est invalide</strong></p>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class=\"login-form\">
+                                <form action=\"{{ path('account_login') }}\" method=\"post\">
+                                    <div class=\"form-group\">
+                                        <label for=\"email\">Email :</label>
+                                        <input type=\"text\" name=\"_username\" id=\"email\" class=\"form-control\" placeholder=\"Adresse email...\" value=\"{{username}}\" required>  
+                                    </div>
+                                    <div class=\"form-group\">
+                                        <label for=\"password\">Mot de passe :</label>
+                                        <input type=\"password\" name=\"_password\" id=\"password\" class=\"form-control\" placeholder=\"Mot de passe...\" required>
+                                    </div>
+                                    <div class=\"form-group\">
+                                        <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>    
+                        <div class=\"col-md-4\">
+                            <img src=\"/img/joie.jpg\" alt=\"joueur heureux\">
+                        </div>
+                    </div>    
                 </div>
-                <div class=\"form-group\">
-                    <label for=\"password\">Mot de passe :</label>
-                    <input type=\"password\" name=\"_password\" id=\"password\" class=\"form-control\" placeholder=\"Mot de passe...\" required>
-                </div>
-                <div class=\"form-group\">
-                    <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
-                </div>
-            </form>
-            </div>
-        </div>
-    </div>
-</div>        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+   
 {% endblock %}
 ", "account/login.html.twig", "/var/www/site/tcs/templates/account/login.html.twig");
     }

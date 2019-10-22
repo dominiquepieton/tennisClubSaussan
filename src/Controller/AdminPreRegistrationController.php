@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Reservation;
+use App\service\Pagination;
 use App\Form\ReservationType;
 use App\Entity\PreRegistration;
 use App\Form\AdminPreRegistrationType;
@@ -18,12 +19,17 @@ class AdminPreRegistrationController extends AbstractController
     /**
      * Permet d'affiche la liste de pré-inscription
      * 
-     * @Route("/admin/registration", name="admin_registration_index")
+     * @Route("/admin/registration/{page<\d+>?1}", name="admin_registration_index")
      */
-    public function index(PreRegistrationRepository $repo)
+    public function index(PreRegistrationRepository $repo, $page, Pagination $pagination)
     {
+        $pagination->setEntityClass(PreRegistration::class)
+                   ->setPage($page); 
+
         return $this->render('admin/registration/index.html.twig', [
-            'preRegistration' => $repo->findAll()
+            'preRegistration' => $pagination->getData(),
+            'pages' => $pagination->getPages(),
+            'page'  => $page
         ]);
     }
 
@@ -61,7 +67,7 @@ class AdminPreRegistrationController extends AbstractController
             );
             
             // gérer la redirection la redirection 
-            return $this->redirectToRoute('admin_registration_show', [
+            return $this->redirectToRoute('admin_registration_index', [
                 'id' =>$preRegistration->getId()
             ]);
         }
@@ -114,7 +120,7 @@ class AdminPreRegistrationController extends AbstractController
            );
            
            // gérer la redirection la redirection 
-           return $this->redirectToRoute('admin_registration_show', [
+           return $this->redirectToRoute('admin_registration_index', [
                'id' =>$preRegistration->getId()
            ]);
        }
@@ -141,7 +147,7 @@ class AdminPreRegistrationController extends AbstractController
         //message flash
         $this->addFlash(
             'success',
-            "La réservation a bien été supprimée !"
+            "La pré-inscription a bien été supprimée !"
         );
 
         // fait une redirection aprés avoir supprimer

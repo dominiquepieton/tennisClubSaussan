@@ -81,7 +81,7 @@ class AccountController extends AbstractController
                 "L'inscription est réussit......"    
             );
 
-            return $this->redirectToRoute('admin_res_index');
+            return $this->redirectToRoute('admin_adherent_index');
 
         }
 
@@ -95,7 +95,7 @@ class AccountController extends AbstractController
      * 
      * @Route("/account/profile", name="account_profile")
      * @IsGranted("ROLE_USER")
-     * 
+     * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
     public function profile(Request $request, ObjectManager $manager) {

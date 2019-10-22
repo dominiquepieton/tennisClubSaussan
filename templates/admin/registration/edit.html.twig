@@ -4,19 +4,26 @@
 
 {% block body %}
     <div class="container">
-        <div>
-            <h1>Modifier la pré-inscription :</h1>
-        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-3">
+                <img src="/img/logo.jpg" alt="logo club">
+            </div>
+            <div class="col-md-8">
+                <div class="shadow p-3 mb-5 bg-transparent">
+                <h1>Modifier la pré-inscription :</h1>
+            {{ form_start(form) }}
 
-        {{ form_widget(form) }}
+            {{ form_widget(form) }}
 
-        <button type="submit" class="btn btn-primary">Valider les modifications</button>
-        <ul class="nav">
-        <li class="nav-item mx-auto">
-            <a class="btn btn-dark" href="{{ path('admin_registration_index') }}">Retour</a>
-        </li>
-        </ul>
-        {{ form_end(form) }}
+            <button type="submit" class="btn btn-primary">Valider les modifications</button>
+            <ul class="nav">
+            <li class="nav-item mx-auto">
+                <a class="btn btn-dark" href="{{ path('admin_registration_index') }}">Retour</a>
+            </li>
+            </ul>
+            {{ form_end(form) }}
+            </div>
+            <div class="col-md-1">&nbsp;</div>
         </div>
     </div>
 {% endblock %}

@@ -85,21 +85,45 @@ class __TwigTemplate_06bf0362a68b1ef697397fc24e2446a561765329c47fcd36d7755a013d8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div class=\"container\">
-        <h1>envoyez-nous un petit message</h1>
-            ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'form_start');
+        echo "    <div class=\"container-fluid mess bg-light\">
+        <h1 class=\"text-center mt-5\">Contactez le Tennis Club Saussan</h1>
+        <hr class=\"separator\">
+        <div class=\"row\">
+            <div class=\"col-md-4 col-lg-4 col-sx-12 col-sm-12 cont\">
+                <img src=\"/img/ancien.jpg\" alt=\"vétéran du tennis\"> 
+            </div>
+            <div class=\"col-md-5 col-lg-5 com-sx-12 col-sm-12\">
+                <div class=\"cont-form shadow shadow p-3 mb-5\">
+                <h2>Formulaire de Contact:</h2>
+                ";
+        // line 16
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), 'form_start');
         echo "
-            ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'widget');
+                ";
+        // line 17
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'widget');
         echo "
-            <button type=\"submit\" class=\"btn btn-primary\">envoyer</button>
-            ";
-        // line 11
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'form_end');
+                <button type=\"submit\" class=\"btn btn-primary\">envoyer</button>
+                ";
+        // line 19
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
         echo "
+                </div>
+            </div>
+            <div class=\"col-md-3 col-lg-3 col-sx-12 col-sm-12 cont-text\">
+                <div class=\"adress-text\">    
+                    <ul>
+                        <li>président: MR Raspaud Frédéric</li>
+                        <li>Adresse : 6 Allée de Maguelone<br>
+                                        34570 Saussan</li>
+                        <li>Téléphone :</li>
+                                    <li>04/67/27/33/10<li>
+                </div>
+                <div class=\"adress border border-success\">
+                    <img src=\"/img/joie.jpg\" alt=\"joie\">
+                </div>
+            </div>            
+        </div>    
     </div>
 
 ";
@@ -123,7 +147,7 @@ class __TwigTemplate_06bf0362a68b1ef697397fc24e2446a561765329c47fcd36d7755a013d8
 
     public function getDebugInfo()
     {
-        return array (  101 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  109 => 19,  104 => 17,  100 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -133,12 +157,36 @@ class __TwigTemplate_06bf0362a68b1ef697397fc24e2446a561765329c47fcd36d7755a013d8
 {% block title %}Contactez-nous{% endblock %}
 
 {% block body %}
-    <div class=\"container\">
-        <h1>envoyez-nous un petit message</h1>
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <button type=\"submit\" class=\"btn btn-primary\">envoyer</button>
-            {{ form_end(form) }}
+    <div class=\"container-fluid mess bg-light\">
+        <h1 class=\"text-center mt-5\">Contactez le Tennis Club Saussan</h1>
+        <hr class=\"separator\">
+        <div class=\"row\">
+            <div class=\"col-md-4 col-lg-4 col-sx-12 col-sm-12 cont\">
+                <img src=\"/img/ancien.jpg\" alt=\"vétéran du tennis\"> 
+            </div>
+            <div class=\"col-md-5 col-lg-5 com-sx-12 col-sm-12\">
+                <div class=\"cont-form shadow shadow p-3 mb-5\">
+                <h2>Formulaire de Contact:</h2>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button type=\"submit\" class=\"btn btn-primary\">envoyer</button>
+                {{ form_end(form) }}
+                </div>
+            </div>
+            <div class=\"col-md-3 col-lg-3 col-sx-12 col-sm-12 cont-text\">
+                <div class=\"adress-text\">    
+                    <ul>
+                        <li>président: MR Raspaud Frédéric</li>
+                        <li>Adresse : 6 Allée de Maguelone<br>
+                                        34570 Saussan</li>
+                        <li>Téléphone :</li>
+                                    <li>04/67/27/33/10<li>
+                </div>
+                <div class=\"adress border border-success\">
+                    <img src=\"/img/joie.jpg\" alt=\"joie\">
+                </div>
+            </div>            
+        </div>    
     </div>
 
 {% endblock %}", "contact/new.html.twig", "/var/www/site/tcs/templates/contact/new.html.twig");

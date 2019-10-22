@@ -9,11 +9,11 @@
                 <div class="card bg-primary text-white mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 col-md-4 col-sm-12 col-sx-12">
                                 <i class="fas fa-users fa-4x"></i>   
                             </div>
-                            <div class="col-8">
-                                <h4 class="card-title">{{ stats.adherent }} Adhérents au site</h4>
+                            <div class="col-8 col-md-8 col-sm-12 col-sx-12 carte">
+                                <a href="{{ path('admin_adherent_index') }}" class="text-white"><h4>{{ stats.adherent }} Adhérents au site</h4></a>
                             </div>
                         </div>
                     </div>    
@@ -23,11 +23,11 @@
                 <div class="card bg-secondary text-white mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 col-md-4 col-sm-12 col-sx-12">
                                 <i class="fas fa-file-archive fa-4x"></i>   
                             </div>
-                            <div class="col-8">
-                                <h4 class="card-title">{{ stats.reservation}} Réservation de terrains</h4>
+                            <div class="col-8 col-md-8 col-sm-12 col-sx-12 carte">
+                                <a href="{{ path('admin_res_index') }}" class="text-white"><h4>{{ stats.reservation}} Réservation</h4></a>
                             </div>
                         </div>
                     </div>    
@@ -37,11 +37,11 @@
                 <div class="card bg-info text-white mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 col-md-4 col-sm-12 col-sx-12">
                                 <i class="fas fa-comments fa-4x"></i>   
                             </div>
-                            <div class="col-8">
-                                <h4 class="card-title">{{ stats.contact }} Messages reçus</h4>
+                            <div class="col-8 col-md-8 col-sm-12 col-sx-12 carte">
+                                <a href="{{ path('admin_contact_index')}}" class="text-white"><h4>{{ stats.contact }} Messages</h4></a>
                             </div>
                         </div>
                     </div>    
@@ -51,11 +51,11 @@
                 <div class="card bg-primary text-white mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 col-md-4 col-sm-12 col-sx-12">
                                 <i class="fas fa-newspaper fa-4x"></i>   
                             </div>
-                            <div class="col-8">
-                                <h4 class="card-title">{{ stats.article }} Articles publiés</h4>
+                            <div class="col-8 col-md-8 col-sm-12 col-sx-12 carte">
+                                <a href="{{ path('admin_article_create') }}" class="text-white"><h4>{{ stats.article }} Évènements publiés</h4></a>
                             </div>
                         </div>
                     </div>    
@@ -65,11 +65,11 @@
                 <div class="card bg-secondary text-white mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 col-md-4 col-sm-12 col-sx-12">
                                 <i class="fas fa-edit fa-4x"></i>   
                             </div>
-                            <div class="col-8">
-                                <h4 class="card-title">{{ stats.registration }} Pré-inscrits pour l'année</h4>
+                            <div class="col-8 col-md-8 col-sm-12 col-sx-12 carte">
+                                <a href="{{ path('admin_registration_index') }}" class="text-white"><h4 class="card-title">{{ stats.registration }} Pré-inscrits</h4></a>
                             </div>
                         </div>
                     </div>    
@@ -79,15 +79,21 @@
                 <div class="card bg-info text-white mb-3 text-center">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 col-md-4 col-sm-12 col-sx-12">
                                 <i class="fas fa-edit fa-4x"></i>   
                             </div>
-                            <div class="col-8">
-                                <h4 class="card-title">{{ stats.stage }} Inscrit au stage</h4>
+                            <div class="col-8 col-md-8 col-sm-12 col-sx-12 carte">
+                                <a href="{{ path('admin_stage_index') }}" class="text-white"><h4>{{ stats.stage }} Inscrit au stage</h4></a>
                             </div>
                         </div>
                     </div>    
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+
             </div>
         </div>
     </div>

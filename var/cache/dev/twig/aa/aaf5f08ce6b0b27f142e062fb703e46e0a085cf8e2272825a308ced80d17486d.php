@@ -86,19 +86,27 @@ class __TwigTemplate_973635b5bf4ed7c608b67415bac3427cdea275f030a281ec7cd9739e52e
 
         // line 6
         echo "    <div class=\"container\">
+    <h1>Inscription au Stage :</h1>
+    <div class=\"row\">
+        <div class=\"col-md-4\">
+            <img src=\"/img/logo.jpg\" alt=\"logo club\">
+        </div>
+        <div class=\"col-md-8\">
         ";
-        // line 7
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form_start');
+        // line 13
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form_start');
         echo "
         ";
-        // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'widget');
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'widget');
         echo "
         <button type=\"submit\" class=\"btn btn-primary\">Enregistrer</button>
         ";
-        // line 10
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_end');
+        // line 16
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), 'form_end');
         echo "
+        </div>
+    </div>    
     </div>
 
 ";
@@ -122,7 +130,7 @@ class __TwigTemplate_973635b5bf4ed7c608b67415bac3427cdea275f030a281ec7cd9739e52e
 
     public function getDebugInfo()
     {
-        return array (  100 => 10,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  106 => 16,  101 => 14,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -133,10 +141,18 @@ class __TwigTemplate_973635b5bf4ed7c608b67415bac3427cdea275f030a281ec7cd9739e52e
 
 {% block body %}
     <div class=\"container\">
+    <h1>Inscription au Stage :</h1>
+    <div class=\"row\">
+        <div class=\"col-md-4\">
+            <img src=\"/img/logo.jpg\" alt=\"logo club\">
+        </div>
+        <div class=\"col-md-8\">
         {{ form_start(form) }}
         {{ form_widget(form) }}
         <button type=\"submit\" class=\"btn btn-primary\">Enregistrer</button>
         {{ form_end(form) }}
+        </div>
+    </div>    
     </div>
 
 {% endblock %}", "admin/stage/new.html.twig", "/var/www/site/tcs/templates/admin/stage/new.html.twig");
