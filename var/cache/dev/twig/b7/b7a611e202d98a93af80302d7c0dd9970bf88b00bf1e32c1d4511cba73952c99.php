@@ -112,22 +112,24 @@ class __TwigTemplate_d108f88ea72d76a509f47c706b1f32272827b338b512bfd8299957f9d67
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 22, $this->source); })()), "dateCreated", [], "any", false, false, false, 22), "d/m/Y"), "html", null, true);
         echo "</p>
             </div>
-            <div class=\"col-md-2 col-lg-2 col-sx-12 col-sm-12 border-left\">
+            <div class=\"col-md-2 col-lg-2 col-sx-12 col-sm-12 border-left list\">
                 <h5>Les articles :</h5>
                 <ul>
                 ";
         // line 27
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($context["article"]);
-        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+        $context['_seq'] = twig_ensure_traversable($context["articles"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["articles"]) {
             // line 28
-            echo "                    <li><a href=\"#\" class=\"link\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 28, $this->source); })()), "title", [], "any", false, false, false, 28), "html", null, true);
+            echo "                    <li><a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["articles"], "slug", [], "any", false, false, false, 28)]), "html", null, true);
+            echo "\" class=\"link\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["articles"], "title", [], "any", false, false, false, 28), "html", null, true);
             echo "</a></li>
                 ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['articles'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 30
         echo "                </ul>
@@ -158,7 +160,7 @@ class __TwigTemplate_d108f88ea72d76a509f47c706b1f32272827b338b512bfd8299957f9d67
 
     public function getDebugInfo()
     {
-        return array (  133 => 30,  124 => 28,  120 => 27,  112 => 22,  108 => 21,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  135 => 30,  124 => 28,  120 => 27,  112 => 22,  108 => 21,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -186,11 +188,11 @@ class __TwigTemplate_d108f88ea72d76a509f47c706b1f32272827b338b512bfd8299957f9d67
                 <p>{{ article.content }}</p>
                 <p>{{ article.dateCreated | date('d/m/Y')}}</p>
             </div>
-            <div class=\"col-md-2 col-lg-2 col-sx-12 col-sm-12 border-left\">
+            <div class=\"col-md-2 col-lg-2 col-sx-12 col-sm-12 border-left list\">
                 <h5>Les articles :</h5>
                 <ul>
-                {% for article in article %}
-                    <li><a href=\"#\" class=\"link\">{{ articles.title }}</a></li>
+                {% for articles in articles %}
+                    <li><a href=\"{{path('article_show', {'slug': articles.slug})}}\" class=\"link\">{{ articles.title }}</a></li>
                 {% endfor %}
                 </ul>
             </div>

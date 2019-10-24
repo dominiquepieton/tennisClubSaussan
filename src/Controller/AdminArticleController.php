@@ -54,11 +54,14 @@ class AdminArticleController extends Controller
      * @Route("/ad/{slug}", name="article_show")
      * @return Response
      */
-    public function show(Article $article) {
+    public function show(Article $article, ArticleRepository $repo) {
         // On récupère l'article par rapport à l'entite article
-    
+        
+        $articles = $repo->findAll();
+
         return $this->render('ad/show.html.twig',[
-            'article' => $article
+            'article'=> $article,
+            'articles' => $articles
         ]);
     }
 

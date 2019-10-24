@@ -6,14 +6,14 @@
 */
 /****************    home page **********************/
 body{
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     font-family: 'Cinzel', serif;
 }
 
 .container-fluid{
-    padding: 0;
-    margin:  0;
+    padding: 0px;
+    margin:  0px;
 }
 
 .separator{
@@ -177,6 +177,14 @@ body{
     font-weight: bold;
 }
 
+.list ul{
+    list-style: none;
+}
+
+.list a:hover{
+    text-decoration: none;
+}
+
 /********************* contact ********************************************/
 
 .cont{
@@ -244,3 +252,35 @@ body{
     margin-bottom: 9%;
 }
 
+/*************************** profil **************************/
+.profil{
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+.mod{
+    margin-top: 5%;
+    margin-bottom: 12%;
+}
+
+.modification img{
+    width:90%;
+    margin-top:15%;
+    transform:rotate(20deg);
+}
+
+/******************************** password **************************/
+.mdp{
+    margin-top: 5%;
+    margin-bottom: 20%;
+
+}
+
+/***************************** reservation ***************************/
+.resa {
+    margin-top:5%;
+}
+
+.res{
+    margin-bottom: 5%;
+}

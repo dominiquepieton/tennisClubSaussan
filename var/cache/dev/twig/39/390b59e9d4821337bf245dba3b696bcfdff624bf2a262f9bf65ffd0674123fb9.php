@@ -67,11 +67,11 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
         // line 13
         echo "    </head>
     <body>
-        ";
+     ";
         // line 15
         $this->loadTemplate("admin/partials/header.html.twig", "admin/base.html.twig", 15)->display($context);
-        // line 16
-        echo "
+        echo " 
+
         ";
         // line 17
         $this->displayBlock('body', $context, $blocks);
@@ -183,7 +183,7 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
 
     public function getDebugInfo()
     {
-        return array (  157 => 25,  139 => 17,  121 => 12,  102 => 5,  90 => 26,  88 => 25,  79 => 18,  77 => 17,  74 => 16,  72 => 15,  68 => 13,  66 => 12,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  157 => 25,  139 => 17,  121 => 12,  102 => 5,  90 => 26,  88 => 25,  79 => 18,  77 => 17,  72 => 15,  68 => 13,  66 => 12,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -202,7 +202,7 @@ class __TwigTemplate_54f1b6e4444035e95dc18c8282068ccf80142aac4b0e39a4148866d1245
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% include 'admin/partials/header.html.twig' %}
+     {% include 'admin/partials/header.html.twig' %} 
 
         {% block body %}{% endblock %}
 

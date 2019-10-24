@@ -53,7 +53,7 @@ class __TwigTemplate_270084631c6a9f58bbacfe255e77bf55afb35362090bed7c0a28a6493c2
         echo "\">Accueil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-dark\" href=\"#\">Mention légale</a>
+                    <a class=\"nav-link text-dark\" href=\"#\">Mention légales</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-dark\" href=\"";
@@ -102,7 +102,7 @@ class __TwigTemplate_270084631c6a9f58bbacfe255e77bf55afb35362090bed7c0a28a6493c2
                     <a class=\"nav-link text-dark\" href=\"{{ path('homepage') }}\">Accueil</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-dark\" href=\"#\">Mention légale</a>
+                    <a class=\"nav-link text-dark\" href=\"#\">Mention légales</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link text-dark\" href=\"{{ path('contact_create')}}\">Contact</a>

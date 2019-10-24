@@ -4,23 +4,25 @@
 
 {% block body %}
 
-    <div class="container">
+    <div class="container-fluid mod">
         <div class="row">
-            <div class="col-md-3">&nbsp;</div>
-            <div class="col-md-6 bg-light py-3 px-3">
+            <div class="col-md-2">&nbsp;</div>
+            <div class="col-md-6 bg transparent py-3 px-3">
                 <h1>Modification du profil :</h1>
-                    <p>vous pouvez modifier votre profil où changez le mot de passe</p>
+                    <p>vous pouvez modifier votre profil où changer le mot de passe</p>
 
                     {{ form_start(form) }}
 
                     {{ form_widget(form) }}
-
+                <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary">Valider les modifications</button>
-
+                    <a href="{{ path('user_show', {'firstName' : app.user.firstName}) }}" class=" ml-2 btn btn-primary">Retour</a>
                     {{ form_end(form)}}
-                   <a href="{{ path('user_show', {'firstName' : app.user.firstName}) }}" class="btn btn-primary">Retour</a> 
+                </div>    
             </div>
-            <div class="col-md-3">&nbsp;</div>
+            <div class="col-md-4 modification">
+                 <img src="/img/2.jpg" alt="joueur de tennis">
+            </div>
         </div>
 
 

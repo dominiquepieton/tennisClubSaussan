@@ -3,18 +3,28 @@
 {% block title %}Création d'une annonce{% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
-        <h1>Faites votre réservation de terrain de tennis :</h1>   
-        <p>Vous pouvez faire votre réservation grâce à ce formulaire et merci de votre confiance</p>
+<div class="container resa">
+    <h1 class="text-center">Faites votre réservation de terrain de tennis :</h1>
+    <hr class="separator">   
+    <p class="text-center">Vous pouvez faire votre réservation grâce à ce formulaire et merci de votre confiance</p>
+    <p class="text-center">Les horraires de réservations sont pour lundi au vendredi : 7h à 16h30 / 20h à 22h  et le week-end : 7h à 22h</p>
+</div>
+<div class="container-fluid res">
+    <div class="row">
+        <div class="col-md-4 mt-3">
+            <img src="/img/terrain.jpg" alt="terrain tennis">
+        </div>
+        <div class="col-md-6">
+            {{ form_start(form) }}
+
+            {{ form_widget(form) }}
+
+            <button type="submit" class="btn btn-primary">Valider</button>
+
+            {{ form_end(form) }}
+        </div>
+        <div class="2">&nbsp;</div>
     </div>
-    <div class="container">
-        {{ form_start(form) }}
-
-        {{ form_widget(form) }}
-
-        <button type="submit" class="btn btn-primary">Valider</button>
-
-        {{ form_end(form) }}
-    </div>
+</div>    
 
 {% endblock %}

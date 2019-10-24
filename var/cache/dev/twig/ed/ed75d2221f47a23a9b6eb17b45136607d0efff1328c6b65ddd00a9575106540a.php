@@ -114,8 +114,6 @@ class __TwigTemplate_06bf0362a68b1ef697397fc24e2446a561765329c47fcd36d7755a013d8
                 <div class=\"adress-text\">    
                     <ul>
                         <li>président: MR Raspaud Frédéric</li>
-                        <li>Adresse : 6 Allée de Maguelone<br>
-                                        34570 Saussan</li>
                         <li>Téléphone :</li>
                                     <li>04/67/27/33/10<li>
                 </div>
@@ -177,8 +175,6 @@ class __TwigTemplate_06bf0362a68b1ef697397fc24e2446a561765329c47fcd36d7755a013d8
                 <div class=\"adress-text\">    
                     <ul>
                         <li>président: MR Raspaud Frédéric</li>
-                        <li>Adresse : 6 Allée de Maguelone<br>
-                                        34570 Saussan</li>
                         <li>Téléphone :</li>
                                     <li>04/67/27/33/10<li>
                 </div>

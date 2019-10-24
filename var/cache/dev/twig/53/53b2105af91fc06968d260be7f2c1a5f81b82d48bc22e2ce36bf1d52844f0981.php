@@ -86,12 +86,12 @@ class __TwigTemplate_80d106269b42a6d186d8e23cea2118cd9c679f603d29d00decf0f4f9643
 
         // line 6
         echo "
-    <div class=\"container\">
+    <div class=\"container-fluid mod\">
         <div class=\"row\">
-            <div class=\"col-md-3\">&nbsp;</div>
-            <div class=\"col-md-6 bg-light py-3 px-3\">
+            <div class=\"col-md-2\">&nbsp;</div>
+            <div class=\"col-md-6 bg transparent py-3 px-3\">
                 <h1>Modification du profil :</h1>
-                    <p>vous pouvez modifier votre profil où changez le mot de passe</p>
+                    <p>vous pouvez modifier votre profil où changer le mot de passe</p>
 
                     ";
         // line 14
@@ -102,19 +102,21 @@ class __TwigTemplate_80d106269b42a6d186d8e23cea2118cd9c679f603d29d00decf0f4f9643
         // line 16
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), 'widget');
         echo "
-
+                <div class=\"d-flex justify-content-end\">
                     <button type=\"submit\" class=\"btn btn-primary\">Valider les modifications</button>
-
+                    <a href=\"";
+        // line 19
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["firstName" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "firstName", [], "any", false, false, false, 19)]), "html", null, true);
+        echo "\" class=\" ml-2 btn btn-primary\">Retour</a>
                     ";
         // line 20
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_end');
         echo "
-                   <a href=\"";
-        // line 21
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["firstName" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "firstName", [], "any", false, false, false, 21)]), "html", null, true);
-        echo "\" class=\"btn btn-primary\">Retour</a> 
+                </div>    
             </div>
-            <div class=\"col-md-3\">&nbsp;</div>
+            <div class=\"col-md-4 modification\">
+                 <img src=\"/img/2.jpg\" alt=\"joueur de tennis\">
+            </div>
         </div>
 
 
@@ -143,7 +145,7 @@ class __TwigTemplate_80d106269b42a6d186d8e23cea2118cd9c679f603d29d00decf0f4f9643
 
     public function getDebugInfo()
     {
-        return array (  114 => 21,  110 => 20,  103 => 16,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  113 => 20,  109 => 19,  103 => 16,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -154,23 +156,25 @@ class __TwigTemplate_80d106269b42a6d186d8e23cea2118cd9c679f603d29d00decf0f4f9643
 
 {% block body %}
 
-    <div class=\"container\">
+    <div class=\"container-fluid mod\">
         <div class=\"row\">
-            <div class=\"col-md-3\">&nbsp;</div>
-            <div class=\"col-md-6 bg-light py-3 px-3\">
+            <div class=\"col-md-2\">&nbsp;</div>
+            <div class=\"col-md-6 bg transparent py-3 px-3\">
                 <h1>Modification du profil :</h1>
-                    <p>vous pouvez modifier votre profil où changez le mot de passe</p>
+                    <p>vous pouvez modifier votre profil où changer le mot de passe</p>
 
                     {{ form_start(form) }}
 
                     {{ form_widget(form) }}
-
+                <div class=\"d-flex justify-content-end\">
                     <button type=\"submit\" class=\"btn btn-primary\">Valider les modifications</button>
-
+                    <a href=\"{{ path('user_show', {'firstName' : app.user.firstName}) }}\" class=\" ml-2 btn btn-primary\">Retour</a>
                     {{ form_end(form)}}
-                   <a href=\"{{ path('user_show', {'firstName' : app.user.firstName}) }}\" class=\"btn btn-primary\">Retour</a> 
+                </div>    
             </div>
-            <div class=\"col-md-3\">&nbsp;</div>
+            <div class=\"col-md-4 modification\">
+                 <img src=\"/img/2.jpg\" alt=\"joueur de tennis\">
+            </div>
         </div>
 
 

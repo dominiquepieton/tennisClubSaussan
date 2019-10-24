@@ -85,25 +85,37 @@ class __TwigTemplate_0bacb6952f6a30a67f22ae7d95233e1ee43ad5a53d147857706525e5818
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div class=\"container\">
-        <h1>Modifier votre password :</h1>
-        ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'form_start');
-        echo "
-        ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'widget');
-        echo "
-        <button type=\"submit\" class=\"btn btn-primary\">Confirmez le nouveau password</button>
-        ";
-        // line 11
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), 'form_end');
-        echo "
-        <a href=\"";
+        echo "    <div class=\"container-fluid mdp\">
+        <h1 class=\"text-center\">Modifier votre mot de passe :</h1>
+        <div class=\"row\">
+            <div class=\"col-md-1\">&nbsp;</div>
+            <div class=\"col-md-7\">
+                <div class=\"w-50 mx-auto\">
+                ";
         // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["firstName" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "firstName", [], "any", false, false, false, 12)]), "html", null, true);
-        echo "\" class=\"btn btn-primary\">RETOUR</a> 
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start');
+        echo "
+                ";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'widget');
+        echo "
+                <div class=\"\">
+                    <button type=\"submit\" class=\"btn btn-primary\">Confirmez le nouveau password</button>
+                    <a href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["firstName" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "firstName", [], "any", false, false, false, 16)]), "html", null, true);
+        echo "\" class=\"btn btn-primary\">RETOUR</a>
+                </div>
+                ";
+        // line 18
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_end');
+        echo "
+                </div>
+            </div>
+            <div class=\"col-md-4\">
+                <img src=\"/img/mdp2.png\" alt=\"icône mot de passe\">
+            </div>
+        </div>    
     </div>
 
 
@@ -128,7 +140,7 @@ class __TwigTemplate_0bacb6952f6a30a67f22ae7d95233e1ee43ad5a53d147857706525e5818
 
     public function getDebugInfo()
     {
-        return array (  105 => 12,  101 => 11,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  111 => 18,  106 => 16,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -138,13 +150,25 @@ class __TwigTemplate_0bacb6952f6a30a67f22ae7d95233e1ee43ad5a53d147857706525e5818
 {% block title %}Modifier le password{% endblock %}
 
 {% block body %}
-    <div class=\"container\">
-        <h1>Modifier votre password :</h1>
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button type=\"submit\" class=\"btn btn-primary\">Confirmez le nouveau password</button>
-        {{ form_end(form) }}
-        <a href=\"{{ path('user_show', {'firstName' : app.user.firstName}) }}\" class=\"btn btn-primary\">RETOUR</a> 
+    <div class=\"container-fluid mdp\">
+        <h1 class=\"text-center\">Modifier votre mot de passe :</h1>
+        <div class=\"row\">
+            <div class=\"col-md-1\">&nbsp;</div>
+            <div class=\"col-md-7\">
+                <div class=\"w-50 mx-auto\">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <div class=\"\">
+                    <button type=\"submit\" class=\"btn btn-primary\">Confirmez le nouveau password</button>
+                    <a href=\"{{ path('user_show', {'firstName' : app.user.firstName}) }}\" class=\"btn btn-primary\">RETOUR</a>
+                </div>
+                {{ form_end(form) }}
+                </div>
+            </div>
+            <div class=\"col-md-4\">
+                <img src=\"/img/mdp2.png\" alt=\"icône mot de passe\">
+            </div>
+        </div>    
     </div>
 
 
